@@ -1,0 +1,140 @@
+{
+  "movementPatterns": [
+    {
+      "id": "squat",
+      "name": "Squat",
+      "category": "lower_body",
+      "description": "Bilateral leg extension movement, knees and hips bend",
+      "muscleGroups": ["quads", "glutes", "hamstrings"],
+      "example": "Bodyweight squat, goblet squat, barbell back squat"
+    },
+    {
+      "id": "lunge",
+      "name": "Lunge",
+      "category": "lower_body",
+      "description": "Single-leg stepping movement with one leg forward",
+      "muscleGroups": ["quads", "glutes", "hamstrings"],
+      "example": "Forward lunge, reverse lunge, Bulgarian split squat"
+    },
+    {
+      "id": "hinge",
+      "name": "Hinge",
+      "category": "lower_body",
+      "description": "Hip-dominant movement where hips drive the motion, knees slightly bent",
+      "muscleGroups": ["glutes", "hamstrings", "lower_back"],
+      "example": "Deadlift, Romanian deadlift, good morning"
+    },
+    {
+      "id": "push_horizontal",
+      "name": "Horizontal Push",
+      "category": "upper_body",
+      "description": "Pressing movement horizontally away from body, chest dominant",
+      "muscleGroups": ["chest", "triceps", "shoulders"],
+      "example": "Push-up, dumbbell chest press, barbell bench press"
+    },
+    {
+      "id": "push_vertical",
+      "name": "Vertical Push",
+      "category": "upper_body",
+      "description": "Pressing movement vertically overhead, shoulder dominant",
+      "muscleGroups": ["shoulders", "triceps", "chest"],
+      "example": "Shoulder press, overhead press, Arnold press"
+    },
+    {
+      "id": "pull_horizontal",
+      "name": "Horizontal Pull",
+      "category": "upper_body",
+      "description": "Pulling movement horizontally toward body, back dominant",
+      "muscleGroups": ["back", "biceps", "shoulders"],
+      "example": "Barbell row, dumbbell row, cable row"
+    },
+    {
+      "id": "pull_vertical",
+      "name": "Vertical Pull",
+      "category": "upper_body",
+      "description": "Pulling movement vertically downward or upward, lats dominant",
+      "muscleGroups": ["back", "biceps"],
+      "example": "Pull-up, chin-up, lat pulldown"
+    },
+    {
+      "id": "isolation",
+      "name": "Isolation",
+      "category": "upper_body",
+      "description": "Movement targeting a single muscle group in isolation",
+      "muscleGroups": ["biceps", "triceps", "shoulders", "forearms"],
+      "example": "Bicep curl, tricep extension, lateral raise"
+    },
+    {
+      "id": "carry",
+      "name": "Carry",
+      "category": "full_body",
+      "description": "Loaded movement where weight is carried for distance or time",
+      "muscleGroups": ["core", "traps", "forearms", "glutes"],
+      "example": "Farmer's carry, suitcase carry, waiter's walk"
+    },
+    {
+      "id": "core_anti_extension",
+      "name": "Anti-Extension",
+      "category": "core",
+      "description": "Isometric or dynamic movement resisting spinal extension",
+      "muscleGroups": ["core", "abs"],
+      "example": "Plank, dead bug, hollow body hold"
+    },
+    {
+      "id": "core_anti_rotation",
+      "name": "Anti-Rotation",
+      "category": "core",
+      "description": "Movement resisting rotational forces on the spine",
+      "muscleGroups": ["core", "obliques"],
+      "example": "Pallof press, bird dog, plank shoulder tap"
+    },
+    {
+      "id": "core_rotation",
+      "name": "Rotation",
+      "category": "core",
+      "description": "Dynamic twisting or rotating movement of the torso",
+      "muscleGroups": ["obliques", "core"],
+      "example": "Russian twist, wood chop, bicycle crunch"
+    },
+    {
+      "id": "core_flexion",
+      "name": "Flexion",
+      "category": "core",
+      "description": "Movement bringing torso toward hips, abs dominant",
+      "muscleGroups": ["abs", "core"],
+      "example": "Crunch, leg raise, V-up"
+    },
+    {
+      "id": "conditioning",
+      "name": "Conditioning",
+      "category": "cardio",
+      "description": "Explosive or high-intensity movement for cardiovascular and metabolic adaptation",
+      "muscleGroups": ["quads", "glutes", "core"],
+      "example": "Burpees, jumping jacks, high knees"
+    },
+    {
+      "id": "mobility",
+      "name": "Mobility",
+      "category": "flexibility",
+      "description": "Stretching or mobility movement to increase range of motion",
+      "muscleGroups": ["hip_flexors", "hamstrings", "chest"],
+      "example": "Cat-cow, hip flexor stretch, inchworm"
+    },
+    {
+      "id": "plyometric",
+      "name": "Plyometric",
+      "category": "explosive",
+      "description": "Explosive jumping or bounding movement for power development",
+      "muscleGroups": ["quads", "glutes", "calves"],
+      "example": "Box jump, burpees, jump squat"
+    },
+    {
+      "id": "full_body",
+      "name": "Full Body",
+      "category": "full_body",
+      "description": "Complex movement engaging multiple muscle groups simultaneously",
+      "muscleGroups": ["chest", "back", "glutes", "core"],
+      "example": "Turkish get-up, kettlebell swing, clean and jerk"
+    }
+  ]
+}

@@ -1,0 +1,805 @@
+{
+  "substitutionIndex": {
+    "incline_pushup": {
+      "sameEquipment": ["pushup", "wide_pushup"],
+      "differentEquipmentSameMuscle": ["band_pull_apart", "dumbbell_chest_press"],
+      "regression": null,
+      "progression": ["pushup", "diamond_pushup"],
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["band_pull_apart"],
+        "wrist_pain": ["band_pull_apart"],
+        "elbow_injury": ["dumbbell_chest_press"]
+      }
+    },
+    "pushup": {
+      "sameEquipment": ["incline_pushup", "wide_pushup", "decline_pushup", "diamond_pushup"],
+      "differentEquipmentSameMuscle": ["dumbbell_chest_press", "barbell_bench_press", "band_pull_apart"],
+      "regression": ["incline_pushup"],
+      "progression": ["diamond_pushup", "decline_pushup"],
+      "mobilityWarmup": ["cat_cow", "inchworm"],
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["band_pull_apart"],
+        "wrist_pain": ["dumbbell_chest_press"],
+        "elbow_injury": ["wide_pushup"]
+      }
+    },
+    "wide_pushup": {
+      "sameEquipment": ["pushup", "decline_pushup"],
+      "differentEquipmentSameMuscle": ["dumbbell_chest_fly", "band_pull_apart"],
+      "regression": ["pushup"],
+      "progression": ["decline_pushup"],
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["band_pull_apart"],
+        "wrist_pain": ["dumbbell_chest_fly"]
+      }
+    },
+    "decline_pushup": {
+      "sameEquipment": ["pushup", "wide_pushup", "diamond_pushup"],
+      "differentEquipmentSameMuscle": ["dumbbell_chest_press", "barbell_bench_press"],
+      "regression": ["wide_pushup", "pushup"],
+      "progression": ["diamond_pushup"],
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["band_pull_apart"]
+      }
+    },
+    "diamond_pushup": {
+      "sameEquipment": ["pushup", "decline_pushup"],
+      "differentEquipmentSameMuscle": ["overhead_tricep_extension", "tricep_kickback"],
+      "regression": ["pushup", "decline_pushup"],
+      "progression": null,
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "wrist_pain": ["overhead_tricep_extension"]
+      }
+    },
+    "wall_sit": {
+      "sameEquipment": ["bodyweight_squat"],
+      "differentEquipmentSameMuscle": ["goblet_squat", "band_squat"],
+      "regression": null,
+      "progression": ["bodyweight_squat"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "knee_injury": ["band_lateral_walk"],
+        "hip_injury": ["glute_bridge"]
+      }
+    },
+    "bodyweight_squat": {
+      "sameEquipment": ["wall_sit", "sumo_squat"],
+      "differentEquipmentSameMuscle": ["goblet_squat", "band_squat", "barbell_back_squat"],
+      "regression": ["wall_sit"],
+      "progression": ["goblet_squat", "barbell_back_squat"],
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "knee_injury": ["glute_bridge"],
+        "lower_back_pain": ["wall_sit"]
+      }
+    },
+    "sumo_squat": {
+      "sameEquipment": ["bodyweight_squat"],
+      "differentEquipmentSameMuscle": ["dumbbell_sumo_squat", "band_squat"],
+      "regression": ["bodyweight_squat"],
+      "progression": ["dumbbell_sumo_squat"],
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "hip_injury": ["bodyweight_squat"],
+        "knee_injury": ["glute_bridge"]
+      }
+    },
+    "reverse_lunge": {
+      "sameEquipment": ["forward_lunge", "bodyweight_squat"],
+      "differentEquipmentSameMuscle": ["dumbbell_lunge", "band_squat"],
+      "regression": ["bodyweight_squat"],
+      "progression": ["forward_lunge", "bulgarian_split_squat"],
+      "mobilityWarmup": ["hip_flexor_stretch"],
+      "injurySafeAlternatives": {
+        "knee_injury": ["bodyweight_squat"]
+      }
+    },
+    "forward_lunge": {
+      "sameEquipment": ["reverse_lunge", "bodyweight_squat"],
+      "differentEquipmentSameMuscle": ["dumbbell_lunge", "band_squat"],
+      "regression": ["reverse_lunge", "bodyweight_squat"],
+      "progression": ["bulgarian_split_squat", "dumbbell_lunge"],
+      "mobilityWarmup": ["hip_flexor_stretch"],
+      "injurySafeAlternatives": {
+        "knee_injury": ["bodyweight_squat"]
+      }
+    },
+    "bulgarian_split_squat": {
+      "sameEquipment": ["forward_lunge", "reverse_lunge"],
+      "differentEquipmentSameMuscle": ["dumbbell_lunge", "dumbbell_stepup"],
+      "regression": ["forward_lunge", "reverse_lunge"],
+      "progression": ["dumbbell_stepup"],
+      "mobilityWarmup": ["hip_flexor_stretch"],
+      "injurySafeAlternatives": {
+        "knee_injury": ["dumbbell_stepup"]
+      }
+    },
+    "glute_bridge": {
+      "sameEquipment": ["single_leg_glute_bridge"],
+      "differentEquipmentSameMuscle": ["hip_thrust_bw"],
+      "regression": null,
+      "progression": ["single_leg_glute_bridge", "hip_thrust_bw"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "lower_back_pain": ["dead_bug"],
+        "hip_injury": ["dead_bug"]
+      }
+    },
+    "single_leg_glute_bridge": {
+      "sameEquipment": ["glute_bridge"],
+      "differentEquipmentSameMuscle": ["hip_thrust_bw"],
+      "regression": ["glute_bridge"],
+      "progression": ["hip_thrust_bw"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "hip_injury": ["glute_bridge"],
+        "lower_back_pain": ["glute_bridge"]
+      }
+    },
+    "hip_thrust_bw": {
+      "sameEquipment": ["glute_bridge", "single_leg_glute_bridge"],
+      "differentEquipmentSameMuscle": ["barbell_deadlift"],
+      "regression": ["single_leg_glute_bridge", "glute_bridge"],
+      "progression": null,
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "lower_back_pain": ["glute_bridge"],
+        "hip_injury": ["glute_bridge"]
+      }
+    },
+    "good_morning_bw": {
+      "sameEquipment": ["bodyweight_squat"],
+      "differentEquipmentSameMuscle": ["dumbbell_rdl", "barbell_deadlift"],
+      "regression": null,
+      "progression": ["dumbbell_rdl"],
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "lower_back_pain": ["bird_dog"],
+        "spinal_injury": ["glute_bridge"]
+      }
+    },
+    "superman": {
+      "sameEquipment": ["bodyweight_squat"],
+      "differentEquipmentSameMuscle": ["dumbbell_rdl"],
+      "regression": null,
+      "progression": ["dumbbell_rdl"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "lower_back_pain": ["glute_bridge"],
+        "spinal_injury": ["glute_bridge"]
+      }
+    },
+    "dead_bug": {
+      "sameEquipment": ["bird_dog", "plank"],
+      "differentEquipmentSameMuscle": ["hollow_body_hold"],
+      "regression": null,
+      "progression": ["bird_dog", "plank"],
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "lower_back_pain": ["bird_dog"]
+      }
+    },
+    "bird_dog": {
+      "sameEquipment": ["dead_bug", "side_plank"],
+      "differentEquipmentSameMuscle": ["plank"],
+      "regression": ["dead_bug"],
+      "progression": ["plank_shoulder_tap"],
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "lower_back_pain": ["dead_bug"]
+      }
+    },
+    "plank": {
+      "sameEquipment": ["side_plank", "dead_bug"],
+      "differentEquipmentSameMuscle": ["renegade_row"],
+      "regression": ["dead_bug", "bird_dog"],
+      "progression": ["plank_shoulder_tap", "hollow_body_hold"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "wrist_pain": ["dead_bug"],
+        "shoulder_injury": ["dead_bug"]
+      }
+    },
+    "side_plank": {
+      "sameEquipment": ["plank"],
+      "differentEquipmentSameMuscle": ["bird_dog"],
+      "regression": ["plank"],
+      "progression": ["plank_shoulder_tap"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["dead_bug"]
+      }
+    },
+    "plank_shoulder_tap": {
+      "sameEquipment": ["plank", "mountain_climbers"],
+      "differentEquipmentSameMuscle": ["renegade_row"],
+      "regression": ["plank"],
+      "progression": ["hollow_body_hold"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "wrist_pain": ["dead_bug"]
+      }
+    },
+    "crunch": {
+      "sameEquipment": ["bicycle_crunch"],
+      "differentEquipmentSameMuscle": ["leg_raise"],
+      "regression": null,
+      "progression": ["bicycle_crunch", "v_up"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "neck_issues": ["dead_bug"]
+      }
+    },
+    "bicycle_crunch": {
+      "sameEquipment": ["crunch"],
+      "differentEquipmentSameMuscle": ["russian_twist"],
+      "regression": ["crunch"],
+      "progression": ["russian_twist"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "neck_issues": ["dead_bug"]
+      }
+    },
+    "leg_raise": {
+      "sameEquipment": ["crunch"],
+      "differentEquipmentSameMuscle": ["flutter_kicks"],
+      "regression": ["crunch"],
+      "progression": ["v_up"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "lower_back_pain": ["dead_bug"]
+      }
+    },
+    "russian_twist": {
+      "sameEquipment": ["bicycle_crunch"],
+      "differentEquipmentSameMuscle": ["plank_shoulder_tap"],
+      "regression": ["bicycle_crunch"],
+      "progression": null,
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "spinal_injury": ["dead_bug"]
+      }
+    },
+    "mountain_climbers": {
+      "sameEquipment": ["plank"],
+      "differentEquipmentSameMuscle": ["burpees"],
+      "regression": ["plank"],
+      "progression": ["burpees"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "wrist_pain": ["high_knees"]
+      }
+    },
+    "hollow_body_hold": {
+      "sameEquipment": ["dead_bug"],
+      "differentEquipmentSameMuscle": ["plank"],
+      "regression": ["plank"],
+      "progression": ["v_up"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "lower_back_pain": ["dead_bug"]
+      }
+    },
+    "v_up": {
+      "sameEquipment": ["leg_raise"],
+      "differentEquipmentSameMuscle": null,
+      "regression": ["hollow_body_hold", "leg_raise"],
+      "progression": null,
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "lower_back_pain": ["leg_raise"]
+      }
+    },
+    "flutter_kicks": {
+      "sameEquipment": ["leg_raise"],
+      "differentEquipmentSameMuscle": null,
+      "regression": ["leg_raise"],
+      "progression": null,
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "lower_back_pain": ["leg_raise"]
+      }
+    },
+    "jumping_jacks": {
+      "sameEquipment": ["high_knees", "butt_kicks"],
+      "differentEquipmentSameMuscle": null,
+      "regression": null,
+      "progression": ["burpees"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "knee_injury": ["high_knees"],
+        "ankle_sprain": ["high_knees"]
+      }
+    },
+    "high_knees": {
+      "sameEquipment": ["jumping_jacks", "butt_kicks"],
+      "differentEquipmentSameMuscle": null,
+      "regression": ["jumping_jacks"],
+      "progression": ["mountain_climbers"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "ankle_sprain": ["jumping_jacks"]
+      }
+    },
+    "butt_kicks": {
+      "sameEquipment": ["jumping_jacks", "high_knees"],
+      "differentEquipmentSameMuscle": null,
+      "regression": ["jumping_jacks"],
+      "progression": ["mountain_climbers"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "hamstring_strain": ["high_knees"]
+      }
+    },
+    "burpees": {
+      "sameEquipment": ["mountain_climbers"],
+      "differentEquipmentSameMuscle": null,
+      "regression": ["mountain_climbers"],
+      "progression": null,
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "knee_injury": ["mountain_climbers"],
+        "ankle_sprain": ["mountain_climbers"],
+        "shoulder_injury": ["high_knees"]
+      }
+    },
+    "inchworm": {
+      "sameEquipment": ["pushup", "cat_cow"],
+      "differentEquipmentSameMuscle": null,
+      "regression": ["cat_cow"],
+      "progression": ["pushup"],
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "wrist_pain": ["cat_cow"],
+        "shoulder_injury": ["cat_cow"]
+      }
+    },
+    "hip_flexor_stretch": {
+      "sameEquipment": ["reverse_lunge"],
+      "differentEquipmentSameMuscle": null,
+      "regression": null,
+      "progression": null,
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "knee_injury": ["cat_cow"],
+        "hip_injury": ["cat_cow"]
+      }
+    },
+    "cat_cow": {
+      "sameEquipment": ["inchworm", "hip_flexor_stretch"],
+      "differentEquipmentSameMuscle": null,
+      "regression": null,
+      "progression": null,
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "spinal_injury": ["dead_bug"],
+        "neck_issues": ["dead_bug"]
+      }
+    },
+    "dumbbell_chest_press": {
+      "sameEquipment": ["dumbbell_chest_fly"],
+      "differentEquipmentSameMuscle": ["pushup", "barbell_bench_press"],
+      "regression": ["pushup"],
+      "progression": ["barbell_bench_press"],
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["pushup"],
+        "wrist_pain": ["pushup"]
+      }
+    },
+    "dumbbell_chest_fly": {
+      "sameEquipment": ["dumbbell_chest_press"],
+      "differentEquipmentSameMuscle": ["wide_pushup"],
+      "regression": ["dumbbell_chest_press"],
+      "progression": null,
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["dumbbell_chest_press"]
+      }
+    },
+    "dumbbell_shoulder_press": {
+      "sameEquipment": ["arnold_press"],
+      "differentEquipmentSameMuscle": ["pushup", "barbell_ohp"],
+      "regression": ["pushup"],
+      "progression": ["barbell_ohp"],
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["lateral_raise"],
+        "rotator_cuff_issues": ["lateral_raise"]
+      }
+    },
+    "lateral_raise": {
+      "sameEquipment": ["front_raise"],
+      "differentEquipmentSameMuscle": ["band_pull_apart"],
+      "regression": null,
+      "progression": ["arnold_press"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["band_pull_apart"]
+      }
+    },
+    "front_raise": {
+      "sameEquipment": ["lateral_raise"],
+      "differentEquipmentSameMuscle": ["band_pull_apart"],
+      "regression": null,
+      "progression": ["arnold_press"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["band_pull_apart"]
+      }
+    },
+    "dumbbell_row": {
+      "sameEquipment": ["renegade_row"],
+      "differentEquipmentSameMuscle": ["pullup", "barbell_row", "band_row"],
+      "regression": ["pushup"],
+      "progression": ["barbell_row"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "lower_back_pain": ["band_row"],
+        "shoulder_injury": ["band_row"]
+      }
+    },
+    "renegade_row": {
+      "sameEquipment": ["dumbbell_row"],
+      "differentEquipmentSameMuscle": ["plank"],
+      "regression": ["dumbbell_row"],
+      "progression": null,
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "wrist_pain": ["dumbbell_row"],
+        "lower_back_pain": ["dumbbell_row"]
+      }
+    },
+    "goblet_squat": {
+      "sameEquipment": ["kettlebell_goblet_squat"],
+      "differentEquipmentSameMuscle": ["bodyweight_squat", "barbell_back_squat"],
+      "regression": ["bodyweight_squat"],
+      "progression": ["barbell_back_squat"],
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "knee_injury": ["bodyweight_squat"]
+      }
+    },
+    "dumbbell_rdl": {
+      "sameEquipment": null,
+      "differentEquipmentSameMuscle": ["good_morning_bw", "barbell_deadlift"],
+      "regression": ["good_morning_bw"],
+      "progression": ["barbell_deadlift"],
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "lower_back_pain": ["good_morning_bw"]
+      }
+    },
+    "dumbbell_lunge": {
+      "sameEquipment": null,
+      "differentEquipmentSameMuscle": ["forward_lunge", "band_squat"],
+      "regression": ["forward_lunge"],
+      "progression": ["bulgarian_split_squat"],
+      "mobilityWarmup": ["hip_flexor_stretch"],
+      "injurySafeAlternatives": {
+        "knee_injury": ["band_squat"]
+      }
+    },
+    "dumbbell_sumo_squat": {
+      "sameEquipment": ["goblet_squat"],
+      "differentEquipmentSameMuscle": ["sumo_squat"],
+      "regression": ["sumo_squat"],
+      "progression": ["barbell_back_squat"],
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "hip_injury": ["sumo_squat"]
+      }
+    },
+    "dumbbell_stepup": {
+      "sameEquipment": null,
+      "differentEquipmentSameMuscle": ["bulgarian_split_squat"],
+      "regression": ["bulgarian_split_squat"],
+      "progression": null,
+      "mobilityWarmup": ["hip_flexor_stretch"],
+      "injurySafeAlternatives": {
+        "knee_injury": ["bulgarian_split_squat"]
+      }
+    },
+    "farmer_carries": {
+      "sameEquipment": null,
+      "differentEquipmentSameMuscle": null,
+      "regression": null,
+      "progression": null,
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "lower_back_pain": ["band_pull_apart"]
+      }
+    },
+    "dumbbell_swing": {
+      "sameEquipment": null,
+      "differentEquipmentSameMuscle": ["kettlebell_swing"],
+      "regression": ["good_morning_bw"],
+      "progression": ["kettlebell_swing"],
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "lower_back_pain": ["good_morning_bw"]
+      }
+    },
+    "bicep_curl": {
+      "sameEquipment": ["hammer_curl", "concentration_curl"],
+      "differentEquipmentSameMuscle": ["pullup", "chinup", "band_bicep_curl"],
+      "regression": null,
+      "progression": ["concentration_curl"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "elbow_injury": ["band_bicep_curl"]
+      }
+    },
+    "hammer_curl": {
+      "sameEquipment": ["bicep_curl"],
+      "differentEquipmentSameMuscle": ["band_bicep_curl"],
+      "regression": ["bicep_curl"],
+      "progression": ["concentration_curl"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "elbow_injury": ["band_bicep_curl"]
+      }
+    },
+    "concentration_curl": {
+      "sameEquipment": ["hammer_curl"],
+      "differentEquipmentSameMuscle": ["band_bicep_curl"],
+      "regression": ["hammer_curl", "bicep_curl"],
+      "progression": null,
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "elbow_injury": ["band_bicep_curl"]
+      }
+    },
+    "overhead_tricep_extension": {
+      "sameEquipment": ["tricep_kickback"],
+      "differentEquipmentSameMuscle": ["diamond_pushup", "band_tricep_pushdown"],
+      "regression": null,
+      "progression": ["tricep_kickback"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["tricep_kickback"],
+        "wrist_pain": ["band_tricep_pushdown"]
+      }
+    },
+    "tricep_kickback": {
+      "sameEquipment": ["overhead_tricep_extension"],
+      "differentEquipmentSameMuscle": ["diamond_pushup"],
+      "regression": ["overhead_tricep_extension"],
+      "progression": null,
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["band_tricep_pushdown"]
+      }
+    },
+    "arnold_press": {
+      "sameEquipment": ["dumbbell_shoulder_press"],
+      "differentEquipmentSameMuscle": ["barbell_ohp"],
+      "regression": ["dumbbell_shoulder_press"],
+      "progression": null,
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["lateral_raise"]
+      }
+    },
+    "band_pull_apart": {
+      "sameEquipment": ["band_face_pull"],
+      "differentEquipmentSameMuscle": ["pullup"],
+      "regression": null,
+      "progression": ["band_face_pull"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["band_pull_apart"]
+      }
+    },
+    "band_face_pull": {
+      "sameEquipment": ["band_pull_apart"],
+      "differentEquipmentSameMuscle": ["pullup"],
+      "regression": ["band_pull_apart"],
+      "progression": null,
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "rotator_cuff_issues": ["band_pull_apart"]
+      }
+    },
+    "band_bicep_curl": {
+      "sameEquipment": null,
+      "differentEquipmentSameMuscle": ["bicep_curl"],
+      "regression": null,
+      "progression": ["bicep_curl"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "elbow_injury": ["band_bicep_curl"]
+      }
+    },
+    "band_tricep_pushdown": {
+      "sameEquipment": null,
+      "differentEquipmentSameMuscle": ["overhead_tricep_extension"],
+      "regression": null,
+      "progression": ["overhead_tricep_extension"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["band_tricep_pushdown"]
+      }
+    },
+    "band_squat": {
+      "sameEquipment": null,
+      "differentEquipmentSameMuscle": ["bodyweight_squat", "goblet_squat"],
+      "regression": ["bodyweight_squat"],
+      "progression": ["goblet_squat"],
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "knee_injury": ["band_lateral_walk"]
+      }
+    },
+    "band_lateral_walk": {
+      "sameEquipment": null,
+      "differentEquipmentSameMuscle": ["glute_bridge"],
+      "regression": null,
+      "progression": null,
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "knee_injury": ["glute_bridge"]
+      }
+    },
+    "band_row": {
+      "sameEquipment": null,
+      "differentEquipmentSameMuscle": ["dumbbell_row", "barbell_row"],
+      "regression": null,
+      "progression": ["dumbbell_row"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "lower_back_pain": ["band_row"]
+      }
+    },
+    "dead_hang": {
+      "sameEquipment": ["negative_pullup"],
+      "differentEquipmentSameMuscle": ["band_pull_apart"],
+      "regression": null,
+      "progression": ["negative_pullup"],
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["band_pull_apart"],
+        "wrist_pain": ["band_pull_apart"]
+      }
+    },
+    "negative_pullup": {
+      "sameEquipment": ["dead_hang"],
+      "differentEquipmentSameMuscle": ["band_row"],
+      "regression": ["dead_hang"],
+      "progression": ["pullup", "chinup"],
+      "mobilityWarmup": ["dead_hang"],
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["band_row"]
+      }
+    },
+    "pullup": {
+      "sameEquipment": ["chinup"],
+      "differentEquipmentSameMuscle": ["dumbbell_row", "barbell_row"],
+      "regression": ["negative_pullup"],
+      "progression": null,
+      "mobilityWarmup": ["dead_hang"],
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["dumbbell_row"]
+      }
+    },
+    "chinup": {
+      "sameEquipment": ["pullup"],
+      "differentEquipmentSameMuscle": ["dumbbell_row"],
+      "regression": ["negative_pullup"],
+      "progression": null,
+      "mobilityWarmup": ["dead_hang"],
+      "injurySafeAlternatives": {
+        "elbow_injury": ["dumbbell_row"]
+      }
+    },
+    "hanging_knee_raise": {
+      "sameEquipment": ["dead_hang"],
+      "differentEquipmentSameMuscle": ["leg_raise"],
+      "regression": ["dead_hang"],
+      "progression": null,
+      "mobilityWarmup": ["dead_hang"],
+      "injurySafeAlternatives": {
+        "lower_back_pain": ["leg_raise"]
+      }
+    },
+    "barbell_back_squat": {
+      "sameEquipment": null,
+      "differentEquipmentSameMuscle": ["goblet_squat"],
+      "regression": ["goblet_squat"],
+      "progression": null,
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "knee_injury": ["band_lateral_walk"],
+        "lower_back_pain": ["glute_bridge"]
+      }
+    },
+    "barbell_deadlift": {
+      "sameEquipment": null,
+      "differentEquipmentSameMuscle": ["dumbbell_rdl"],
+      "regression": ["dumbbell_rdl"],
+      "progression": null,
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "lower_back_pain": ["good_morning_bw"]
+      }
+    },
+    "barbell_bench_press": {
+      "sameEquipment": null,
+      "differentEquipmentSameMuscle": ["dumbbell_chest_press"],
+      "regression": ["dumbbell_chest_press"],
+      "progression": null,
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["dumbbell_chest_fly"],
+        "rotator_cuff_issues": ["dumbbell_chest_fly"]
+      }
+    },
+    "barbell_ohp": {
+      "sameEquipment": null,
+      "differentEquipmentSameMuscle": ["dumbbell_shoulder_press"],
+      "regression": ["dumbbell_shoulder_press"],
+      "progression": null,
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["lateral_raise"],
+        "rotator_cuff_issues": ["lateral_raise"]
+      }
+    },
+    "barbell_row": {
+      "sameEquipment": null,
+      "differentEquipmentSameMuscle": ["dumbbell_row"],
+      "regression": ["dumbbell_row"],
+      "progression": null,
+      "mobilityWarmup": null,
+      "injurySafeAlternatives": {
+        "lower_back_pain": ["band_row"]
+      }
+    },
+    "kettlebell_swing": {
+      "sameEquipment": null,
+      "differentEquipmentSameMuscle": ["dumbbell_swing"],
+      "regression": ["dumbbell_swing"],
+      "progression": null,
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "lower_back_pain": ["good_morning_bw"]
+      }
+    },
+    "kettlebell_goblet_squat": {
+      "sameEquipment": ["goblet_squat"],
+      "differentEquipmentSameMuscle": ["bodyweight_squat"],
+      "regression": ["bodyweight_squat"],
+      "progression": ["barbell_back_squat"],
+      "mobilityWarmup": ["cat_cow"],
+      "injurySafeAlternatives": {
+        "knee_injury": ["bodyweight_squat"]
+      }
+    },
+    "kettlebell_turkish_getup": {
+      "sameEquipment": null,
+      "differentEquipmentSameMuscle": null,
+      "regression": null,
+      "progression": null,
+      "mobilityWarmup": ["dead_hang"],
+      "injurySafeAlternatives": {
+        "shoulder_injury": ["dead_hang"],
+        "knee_injury": ["dead_hang"],
+        "lower_back_pain": ["glute_bridge"]
+      }
+    }
+  },
+  "substitutionStatistics": {
+    "totalExercises": 76,
+    "exercisesWithSameEquipmentAlternatives": 42,
+    "exercisesWithDifferentEquipmentAlternatives": 55,
+    "exercisesWithRegressions": 56,
+    "exercisesWithProgressions": 54,
+    "exercisesWithInjurySafeAlternatives": 66,
+    "averageAlternativesPerExercise": 4.2,
+    "lowestCoverage": "kettlebell_turkish_getup"
+  }
+}

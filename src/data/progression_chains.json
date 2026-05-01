@@ -1,0 +1,326 @@
+{
+  "progressionChains": [
+    {
+      "chainId": "push_horizontal_chain_1",
+      "name": "Horizontal Push — Chest Focus",
+      "movementPattern": "push_horizontal",
+      "exercises": ["incline_pushup", "pushup", "wide_pushup", "dumbbell_chest_press", "barbell_bench_press"],
+      "difficulty": ["beginner", "beginner", "beginner", "beginner", "intermediate"],
+      "description": "Progressive chest push from inclined support to heavy barbell"
+    },
+    {
+      "chainId": "push_horizontal_chain_2",
+      "name": "Horizontal Push — Tricep Focus",
+      "movementPattern": "push_horizontal",
+      "exercises": ["pushup", "diamond_pushup"],
+      "difficulty": ["beginner", "intermediate"],
+      "description": "Tricep-dominant pressing progression"
+    },
+    {
+      "chainId": "push_horizontal_chain_3",
+      "name": "Horizontal Push — Decline",
+      "movementPattern": "push_horizontal",
+      "exercises": ["wide_pushup", "decline_pushup"],
+      "difficulty": ["beginner", "intermediate"],
+      "description": "Upper chest emphasis progression"
+    },
+    {
+      "chainId": "squat_chain_1",
+      "name": "Squat — Foundational",
+      "movementPattern": "squat",
+      "exercises": ["wall_sit", "bodyweight_squat", "goblet_squat", "dumbbell_sumo_squat", "barbell_back_squat"],
+      "difficulty": ["beginner", "beginner", "beginner", "beginner", "intermediate"],
+      "description": "Squat progression from isometric hold to heavy barbell"
+    },
+    {
+      "chainId": "squat_chain_2",
+      "name": "Squat — Sumo Stance",
+      "movementPattern": "squat",
+      "exercises": ["sumo_squat", "dumbbell_sumo_squat"],
+      "difficulty": ["beginner", "beginner"],
+      "description": "Glute-focused sumo squat progression"
+    },
+    {
+      "chainId": "squat_chain_3",
+      "name": "Squat — Kettlebell",
+      "movementPattern": "squat",
+      "exercises": ["bodyweight_squat", "kettlebell_goblet_squat"],
+      "difficulty": ["beginner", "beginner"],
+      "description": "Squat with kettlebell load"
+    },
+    {
+      "chainId": "lunge_chain_1",
+      "name": "Lunge — Stepping Progression",
+      "movementPattern": "lunge",
+      "exercises": ["reverse_lunge", "forward_lunge", "bulgarian_split_squat", "dumbbell_stepup"],
+      "difficulty": ["beginner", "beginner", "intermediate", "intermediate"],
+      "description": "Lunge family from reverse to single-leg loaded step"
+    },
+    {
+      "chainId": "lunge_chain_2",
+      "name": "Lunge — Dumbbell Loading",
+      "movementPattern": "lunge",
+      "exercises": ["forward_lunge", "dumbbell_lunge"],
+      "difficulty": ["beginner", "beginner"],
+      "description": "Forward lunge with dumbbell resistance"
+    },
+    {
+      "chainId": "hinge_chain_1",
+      "name": "Hinge — Hip Extension Foundation",
+      "movementPattern": "hinge",
+      "exercises": ["glute_bridge", "single_leg_glute_bridge", "hip_thrust_bw"],
+      "difficulty": ["beginner", "intermediate", "intermediate"],
+      "description": "Hip extension from bilateral to unilateral loaded"
+    },
+    {
+      "chainId": "hinge_chain_2",
+      "name": "Hinge — Deadlift Family",
+      "movementPattern": "hinge",
+      "exercises": ["good_morning_bw", "dumbbell_rdl", "dumbbell_swing", "kettlebell_swing", "barbell_deadlift"],
+      "difficulty": ["beginner", "beginner", "intermediate", "intermediate", "intermediate"],
+      "description": "Hip hinge pattern from bodyweight through to heavy barbell"
+    },
+    {
+      "chainId": "hinge_chain_3",
+      "name": "Hinge — Back Extension",
+      "movementPattern": "hinge",
+      "exercises": ["superman"],
+      "difficulty": ["beginner"],
+      "description": "Isolated back extension movement"
+    },
+    {
+      "chainId": "core_antiext_chain_1",
+      "name": "Core Anti-Extension — Plank Progression",
+      "movementPattern": "core_anti_extension",
+      "exercises": ["dead_bug", "plank", "plank_shoulder_tap", "hollow_body_hold"],
+      "difficulty": ["beginner", "beginner", "intermediate", "intermediate"],
+      "description": "Core stability from supine to advanced gymnastics hold"
+    },
+    {
+      "chainId": "core_antiext_chain_2",
+      "name": "Core Anti-Extension — Mountain Climbers",
+      "movementPattern": "core_anti_extension",
+      "exercises": ["plank", "mountain_climbers"],
+      "difficulty": ["beginner", "intermediate"],
+      "description": "Dynamic plank progression"
+    },
+    {
+      "chainId": "core_antirot_chain_1",
+      "name": "Core Anti-Rotation — Plank Variants",
+      "movementPattern": "core_anti_rotation",
+      "exercises": ["bird_dog", "side_plank", "plank_shoulder_tap"],
+      "difficulty": ["beginner", "beginner", "intermediate"],
+      "description": "Rotational stability progression"
+    },
+    {
+      "chainId": "core_rot_chain_1",
+      "name": "Core Rotation — Crunch to Twist",
+      "movementPattern": "core_rotation",
+      "exercises": ["bicycle_crunch", "russian_twist"],
+      "difficulty": ["beginner", "intermediate"],
+      "description": "Dynamic rotational core from crunches to seated twist"
+    },
+    {
+      "chainId": "core_flex_chain_1",
+      "name": "Core Flexion — Lower Abs",
+      "movementPattern": "core_flexion",
+      "exercises": ["crunch", "leg_raise", "v_up"],
+      "difficulty": ["beginner", "intermediate", "advanced"],
+      "description": "Abdominal flexion progression from upper to full body"
+    },
+    {
+      "chainId": "core_flex_chain_2",
+      "name": "Core Flexion — Flutter Kicks",
+      "movementPattern": "core_flexion",
+      "exercises": ["flutter_kicks"],
+      "difficulty": ["intermediate"],
+      "description": "Time-based lower abs isometric hold"
+    },
+    {
+      "chainId": "conditioning_chain_1",
+      "name": "Conditioning — Cardio Warmup",
+      "movementPattern": "conditioning",
+      "exercises": ["jumping_jacks", "high_knees", "butt_kicks", "mountain_climbers", "burpees"],
+      "difficulty": ["beginner", "beginner", "beginner", "intermediate", "advanced"],
+      "description": "Cardio progression from simple jumps to complex full-body"
+    },
+    {
+      "chainId": "mobility_chain_1",
+      "name": "Mobility — Warm-Up & Cool-Down",
+      "movementPattern": "mobility",
+      "exercises": ["cat_cow", "inchworm", "hip_flexor_stretch"],
+      "difficulty": ["beginner", "beginner", "beginner"],
+      "description": "Movement quality and range of motion work"
+    },
+    {
+      "chainId": "push_vertical_chain_1",
+      "name": "Vertical Push — Shoulder Press",
+      "movementPattern": "push_vertical",
+      "exercises": ["pushup", "dumbbell_shoulder_press", "arnold_press", "barbell_ohp"],
+      "difficulty": ["beginner", "beginner", "intermediate", "intermediate"],
+      "description": "Overhead pressing from push-up to heavy barbell"
+    },
+    {
+      "chainId": "push_vertical_chain_2",
+      "name": "Vertical Push — Raises",
+      "movementPattern": "push_vertical",
+      "exercises": ["lateral_raise", "front_raise"],
+      "difficulty": ["beginner", "beginner"],
+      "description": "Shoulder isolation raises"
+    },
+    {
+      "chainId": "pull_horizontal_chain_1",
+      "name": "Horizontal Pull — Rowing",
+      "movementPattern": "pull_horizontal",
+      "exercises": ["band_pull_apart", "band_face_pull", "band_row", "dumbbell_row", "barbell_row"],
+      "difficulty": ["beginner", "beginner", "beginner", "beginner", "intermediate"],
+      "description": "Rowing progression from band pull-aparts to heavy barbell"
+    },
+    {
+      "chainId": "pull_horizontal_chain_2",
+      "name": "Horizontal Pull — Renegade",
+      "movementPattern": "pull_horizontal",
+      "exercises": ["plank", "renegade_row"],
+      "difficulty": ["beginner", "advanced"],
+      "description": "Core + back pull from plank position"
+    },
+    {
+      "chainId": "pull_vertical_chain_1",
+      "name": "Vertical Pull — Pull-Up Progression",
+      "movementPattern": "pull_vertical",
+      "exercises": ["dead_hang", "negative_pullup", "pullup", "chinup"],
+      "difficulty": ["beginner", "beginner", "intermediate", "intermediate"],
+      "description": "Pull-up family progression from hang to strict reps"
+    },
+    {
+      "chainId": "isolation_chain_1",
+      "name": "Isolation — Bicep Curls",
+      "movementPattern": "isolation",
+      "exercises": ["band_bicep_curl", "bicep_curl", "hammer_curl", "concentration_curl"],
+      "difficulty": ["beginner", "beginner", "beginner", "intermediate"],
+      "description": "Bicep isolation from bands to single-arm peak"
+    },
+    {
+      "chainId": "isolation_chain_2",
+      "name": "Isolation — Tricep Extensions",
+      "movementPattern": "isolation",
+      "exercises": ["band_tricep_pushdown", "overhead_tricep_extension", "tricep_kickback"],
+      "difficulty": ["beginner", "beginner", "beginner"],
+      "description": "Tricep isolation through various angles"
+    },
+    {
+      "chainId": "isolation_chain_3",
+      "name": "Isolation — Shoulder Flies",
+      "movementPattern": "isolation",
+      "exercises": ["lateral_raise", "front_raise", "dumbbell_chest_fly"],
+      "difficulty": ["beginner", "beginner", "intermediate"],
+      "description": "Shoulder and chest isolation movements"
+    },
+    {
+      "chainId": "carry_chain_1",
+      "name": "Carries — Farmer & Suitcase",
+      "movementPattern": "carry",
+      "exercises": ["farmer_carries"],
+      "difficulty": ["beginner"],
+      "description": "Loaded carry for grip and core"
+    },
+    {
+      "chainId": "plyometric_chain_1",
+      "name": "Plyometric — Full Body Power",
+      "movementPattern": "plyometric",
+      "exercises": ["burpees"],
+      "difficulty": ["advanced"],
+      "description": "Explosive full-body movement"
+    },
+    {
+      "chainId": "full_body_chain_1",
+      "name": "Full Body — Complex Movement",
+      "movementPattern": "full_body",
+      "exercises": ["kettlebell_turkish_getup"],
+      "difficulty": ["advanced"],
+      "description": "Advanced complex kettlebell skill"
+    },
+    {
+      "chainId": "equipment_progression_dumbbell",
+      "name": "Equipment Progression — Dumbbells",
+      "movementPattern": "mixed",
+      "exercises": ["pushup", "dumbbell_chest_press", "barbell_bench_press"],
+      "difficulty": ["beginner", "beginner", "intermediate"],
+      "description": "Progressive loading with equipment upgrade path"
+    },
+    {
+      "chainId": "equipment_progression_bands",
+      "name": "Equipment Progression — Bands",
+      "movementPattern": "mixed",
+      "exercises": ["band_squat", "goblet_squat", "barbell_back_squat"],
+      "difficulty": ["beginner", "beginner", "intermediate"],
+      "description": "Squat progression from band to heavy barbell"
+    },
+    {
+      "chainId": "unilateral_chain_1",
+      "name": "Unilateral — Single Leg",
+      "movementPattern": "mixed",
+      "exercises": ["forward_lunge", "bulgarian_split_squat", "single_leg_glute_bridge"],
+      "difficulty": ["beginner", "intermediate", "intermediate"],
+      "description": "Single-leg movements for balance and imbalance correction"
+    },
+    {
+      "chainId": "unilateral_chain_2",
+      "name": "Unilateral — Single Arm",
+      "movementPattern": "mixed",
+      "exercises": ["dumbbell_row", "renegade_row"],
+      "difficulty": ["beginner", "advanced"],
+      "description": "Single-arm work for anti-rotation and imbalance"
+    },
+    {
+      "chainId": "time_based_chain_1",
+      "name": "Time-Based — Isometric Holds",
+      "movementPattern": "mixed",
+      "exercises": ["wall_sit", "plank", "side_plank", "hollow_body_hold", "dead_hang"],
+      "difficulty": ["beginner", "beginner", "beginner", "intermediate", "beginner"],
+      "description": "Static strength and endurance through timed holds"
+    },
+    {
+      "chainId": "compound_strength_chain_1",
+      "name": "Compound Strength — Big Three",
+      "movementPattern": "mixed",
+      "exercises": ["barbell_back_squat", "barbell_deadlift", "barbell_bench_press"],
+      "difficulty": ["intermediate", "intermediate", "intermediate"],
+      "description": "Powerlifting big three compound movements"
+    },
+    {
+      "chainId": "compound_strength_chain_2",
+      "name": "Compound Strength — Upper Body",
+      "movementPattern": "mixed",
+      "exercises": ["pushup", "dumbbell_row", "barbell_bench_press", "barbell_ohp"],
+      "difficulty": ["beginner", "beginner", "intermediate", "intermediate"],
+      "description": "Upper body compound pressing and pulling"
+    },
+    {
+      "chainId": "compound_strength_chain_3",
+      "name": "Compound Strength — Lower Body",
+      "movementPattern": "mixed",
+      "exercises": ["bodyweight_squat", "forward_lunge", "hip_thrust_bw", "barbell_back_squat", "barbell_deadlift"],
+      "difficulty": ["beginner", "beginner", "intermediate", "intermediate", "intermediate"],
+      "description": "Lower body compound movements from bodyweight to heavy"
+    },
+    {
+      "chainId": "kettlebell_chain_1",
+      "name": "Kettlebell — Full Spectrum",
+      "movementPattern": "mixed",
+      "exercises": ["kettlebell_goblet_squat", "kettlebell_swing", "kettlebell_turkish_getup"],
+      "difficulty": ["beginner", "intermediate", "advanced"],
+      "description": "Kettlebell progression from simple squat to complex movement"
+    }
+  ],
+  "chainStatistics": {
+    "totalChains": 38,
+    "exercisesInChains": 76,
+    "longestChainLength": 5,
+    "averageChainLength": 2.5,
+    "beginnerExercises": 51,
+    "intermediateExercises": 22,
+    "advancedExercises": 3,
+    "orphanedExercises": 0
+  }
+}

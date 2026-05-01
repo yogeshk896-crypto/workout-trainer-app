@@ -1,0 +1,1581 @@
+{
+  "progressionRules": [
+    {
+      "ruleId": "rep_progression_easy_feedback",
+      "name": "Rep Progression from Easy Feedback",
+      "description": "After 2 consecutive sessions marked 'easy' with all prescribed reps completed, increase reps by 2-3. Primary progression mechanism for building strength and endurance.",
+      "ruleType": "progression",
+      
+      "triggerCondition": {
+        "feedback": {
+          "consecutiveEasySessions": 2,
+          "repsCompleted": true,
+          "weeksInProgression": 2
+        },
+        "performance": {
+          "completionRate": 1.0,
+          "minimumReps": 6,
+          "currentReps": "currentReps"
+        },
+        "userStatus": {
+          "daysActive": 7,
+          "exerciseLevel": "beginner",
+          "currentFrequency": 3
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "beginner",
+        "currentReps": 10,
+        "currentSets": 3,
+        "currentWeight": null,
+        "currentRestTime": 90
+      },
+
+      "action": {
+        "actionType": "increase_reps",
+        "actionValue": {
+          "repsIncrease": 2,
+          "newReps": null,
+          "newSets": null,
+          "newWeight": null,
+          "adjustmentStrategy": "batch_increase"
+        },
+        "constraints": {
+          "maxReps": 15,
+          "minWeeksBeforeIncrease": 2,
+          "maxDiesProgression": "intermediate",
+          "requiresFeedback": true,
+          "maxConsecutiveIncrease": 2,
+          "maxWeeklyIncrease": 3
+        }
+      },
+
+      "conditions": {
+        "goalBased": true,
+        "applicableGoals": ["muscle_gain", "general_fitness", "endurance", "fat_loss"],
+        "notApplicableGoals": ["strength"],
+        "equipmentRequired": [],
+        "priority": "high",
+        "blockable": true,
+        "requiresNotification": true
+      },
+
+      "globalModifiers": {
+        "maxWeeklyRepsIncrease": 3,
+        "minWeeksInProgression": 2,
+        "maxDifficulty": "advanced",
+        "deloadPeriod": false
+      }
+    },
+
+    {
+      "ruleId": "set_progression_stalls",
+      "name": "Set Progression After Rep Stalls",
+      "description": "When user hits maximum prescribed reps for 3 consecutive sessions without progression, add 1 more set to increase total volume.",
+      "ruleType": "progression",
+      
+      "triggerCondition": {
+        "feedback": {
+          "consecutiveEasySessions": 3,
+          "repsAtMaximum": true,
+          "weeksInProgression": 3
+        },
+        "performance": {
+          "completionRate": 1.0,
+          "currentReps": "maxReps",
+          "stalledReps": true,
+          "stalledRepsWeeks": 3
+        },
+        "userStatus": {
+          "daysActive": 14,
+          "exerciseLevel": "intermediate",
+          "currentFrequency": 3
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "intermediate",
+        "currentReps": 12,
+        "currentSets": 3,
+        "currentWeight": null,
+        "currentRestTime": 90
+      },
+
+      "action": {
+        "actionType": "increase_sets",
+        "actionValue": {
+          "setsIncrease": 1,
+          "newSets": 4,
+          "adjustedRepsMethod": "maintain_reps",
+          "newWeight": null,
+          "newRestTime": 90
+        },
+        "constraints": {
+          "maxSets": 6,
+          "minWeeksBeforeIncrease": 3,
+          "requiresFeedback": true,
+          "maxSetsBeforeRegress": 10
+        }
+      },
+
+      "conditions": {
+        "goalBased": true,
+        "applicableGoals": ["muscle_gain", "endurance", "fat_loss"],
+        "notApplicableGoals": ["strength"],
+        "equipmentRequired": [],
+        "priority": "high",
+        "blockable": true
+      },
+
+      "globalModifiers": {
+        "maxWeeklyRepsIncrease": 3,
+        "minWeeksInProgression": 3,
+        "maxDifficulty": "intermediate",
+        "deloadPeriod": false
+      }
+    },
+
+    {
+      "ruleId": "rep_decrease_hard_feedback",
+      "name": "Rep Decrease from Hard Feedback",
+      "description": "When user marks exercise 'hard' for 2 consecutive sessions AND doesn't complete all prescribed reps, reduce reps by 2 to ensure successful completion.",
+      "ruleType": "regression",
+      
+      "triggerCondition": {
+        "feedback": {
+          "consecutiveHardSessions": 2,
+          "repsCompleted": false,
+          "weeksInProgression": 2
+        },
+        "performance": {
+          "completionRate": "<0.8",
+          "failedReps": true,
+          "maxRepsAchieved": "currentReps - 1"
+        },
+        "userStatus": {
+          "daysActive": 7,
+          "exerciseLevel": "any",
+          "currentFrequency": "any"
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "any",
+        "currentReps": "currentReps",
+        "currentSets": "currentSets",
+        "currentWeight": "currentWeight",
+        "currentRestTime": "currentRestTime"
+      },
+
+      "action": {
+        "actionType": "decrease_reps",
+        "actionValue": {
+          "repsDecrease": 2,
+          "newReps": null,
+          "newSets": "currentSets",
+          "newRestTime": "currentRestTime + 30",
+          "adjustedStrategy": "safer_completion"
+        },
+        "constraints": {
+          "minReps": 4,
+          "minWeeksInRegress": 1,
+          "autoProgressAfter": true
+        }
+      },
+
+      "conditions": {
+        "goalBased": false,
+        "universalRule": true,
+        "equipmentRequired": [],
+        "priority": "medium",
+        "blockable": true,
+        "requiresNotification": true
+      },
+
+      "globalModifiers": {
+        "maxWeeklyRegressions": 1,
+        "feedbackLikeRegressions": true,
+        "deloadPeriod": false
+      }
+    },
+
+    {
+      "ruleId": "set_decrease_consistent_hard",
+      "name": "Set Decrease from Consistent Hard Feedback",
+      "description": "When user consistently struggles (3+ consecutive 'hard' feedback), reduce total sets to ensure workout completion without overtraining.",
+      "ruleType": "regression",
+      
+      "triggerCondition": {
+        "feedback": {
+          "consecutiveHardSessions": 3,
+          "repsCompleted": false,
+          "weeksInProgression": 3
+        },
+        "performance": {
+          "completionRate": "<0.7",
+          "failedSets": true,
+          "tooManySets": true
+        },
+        "userStatus": {
+          "daysActive": 14,
+          "exerciseLevel": "any",
+          "currentFrequency": "any"
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "any",
+        "currentReps": "currentReps",
+        "currentSets": 5,
+        "currentWeight": "currentWeight",
+        "currentRestTime": "currentRestTime"
+      },
+
+      "action": {
+        "actionType": "decrease_sets",
+        "actionValue": {
+          "setsDecrease": 1,
+          "newSets": 4,
+          "maintainRepsMethod": "maintain_completion_rate",
+          "newRestTime": "currentRestTime + 15"
+        },
+        "constraints": {
+          "minSets": 2,
+          "minWeeksInRegress": 2,
+          "checkAfter": 2
+        }
+      },
+
+      "conditions": {
+        "goalBased": false,
+        "universalRule": true,
+        "equipmentRequired": [],
+        "priority": "medium",
+        "blockable": true
+      },
+
+      "globalModifiers": {
+        "maxWeeklyRegressions": 1,
+        "feedbackLikeRegressions": true,
+        "deloadPeriod": false
+      }
+    },
+
+    {
+      "ruleId": "rest_time_decrease_progression",
+      "name": "Rest Time Decrease for Conditioning Goals",
+      "description": "For users with conditioning/endurance goals, progressively reduce rest times between sets to improve work capacity and cardiovascular fitness.",
+      "ruleType": "adaptation",
+      
+      "triggerCondition": {
+        "feedback": {
+          "consecutiveEasySessions": 2,
+          "repsCompleted": true,
+          "goalIsConditioning": true
+        },
+        "performance": {
+          "completionRate": 1.0,
+          "maintainedQuality": true
+        },
+        "userStatus": {
+          "exerciseGoal": "conditioning",
+          "currentRestTime": 90
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "beginner",
+        "currentReps": 12,
+        "currentSets": 3,
+        "currentWeight": null,
+        "currentRestTime": 90
+      },
+
+      "action": {
+        "actionType": "decrease_rest_time",
+        "actionValue": {
+          "restTimeDecrease": 15,
+          "newRestTime": 75,
+          "maintainRepsMethod": "maintain_volume",
+          "maxReduction": 30
+        },
+        "constraints": {
+          "minRestTime": 30,
+          "minWeeksInRegress": 1,
+          "requiresFeedback": true
+        }
+      },
+
+      "conditions": {
+        "goalBased": true,
+        "applicableGoals": ["endurance", "fat_loss", "general_fitness"],
+        "notApplicableGoals": ["strength", "muscle_gain"],
+        "equipmentRequired": [],
+        "priority": "low",
+        "blockable": true
+      },
+
+      "globalModifiers": {
+        "minRestTime": 30,
+        "restTimeFloor": 30,
+        "priority": "secondary"
+      }
+    },
+
+    {
+      "ruleId": "rest_time_increase_strength",
+      "name": "Rest Time Increase for Strength Goals",
+      "description": "For users with strength goals, progressively increase rest times between sets to improve recovery and strength adaptation for heavy lifts.",
+      "ruleType": "adaptation",
+      
+      "triggerCondition": {
+        "feedback": {
+          "consecutiveEasySessions": 3,
+          "repsCompleted": true,
+          "goalIsStrength": true,
+          "liftingHeavy": true
+        },
+        "performance": {
+          "completionRate": 1.0,
+          "maintainedIntensity": true
+        },
+        "userStatus": {
+          "exerciseGoal": "strength",
+          "currentRestTime": 180
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "intermediate",
+        "currentReps": 5,
+        "currentSets": 4,
+        "currentWeight": "heavy",
+        "currentRestTime": 180
+      },
+
+      "action": {
+        "actionType": "increase_rest_time",
+        "actionValue": {
+          "restTimeIncrease": 30,
+          "newRestTime": 210,
+          "maintainRepsMethod": "maintain_intensity",
+          "maxIncrease": 60
+        },
+        "constraints": {
+          "maxRestTime": 600,
+          "minWeeksInRegress": 2,
+          "requiresFeedback": true
+        }
+      },
+
+      "conditions": {
+        "goalBased": true,
+        "applicableGoals": ["strength", "power"],
+        "notApplicableGoals": ["endurance", "muscle_gain"],
+        "equipmentRequired": [],
+        "priority": "medium",
+        "blockable": true
+      },
+
+      "globalModifiers": {
+        "maxRestTime": 600,
+        "restTimeFloor": 180,
+        "priority": "secondary"
+      }
+    },
+
+    {
+      "ruleId": "weekly_progression_caps",
+      "name": "Weekly Progression Caps",
+      "description": "Prevents users from increasing reps too quickly within a single week. Ensures progressive overload is gradual and sustainable.",
+      "ruleType": "constraint",
+      
+      "triggerCondition": {
+        "feedback": {
+          "anyFeedback": true,
+          "weeksInProgression": 1
+        },
+        "performance": {
+          "singleDayProgress": true
+        },
+        "userStatus": {
+          "exerciseGoal": "any",
+          "currentReps": "currentReps"
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "any",
+        "currentReps": "currentReps",
+        "currentSets": "currentSets",
+        "currentWeight": "currentWeight",
+        "currentRestTime": "currentRestTime"
+      },
+
+      "action": {
+        "actionType": "prevent_excessive_progression",
+        "actionValue": {
+          "maxWeeklyRepsIncrease": 3,
+          "maxWeeklySetsIncrease": 1,
+          "enforcedLimit": "3_reps_per_week"
+        },
+        "constraints": {
+          "rollingWeeklyCount": true,
+          "enforced": true
+        }
+      },
+
+      "conditions": {
+        "goalBased": false,
+        "universalRule": true,
+        "equipmentRequired": [],
+        "priority": "high",
+        "nonNegotiable": true
+      },
+
+      "globalModifiers": {
+        "enforcedLimit": "3_reps_per_week",
+        "minimumProgress": "1_rep_when_appropriated"
+      }
+    },
+
+    {
+      "ruleId": "deload_week_cleanup",
+      "name": "Deload Week Progression Clean",
+      "description": "During deload weeks, pause progression and regression triggers. Prevents getting stuck in repetitive progression loops during recovery periods.",
+      "ruleType": "adaptation",
+      
+      "triggerCondition": {
+        "feedback": {
+          "deloadWeek": true,
+          "weeksInProgression": 4
+        },
+        "performance": {
+          "deloadInProgress": true,
+          "pausedProgression": true
+        },
+        "userStatus": {
+          "exerciseGoal": "any",
+          "deloadWeek": true
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "any",
+        "currentReps": "currentReps",
+        "currentSets": "currentSets",
+        "currentWeight": "currentWeight",
+        "currentRestTime": "currentRestTime"
+      },
+
+      "action": {
+        "actionType": "pause_progression_triggers",
+        "actionValue": {
+          "pausedRules": [
+            "rep_progression_easy_feedback",
+            "set_progression_stalls",
+            "rep_decrease_hard_feedback"
+          ],
+          "duration": "1_week",
+          "resumeAfterDeload": true
+        },
+        "constraints": {
+          "pauseDuration": "1_week",
+          "autoResume": true,
+          "maintainCurrentLevel": true
+        }
+      },
+
+      "conditions": {
+        "goalBased": false,
+        "universalRule": true,
+        "equipmentRequired": [],
+        "priority": "high",
+        "nonNegotiable": true
+      },
+
+      "globalModifiers": {
+        "enforcedLimit": "1_week_pause",
+        "autoResume": true
+      }
+    },
+   
+    {
+      "ruleId": "dumbbell_weight_progression",
+      "name": "Dumbbell Weight Progression",
+      "description": "The 2-for-2 rule: when user completes 2 extra reps above prescribed for 2 consecutive sessions, increase weight by 5 lb (2.5 kg) on next session.",
+      "ruleType": "progression",
+      
+      "triggerCondition": {
+        "feedback": {
+          "consecutiveExtraReps": 2,
+          "abovePrescribed": 2,
+          "consecutiveSessions": 2
+        },
+        "performance": {
+          "completionRate": 1.0,
+          "exceededReps": 2,
+          "currentWeight": "currentWeight",
+          "canProgress": true
+        },
+        "userStatus": {
+          "equipment": "dumbbell",
+          "weeksInProgression": 2
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "any",
+        "currentReps": "currentReps",
+        "currentSets": "currentSets",
+        "currentWeight": 20,
+        "currentRestTime": "currentRestTime"
+      },
+
+      "action": {
+        "actionType": "increase_weight",
+        "actionValue": {
+          "weightIncrease": 5,
+          "increaseMetric": "pounds",
+          "applicableEquipment": "dumbbell",
+          "increaseStrategy": "double_progression"
+        },
+        "constraints": {
+          "minReps": 2,
+          "maxReps": "prescribed + 5",
+          "mustCompleteWithPreviousWeight": true,
+          "minWeeksInRegress": 1
+        }
+      },
+
+      "conditions": {
+        "goalBased": true,
+        "applicableGoals": ["muscle_gain", "strength", "athletic_performance"],
+        "notApplicableGoals": ["endurance", "mobility"],
+        "equipmentRequired": ["dumbbell"],
+        "priority": "high",
+        "blockable": true
+      },
+
+      "globalModifiers": {
+        "loadProgressionStrategy": "2-for-2 rule",
+        "minWeeksBeforeWeightIncrease": 1
+      }
+    },
+
+    {
+      "ruleId": "barbell_weight_progression",
+      "name": "Barbell Weight Progression",
+      "description": "Strength-based progression. Increase weight by 5 lb (2.5 kg) for upper body lifts and 10 lb (5 kg) for lower body lifts when user completes all reps with strict form.",
+      "ruleType": "progression",
+      
+      "triggerCondition": {
+        "feedback": {
+          "consecutiveEasySessions": 2,
+          "repsCompleted": true,
+          "movementQuality": "excellent"
+        },
+        "performance": {
+          "completionRate": 1.0,
+          "exhaustionRate": ">0.9",
+          "currentWeight": "currentWeight",
+          "applicablePattern": "any"
+        },
+        "userStatus": {
+          "equipment": "barbell",
+          "trainingAge": "intermediate",
+          "currentFrequency": 3
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "intermediate",
+        "currentReps": 5,
+        "currentSets": 3,
+        "currentWeight": 135,
+        "currentRestTime": "currentRestTime"
+      },
+
+      "action": {
+        "actionType": "increase_weight",
+        "actionValue": {
+          "weightIncreaseUpper": 5,
+          "weightIncreaseLower": 10,
+          "increaseMetric": "pounds",
+          "applicableEquipment": "barbell",
+          "increaseStrategy": "strength_linear"
+        },
+        "constraints": {
+          "maxWeeklyIncrease": 10,
+          "mustCompleteWithObjectivity": true,
+          "formQuality": "must be excellent",
+          "minWeeksBeforeIncrease": 1
+        }
+      },
+
+      "conditions": {
+        "goalBased": true,
+        "applicableGoals": ["strength", "athletic_performance", "muscle_gain"],
+        "notApplicableGoals": ["mobility", "endurance", "general_fitness"],
+        "equipmentRequired": ["barbell"],
+        "priority": "high",
+        "blockable": true,
+        "formRequired": true
+      },
+
+      "globalModifiers": {
+        "loadProgressionStrategy": "linear periodization",
+        "upperBodyPlateJump": 5,
+        "lowerBodyPlateJump": 10
+      }
+    },
+
+    {
+      "ruleId": "resistance_band_level_progression",
+      "name": "Resistance Band Level Progression",
+      "description": "When user exceeds prescribed reps with a resistance band level for 2 consecutive sessions, progress to next band level (next higher resistance).",
+      "ruleType": "progression",
+      
+      "triggerCondition": {
+        "feedback": {
+          "consecutiveExtraReps": 2,
+          "abovePrescribed": 2,
+          "consecutiveSessions": 2
+        },
+        "performance": {
+          "completionRate": 1.0,
+          "exhaustionRate": ">0.95",
+          "easyTension": true,
+          "strengthLevel": "aboveCurrentBand"
+        },
+        "userStatus": {
+          "equipment": "resistance_band",
+          "currentBandLevel": "light",
+          "weeksInProgression": 2
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "beginner",
+        "currentReps": 15,
+        "currentSets": 2,
+        "currentWeight": null,
+        "currentRestTime": 45
+      },
+
+      "action": {
+        "actionType": "increase_band_level",
+        "actionValue": {
+          "bandLevelIncrease": 1,
+          "bandName": "nextHigherLevel",
+          "applicableEquipment": "resistance_band",
+          "increaseStrategy": "step_up"
+        },
+        "constraints": {
+          "maxBandLevel": "extra_heavy",
+          "minWeeksInRegress": 2,
+          "mustComplete": true,
+          "autoRegressOnFailure": true
+        }
+      },
+
+      "conditions": {
+        "goalBased": true,
+        "applicableGoals": ["muscle_gain", "general_fitness", "rehab_safe"],
+        "notApplicableGoals": [],
+        "equipmentRequired": ["resistance_band"],
+        "priority": "medium",
+        "blockable": true
+      },
+
+      "globalModifiers": {
+        "loadProgressionStrategy": "force_steady_progression",
+        "ensureProgressionBeforeBandChange": true
+      }
+    },
+
+    {
+      "ruleId": "kettlebell_weight_progression",
+      "name": "Kettlebell Weight Progression",
+      "description": "When user exceeds prescribed reps with a kettlebell for 2 consecutive sessions, progress to next standard kettlebell weight (4 kg / 9 lb increase).",
+      "ruleType": "progression",
+      
+      "triggerCondition": {
+        "feedback": {
+          "consecutiveExtraReps": 2,
+          "abovePrescribed": 2,
+          "consecutiveSessions": 2
+        },
+        "performance": {
+          "completionRate": 1.0,
+          "exhaustionRate": ">0.9",
+          "goodForm": true
+        },
+        "userStatus": {
+          "equipment": "kettlebell",
+          "currentKettlebell": 12,
+          "weeksInProgression": 2
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "intermediate",
+        "currentReps": 15,
+        "currentSets": 3,
+        "currentWeight": 12,
+        "currentRestTime": 60
+      },
+
+      "action": {
+        "actionType": "increase_weight",
+        "actionValue": {
+          "weightIncrease": 4,
+          "increaseMetric": "kilograms",
+          "applicableEquipment": "kettlebell",
+          "increaseStrategy": "predefined_levels"
+        },
+        "constraints": {
+          "maxWeeklyIncrease": 4,
+          "mustComplete": true,
+          "minWeeksInRegress": 1,
+          "canAttemptRegression": true
+        }
+      },
+
+      "conditions": {
+        "goalBased": true,
+        "applicableGoals": ["muscle_gain", "athletic_performance", "general_fitness"],
+        "notApplicableGoals": ["rehab_safe", "mobility"],
+        "equipmentRequired": ["kettlebell"],
+        "priority": "high",
+        "blockable": true
+      },
+
+      "globalModifiers": {
+        "loadProgressionStrategy": "force_steady",
+        "minReps": 2,
+        "plateJump": 4
+      }
+    },
+
+    {
+      "ruleId": "weight_decrease_on_struggle",
+      "name": "Weight Decrease on Struggle/Shakiness",
+      "description": "When user marks exercise 'hard' AND form breaks down for 2 consecutive sessions, decrease weight by 5 lb (2.5 kg) to build back strength safely.",
+      "ruleType": "regression",
+      
+      "triggerCondition": {
+        "feedback": {
+          "consecutiveHardSessions": 2,
+          "formBreakdown": true,
+          "strainReported": true
+        },
+        "performance": {
+          "completionRate": "<0.9",
+          "failedSets": true,
+          "currentWeight": "currentWeight",
+          "struggleDetected": true
+        },
+        "userStatus": {
+          "daysActive": 7,
+          "exerciseLevel": "any",
+          "currentFrequency": "any"
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "any",
+        "currentReps": "currentReps",
+        "currentSets": "currentSets",
+        "currentWeight": 45,
+        "currentRestTime": "currentRestTime"
+      },
+
+      "action": {
+        "actionType": "decrease_weight",
+        "actionValue": {
+          "weightDecrease": 5,
+          "decreaseMetric": "automatic",
+          "decreaseStrategy": "safe_reduction",
+          "newWeight": null
+        },
+        "constraints": {
+          "minWeight": 5,
+          "minWeeksInRegress": 1,
+          "autoProgressAfter": true,
+          "mustUseReducedWeight": 2
+        }
+      },
+
+      "conditions": {
+        "goalBased": false,
+        "universalRule": true,
+        "equipmentRequired": [],
+        "priority": "high",
+        "blockable": true,
+        "safetyRule": true
+      },
+
+      "globalModifiers": {
+        "refocusOnForm": true,
+        "safetyPriority": true
+      }
+    },
+
+    {
+      "ruleId": "isometric_hold_progression",
+      "name": "Isometric Hold Time Progression",
+      "description": "For time-based exercises (plank holds, wall sits, etc.), increase hold time by 5 seconds every 2 sessions when user completes all prescribed duration without straining.",
+      "ruleType": "progression",
+      
+      "triggerCondition": {
+        "feedback": {
+          "consecutiveEasySessions": 2,
+          "timeCompleted": true,
+          "timeAtOrAbovePrescribed": true
+        },
+        "performance": {
+          "completionRate": 1.0,
+          "duration": "currentDuration",
+          "noShake": true,
+          "noPainReported": true
+        },
+        "userStatus": {
+          "exerciseType": "isometric",
+          "weeksInProgression": 1
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "beginner",
+        "currentReps": 3,
+        "currentSets": "3 sets at 30 seconds",
+        "currentWeight": null,
+        "currentDuration": 30
+      },
+
+      "action": {
+        "actionType": "increase_duration",
+        "actionValue": {
+          "durationIncrease": 5,
+          "durationMetric": "seconds",
+          "applicableExerciseType": "isometric",
+          "increaseStrategy": "time_increment"
+        },
+        "constraints": {
+          "maxDuration": 120,
+          "minWeeksInRegress": 2,
+          "mustComplete": true,
+          "progressionInterval": 2
+        }
+      },
+
+      "conditions": {
+        "goalBased": false,
+        "isometricOnly": true,
+        "equipmentRequired": [],
+        "priority": "medium",
+        "blockable": true
+      },
+
+      "globalModifiers": {
+        "progressionStrategy": "time_increment",
+        "maxHoldTime": 120
+      }
+    },
+
+    {
+      "ruleId": "progression_pause_no_equipment",
+      "name": "Load Progression Pause (No Equipment Available)",
+      "description": "When user lacks required equipment for weighted progression, pause load increases and focus on bodyweight progressions instead.",
+      "ruleType": "adaptation",
+      
+      "triggerCondition": {
+        "feedback": {
+          "equipmentMissing": true,
+          "consecutiveEasySessions": 2
+        },
+        "performance": {
+          "completionRate": 1.0,
+          "hasEquipment": false
+        },
+        "userStatus": {
+          "equipmentAvailable": false,
+          "progressionBlocked": true
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "beginner",
+        "currentReps": "currentReps",
+        "currentSets": "currentSets",
+        "currentWeight": "currentWeight",
+        "currentRestTime": "currentRestTime"
+      },
+
+      "action": {
+        "actionType": "reduce_environment",
+        "actionValue": {
+          "environment": "bodyweight_only",
+          "focusedOnProgressionOfBodyweight": true,
+          "alternativeProgressionPath": "switch_to_variation"
+        },
+        "constraints": {
+          "alternativeAction": "consult_bodyweight_progression_chart",
+          "resumeWeightProgression": "when_equipment_available"
+        }
+      },
+
+      "conditions": {
+        "goalBased": false,
+        "equipmentRequired": true,
+        "priority": "medium",
+        "blockable": true,
+        "notifyAlternative": true
+      },
+
+      "globalModifiers": {
+        "equipmentFallbackStrategy": "bodyweight_alternatives",
+        "maintainCurrentLevel": true
+      }
+    },
+
+    {
+      "ruleId": "regress_exercise_difficulty",
+      "name": "Exercise Difficulty Regression",
+      "description": "When user struggles (3 consecutive 'hard' feedback), doesn't complete reps, and fails to progress for 3 weeks, regress to easier difficulty level using exercise progression chain.",
+      "ruleType": "regression",
+      
+      "triggerCondition": {
+        "feedback": {
+          "consecutiveHardSessions": 3,
+          "repsCompleted": false,
+          "weeksInProgression": 3
+        },
+        "performance": {
+          "completionRate": "<0.7",
+          "failedReps": true,
+          "stalledRegress": true
+        },
+        "userStatus": {
+          "daysActive": 14,
+          "exerciseLevel": 3,
+          "currentFrequency": 3
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "intermediate",
+        "currentReps": "currentReps",
+        "currentSets": "currentSets",
+        "currentWeight": "currentWeight",
+        "currentRestTime": "currentRestTime"
+      },
+
+      "action": {
+        "actionType": "regress_exercise",
+        "actionValue": {
+          "newDifficulty": "previousLevel",
+          "newExercise": "easierVariation",
+          "predictChain": true,
+          "withdraw": "one_level_lower"
+        },
+        "constraints": {
+          "maxDiesRegress": "beginner",
+          "minWeeksInRegress": 2,
+          "retrainAtMeasierLevel": true,
+          "requiresNotification": true
+        }
+      },
+
+      "conditions": {
+        "goalBased": false,
+        "appliesToAllGoals": true,
+        "notApplicableGoals": [],
+        "equipmentRequired": [],
+        "priority": "high",
+        "blockable": true,
+        "safetyRule": true
+      },
+
+      "globalModifiers": {
+        "regressStrategy": "safety_first",
+        "minWeeksInRegress": 2,
+        "autoProgressBackAfter": true
+      }
+    },
+
+    {
+      "ruleId": "regress_to_safer_variation",
+      "name": "Substitution to Safer Variation on Struggle",
+      "description": "When user struggles with a complex movement (bulgarian split squats, renegade rows) and fails for 2 sessions, switch to safer/simpler variation while maintaining training stimulus.",
+      "ruleType": "adaptation",
+      
+      "triggerCondition": {
+        "feedback": {
+          "consecutiveHardSessions": 2,
+          "repsCompleted": false,
+          "formQuality": "subpar"
+        },
+        "performance": {
+          "completionRate": "<0.8",
+          "formBreakdownDetected": true,
+          "exerciseComplexity": "high"
+        },
+        "userStatus": {
+          "daysActive": 7,
+          "exerciseType": "complex_movement",
+          "currentFrequency": 3
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "intermediate",
+        "currentExercise": "bulgarian_split_squat",
+        "currentReps": 8,
+        "currentSets": 3,
+        "currentWeight": null
+      },
+
+      "action": {
+        "actionType": "substitute_exercise",
+        "actionValue": {
+          "newExercise": "single_leg_glute_bridge",
+          "movementPatternMaintained": true,
+          "muscleFocusMaintained": true,
+          "complexityReduction": true
+        },
+        "constraints": {
+          "maintainStimulus": true,
+          "reIntroductionTimer": 2,
+          "sameEquipment": true,
+          "progressBackTimer": 2
+        }
+      },
+
+      "conditions": {
+        "goalBased": false,
+        "priority": "medium",
+        "blockable": true,
+        "muscleFocusRequired": true
+      },
+
+      "globalModifiers": {
+        "substituteStrategy": "safety_first",
+        "reintroductionPeriod": 2
+      }
+    },
+
+    {
+      "ruleId": "plateau_break_progression",
+      "name": "Plateau Breaking Progression",
+      "description": "When user completely stalls at same weight/reps for 4 consecutive weeks despite good feedback, trigger plateau-breaking strategy (de-load, try alternative rep scheme).",
+      "ruleType": "regression",
+      
+      "triggerCondition": {
+        "feedback": {
+          "consecutiveWeeksStanned": 4,
+          "repsCompleted": true,
+          "noProgress": true
+        },
+        "performance": {
+          "completionRate": 1.0,
+          "sameRepeats": true,
+          "sameWeight": true,
+          "maxOut": false,
+          "stalledRepsWeekly": 4
+        },
+        "userStatus": {
+          "weeksInProgression": 4,
+          "trialDate": "2026-04-30",
+          "plateauDetected": true
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "intermediate",
+        "currentReps": 12,
+        "currentSets": 3,
+        "currentWeight": "20kg",
+        "currentRestTime": 120
+      },
+
+      "action": {
+        "actionType": "break_plateau_sequence",
+        "sequence": [
+          "week1: lighter weight, higher reps (3 sets at 100%)",
+          "week2: deload (reduce volume by 50%)",
+          "week3: increase pace back, test max"
+        ],
+        "actionValue": {
+          "strategy": "deload_and_rebuild",
+          "plateauBreakMethod": "reduce_volume_increase_intensity"
+        },
+        "constraints": {
+          "maxWeeksInPlateauStorage": 4,
+          "consultUser": true,
+          "autoResolve": false
+        }
+      },
+
+      "conditions": {
+        "goalBased": true,
+        "applicableGoals": ["strength", "muscle_gain", "athletic_performance"],
+        "notApplicableGoals": ["mobility"],
+        "equipmentRequired": [],
+        "priority": "high",
+        "blockable": true,
+        "consultUser": true
+      },
+
+      "globalModifiers": {
+        "breakStrategy": "deload_then_rebuild",
+        "minWeeksBeforeBreak": 4
+      }
+    },
+
+    {
+      "ruleId": "prevent_overtraining_loop",
+      "name": "Overtraining Prevention Loop",
+      "description": "When user shows signs of overtraining (fatigue, poor sleep, downsized performance overshoot), reduce total volume by 30-50% as safety measure.",
+      "ruleType": "regression",
+      
+      "triggerCondition": {
+        "feedback": {
+          "fatigueReported": true,
+          "poorSleepQuality": true,
+          "maxOutAcrossExercise": true
+        },
+        "performance": {
+          "overallExhaustion": true,
+          "performanceDecline": true,
+          "muscleSoreTimes": true,
+          "overtrainingDetected": true
+        },
+        "userStatus": {
+          "trainingAge": "any",
+          "volumeTooHighForRecovery": true
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "any",
+        "currentReps": "currentReps",
+        "currentSets": "currentSets",
+        "currentWeight": "currentWeight",
+        "currentTotalVolume": "currentVolume"
+      },
+
+      "action": {
+        "actionType": "reduce_total_volume",
+        "actionValue": {
+          "volumeReduction": 0.3,
+          "reduceBy": "30%",
+          "affectsAllExercises": true,
+          "duration": "1_week"
+        },
+        "constraints": {
+          "minVolume": "50% of normal",
+          "mustNotify": true,
+          "consultUser": true,
+          "resumeAfter": 1
+        }
+      },
+
+      "conditions": {
+        "goalBased": false,
+        "universalRule": true,
+        "equipmentRequired": [],
+        "priority": "high",
+        "blockable": true,
+        "safetyRule": true,
+        "consultUser": true
+      },
+
+      "globalModifiers": {
+        "overtrainingPrevention": true,
+        "protocolDuration": "1_week",
+        "maxFatalReduction": 0.5
+      }
+    },
+
+    {
+      "ruleId": "equipment_less_progression",
+      "name": "Bootcamp Progression (No Weight Available)",
+      "description": "When user has no weighted equipment, progression happens through reps, tempo changes, and exercise variants only.",
+      "ruleType": "progression",
+      
+      "triggerCondition": {
+        "equipment": {
+          "weightedEquipmentAvailable": false,
+          "consecutiveEffort": true
+        },
+        "performance": {
+          "completionRate": 1.0,
+          "easyWithBodyweight": true
+        },
+        "userStatus": {
+          "equipmentAvailability": "bodyweight_only"
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "beginner",
+        "currentReps": 15,
+        "currentSets": 3,
+        "currentWeight": null,
+        "currentRestTime": 60
+      },
+
+      "action": {
+        "actionType": "progress_through_variants",
+        "actionValue": {
+          "strategy": "bodyweight_difficulty_chain",
+          "impliedProgression": "move_to_harder_bodyweight_variation"
+        },
+        "constraints": {
+          "progressMethod": "exercise_chain_navigation",
+          "checkProgressionChain": true
+        }
+      },
+
+      "conditions": {
+        "goalBased": false,
+        "equipmentRequired": false,
+        "bodyweightOnly": true,
+        "priority": "medium",
+        "blockable": true
+      },
+
+      "globalModifiers": {
+        "bodyweightProgressionStrategy": "exercise_chain",
+        "maintenanceReading": true
+      }
+    },
+
+    {
+      "ruleId": "user_is_progressing_slow",
+      "name": "Progression Boost for Slow Progressors",
+      "description": "When user consistently succeeds with current load but shows DOUBT (1-2 weeks of easy but no progress), slightly accelerate progression.",
+      "ruleType": "progression",
+      
+      "triggerCondition": {
+        "feedback": {
+          "easyWithModeratePressure": true,
+          "consecutiveSessions": 2,
+          "maxEasyWeeks": 2
+        },
+        "performance": {
+          "completionRate": 1.0,
+          "linear": false,
+          "individuallyOptimized": false
+        },
+        "userStatus": {
+          "progressSpeed": "too_slow_for_goal",
+          "currentPattern": "bodyweight",
+          "trainingAge": "intermediate"
+        }
+      },
+
+      "exerciseState": {
+        "currentDifficulty": "beginner",
+        "currentReps": 15,
+        "currentSets": 3,
+        "currentWeight": null,
+        "currentRestTime": 60
+      },
+
+      "action": {
+        "actionType": "slightly_aggressive_progression",
+        "actionValue": {
+          "progressionMultiplier": 1.2,
+          "revLimit": "1_rep_extra_per_session",
+          "aggressiveStrategy": "increase_weight_early"
+        },
+        "constraints": {
+          "safetyCheck": true,
+          "maxProgressionPerWeek": 4,
+          "requireFeedback": true
+        }
+      },
+
+      "conditions": {
+        "goalBased": true,
+        "applicableGoals": ["strength", "muscle_gain"],
+        "notApplicableGoals": ["rehab_safe", "mobility"],
+        "equipmentRequired": [],
+        "priority": "medium",
+        "blockable": true
+      },
+
+      "globalModifiers": {
+        "progressionSpeed": "aggressive",
+        "safetyProtocol": true
+      }
+    },
+
+    {
+      "ruleId": "auto_substitute_on_pain",
+      "name": "Auto-Substitution on Pain",
+      "description": "When user reports pain during any exercise, immediately swap to pre-defined alternative before exercise concludes.",
+      "ruleType": "adaptation",
+      "triggerCondition": {
+        "feedback": {
+          "painReported": true,
+          "consecutivePainSessions": 1
+        },
+        "performance": {
+          "painSeverity": "any",
+          "completedDespitePain": false
+        },
+        "userStatus": {
+          "injuryFlagSet": true
+        }
+      },
+      "exerciseState": {
+        "currentExercise": "any",
+        "currentDifficulty": "any",
+        "affectedMuscle": "affectedMuscle"
+      },
+      "action": {
+        "actionType": "substitute_exercise",
+        "actionValue": {
+          "newExercise": "painSafeAlternative",
+          "substitutionStrategy": "pain_free_movement",
+          "consultSubstitutionIndex": true
+        },
+        "constraints": {
+          "mustUse": true,
+          "logSubstitution": true,
+          "requiresNotification": true,
+          "blockOriginal": true
+        }
+      },
+      "conditions": {
+        "goalBased": false,
+        "appliesToAllGoals": true,
+        "equipmentRequired": [],
+        "priority": "high",
+        "blockable": false,
+        "safetyRule": true,
+        "nonNegotiable": true
+      },
+      "globalModifiers": {
+        "substitutionPriority": "safety_first",
+        "logSubstitution": true,
+        "requirePainFreeMovement": true
+      }
+    },
+    {
+      "ruleId": "reduce_intensity_on_fatigue",
+      "name": "Fatigue Detection and Response",
+      "description": "Reduce intensity by 30% when user underperforms compared to baseline.",
+      "ruleType": "regression",
+      "triggerCondition": {
+        "feedback": {
+          "consecutiveUnderperformance": 2,
+          "belowBaseline": 0.7
+        }
+      },
+      "exerciseState": {
+        "currentReps": 8,
+        "baselineReps": 10,
+        "baselineSets": 3
+      },
+      "action": {
+        "actionType": "reduce_intensity",
+        "actionValue": {
+          "intensityReduction": 0.3,
+          "intensityReductionMethod": "reduce_reps_by_30%"
+        },
+        "constraints": {
+          "minIntensity": 0.5,
+          "mustAdjustWithinLimits": true
+        }
+      },
+      "conditions": {
+        "goalBased": false,
+        "universalRule": true,
+        "equipmentRequired": [],
+        "priority": "medium",
+        "blockable": true
+      },
+      "globalModifiers": {
+        "adaptationStrategy": "step_down",
+        "recoveryProtocol": true
+      }
+    },
+    {
+      "ruleId": "injury_history_substitution",
+      "name": "Injury History Modified Exercises",
+      "description": "Permanently substitute exercises affecting previously injured area.",
+      "ruleType": "adaptation",
+      "triggerCondition": {
+        "feedback": {
+          "injuryHistoryDetected": true,
+          "affectedMuscle": true
+        }
+      },
+      "exerciseState": {
+        "affectedInjury": "left_knee_injury",
+        "currentExercise": "any_affecting_left_knee",
+        "muscleGroupAffected": "left_quads"
+      },
+      "action": {
+        "actionType": "substitute_exercise",
+        "actionValue": {
+          "newExercise": "injurySafeAlternative",
+          "substitutionStrategy": "prevent_reinjury",
+          "forcesNoOriginalExercise": true
+        },
+        "constraints": {
+          "historicalData": true,
+          "permanentSubstitution": true,
+          "logSubstitution": true
+        }
+      },
+      "conditions": {
+        "goalBased": false,
+        "injuryHistoryOnly": true,
+        "equipmentRequired": [],
+        "priority": "high",
+        "blockable": true
+      },
+      "globalModifiers": {
+        "historyBased": true,
+        "logSubstitution": true,
+        "requiresNote": true
+      }
+    },
+    {
+      "ruleId": "pain_pause_all_tracking",
+      "name": "Pain Pause All Progression Tracking",
+      "description": "Pause all progression for exercises where pain is reported.",
+      "ruleType": "adaptation",
+      "triggerCondition": {
+        "feedback": {
+          "painReported": true,
+          "painNonResolving": true
+        }
+      },
+      "exerciseState": {
+        "currentExercise": "any_with_pain_reported",
+        "painFlag": "set",
+        "progressionStatus": "paused"
+      },
+      "action": {
+        "actionType": "pause_progression_for_exercise",
+        "actionValue": {
+          "pauseType": "emergency",
+          "duration": "until_pain_resolves",
+          "canResumeAfter": "pain_resolved_and_user_confirms"
+        },
+        "constraints": {
+          "duration": "until_resolved",
+          "requireMedicalConsultation": true,
+          "consultUser": true,
+          "blockManualProgress": true
+        }
+      },
+      "conditions": {
+        "goalBased": false,
+        "universalRule": true,
+        "userSafetyPriority": true,
+        "equipmentRequired": [],
+        "priority": "high",
+        "nonNegotiable": true,
+        "requiresMedicalConsultation": true
+      },
+      "globalModifiers": {
+        "safetyProtocol": true,
+        "medicalAdvisory": true,
+        "pauseExercises": true
+      }
+    },
+    {
+      "ruleId": "substitution_preference_hierarchy",
+      "name": "Substitution Preference Order",
+      "description": "Defines order of substitution preference: same muscle > same equipment > different equipment.",
+      "ruleType": "constraint",
+      "triggerCondition": {
+        "anySubstitutionTrigger": true
+      },
+      "exerciseState": {
+        "affectedMuscle": "affectedMuscle",
+        "availableEquipment": ["equipment_available"]
+      },
+      "action": {
+        "actionType": "set_substitution_preference",
+        "actionValue": {
+          "preferenceOrder": [
+            "same_muscle_same_equipment",
+            "different_muscle_same_equipment",
+            "same_muscle_different_equipment"
+          ]
+        },
+        "constraints": {
+          "optimizationGoal": "minimal_adaptation_time"
+        }
+      },
+      "conditions": {
+        "goalBased": false,
+        "universalRule": true,
+        "equipmentRequired": [],
+        "priority": "medium",
+        "blockable": true
+      },
+      "globalModifiers": {
+        "preferenceOrder": true,
+        "equipmentHandling": "same_when_possible"
+      }
+    },
+    {
+      "ruleId": "exercise_reintroduction_protocol",
+      "name": "Re-introduce Exercise After Pain Resolves",
+      "description": "Gradually reintroduce blocked exercises at 50% intensity after pain resolves.",
+      "ruleType": "progression",
+      "triggerCondition": {
+        "painResolved": true,
+        "userConfirmed": true
+      },
+      "exerciseState": {
+        "exercisePreviouslyBlocked": true,
+        "resumptionReady": true
+      },
+      "action": {
+        "actionType": "gradual_reintroduction_protocol",
+        "sequence": [
+          "week1: resume at 50% intensity",
+          "week2: if pain-free, increase to 75%",
+          "week3: if pain-free, restore to full intensity",
+          "monitoring: pain-check after every session"
+        ],
+        "actionValue": {
+          "progressionStrategy": "graded_reintroduction",
+          "intensityRestoration": 3,
+          "cautionLevel": "high",
+          "requiresMonitoring": true
+        },
+        "constraints": {
+          "intensityRestart": "50%",
+          "fullRestoration": 3,
+          "monitoringRequired": true,
+          "painDetectedAbort": true
+        }
+      },
+      "conditions": {
+        "goalBased": false,
+        "universalRule": true,
+        "requiresMedicalClearance": true,
+        "equipmentRequired": [],
+        "priority": "high",
+        "blockable": true
+      },
+      "globalModifiers": {
+        "reintroductionStrategy": "graded",
+        "safetyProtocol": true
+      }
+    }
+  ]
+}

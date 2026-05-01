@@ -1,0 +1,1049 @@
+{
+  "goalProfiles": [
+    {
+      "goalId": "fat_loss",
+      "name": "Fat Loss",
+      "aliases": ["weight loss", "cutting", "body fat reduction", "lean down"],
+      "description": "Reduce body fat while preserving muscle through high-frequency training and caloric deficit. Emphasizes metabolic conditioning and muscle maintenance.",
+      "difficulty": "intermediate",
+      "primaryMetrics": ["body_fat_percentage", "weight", "aesthetics"],
+      "frequencyRange": {
+        "min": 4,
+        "max": 6,
+        "recommended": 5
+      },
+      "sessionDurationRange": {
+        "min": 45,
+        "max": 75,
+        "recommended": 60
+      },
+      "trainingParameters": {
+        "repRanges": {
+          "compound": {
+            "low": 6,
+            "high": 10,
+            "description": "Maintain strength with heavy compounds"
+          },
+          "hypertrophy": {
+            "low": 10,
+            "high": 15,
+            "description": "Moderate reps to preserve muscle"
+          },
+          "conditioning": {
+            "low": 15,
+            "high": 25,
+            "description": "Higher reps for metabolic demand"
+          }
+        },
+        "restTimes": {
+          "compound": {
+            "min": 120,
+            "max": 180,
+            "recommended": 150,
+            "description": "2–3 minutes rest between heavy lifts"
+          },
+          "hypertrophy": {
+            "min": 60,
+            "max": 90,
+            "recommended": 75,
+            "description": "Short rest to elevate heart rate"
+          },
+          "conditioning": {
+            "min": 30,
+            "max": 60,
+            "recommended": 45,
+            "description": "30–60 seconds for cardio effect"
+          }
+        },
+        "volumeTargets": {
+          "setsPerMusclePerWeek": {
+            "min": 8,
+            "max": 15,
+            "recommended": 12,
+            "description": "Moderate volume with high frequency"
+          },
+          "frequency": {
+            "min": 2,
+            "max": 3,
+            "recommended": 3,
+            "description": "Hit muscles frequently to maintain"
+          },
+          "totalWeeklyVolume": {
+            "min": 50,
+            "max": 70,
+            "recommended": 60,
+            "description": "High total volume across the week"
+          }
+        }
+      },
+      "exerciseSelectionRules": {
+        "movementPatternPriority": [
+          "squat",
+          "hinge",
+          "push_horizontal",
+          "pull_horizontal",
+          "conditioning",
+          "push_vertical",
+          "pull_vertical"
+        ],
+        "muscleGroupFocus": [
+          "quads",
+          "glutes",
+          "hamstrings",
+          "back",
+          "chest",
+          "core"
+        ],
+        "equipmentPreference": [
+          "barbell",
+          "dumbbell",
+          "resistance_band",
+          "bodyweight"
+        ],
+        "excludeMovementPatterns": [],
+        "minCompoundPercentage": 50,
+        "maxIsolationPercentage": 30,
+        "includeConditioningFinishers": true
+      },
+      "progressionStrategy": {
+        "progressionRate": "moderate",
+        "volumeProgression": "linear",
+        "progressionPath": "reps first, then weight",
+        "deloadFrequency": 6,
+        "deloadIntensity": 70,
+        "deloadDuration": "1 week",
+        "periodizationStyle": "linear"
+      },
+      "feedbackAdjustment": {
+        "easyThreshold": 3,
+        "hardThreshold": 2,
+        "painTolerance": "moderate",
+        "autoRegress": true,
+        "maxConsecutiveHardSessions": 2
+      },
+      "contraindications": [],
+      "bestForBodyTypes": ["all"],
+      "estimatedDuration": {
+        "untilVisibleResults": 4,
+        "untilGoalAchievement": 12,
+        "plateauManagementWeeks": 6
+      },
+      "sampleWorkoutSplit": "push_pull_legs_5day",
+      "estimatedCalorieDeficit": "300–500 calorie deficit",
+      "notes": "Fat loss requires discipline with nutrition. Training maintains muscle while diet drives fat loss. Higher frequency prevents muscle loss."
+    },
+    {
+      "goalId": "muscle_gain",
+      "name": "Muscle Gain",
+      "aliases": ["hypertrophy", "bulking", "muscle building", "lean gains"],
+      "description": "Build muscle size and definition through progressive resistance training with caloric surplus. Best for users with beginner-to-intermediate experience.",
+      "difficulty": "intermediate",
+      "primaryMetrics": ["muscle_size", "aesthetics", "strength"],
+      "frequencyRange": {
+        "min": 3,
+        "max": 5,
+        "recommended": 4
+      },
+      "sessionDurationRange": {
+        "min": 45,
+        "max": 90,
+        "recommended": 60
+      },
+      "trainingParameters": {
+        "repRanges": {
+          "compound": {
+            "low": 6,
+            "high": 10,
+            "description": "Heavy compound exercises for strength foundation"
+          },
+          "hypertrophy": {
+            "low": 8,
+            "high": 15,
+            "description": "Moderate weight with higher reps for muscle size"
+          },
+          "isolation": {
+            "low": 10,
+            "high": 20,
+            "description": "Light to moderate weight for muscle finishers"
+          }
+        },
+        "restTimes": {
+          "compound": {
+            "min": 180,
+            "max": 300,
+            "recommended": 240,
+            "description": "3–5 minutes rest between heavy compound sets"
+          },
+          "hypertrophy": {
+            "min": 90,
+            "max": 180,
+            "recommended": 120,
+            "description": "1.5–3 minutes rest between hypertrophy sets"
+          },
+          "isolation": {
+            "min": 45,
+            "max": 90,
+            "recommended": 60,
+            "description": "45–90 seconds rest between isolation sets"
+          }
+        },
+        "volumeTargets": {
+          "setsPerMusclePerWeek": {
+            "min": 10,
+            "max": 20,
+            "recommended": 15,
+            "description": "Total weekly sets per muscle group"
+          },
+          "frequency": {
+            "min": 2,
+            "max": 3,
+            "recommended": 2,
+            "description": "Hit each muscle 2–3 times per week"
+          },
+          "totalWeeklyVolume": {
+            "min": 40,
+            "max": 60,
+            "recommended": 50,
+            "description": "Total sets across entire week"
+          }
+        }
+      },
+      "exerciseSelectionRules": {
+        "movementPatternPriority": [
+          "push_horizontal",
+          "pull_horizontal",
+          "squat",
+          "hinge",
+          "push_vertical",
+          "pull_vertical"
+        ],
+        "muscleGroupFocus": [
+          "chest",
+          "back",
+          "shoulders",
+          "quads",
+          "hamstrings",
+          "glutes",
+          "biceps",
+          "triceps"
+        ],
+        "equipmentPreference": [
+          "barbell",
+          "dumbbell",
+          "machine"
+        ],
+        "excludeMovementPatterns": [],
+        "minCompoundPercentage": 60,
+        "maxIsolationPercentage": 40,
+        "avoidConditioningExcessive": true
+      },
+      "progressionStrategy": {
+        "progressionRate": "moderate",
+        "volumeProgression": "double-progression",
+        "progressionPath": "reps first, then weight",
+        "deloadFrequency": 4,
+        "deloadIntensity": 75,
+        "deloadDuration": "1 week",
+        "periodizationStyle": "undulating"
+      },
+      "feedbackAdjustment": {
+        "easyThreshold": 2,
+        "hardThreshold": 2,
+        "painTolerance": "strict",
+        "autoRegress": true,
+        "maxConsecutiveHardSessions": 2
+      },
+      "contraindications": [
+        "severe_shoulder_injury",
+        "severe_lower_back_pain"
+      ],
+      "bestForBodyTypes": [
+        "ectomorph",
+        "mesomorph"
+      ],
+      "estimatedDuration": {
+        "untilVisibleResults": 6,
+        "untilGoalAchievement": 16,
+        "plateauManagementWeeks": 4
+      },
+      "sampleWorkoutSplit": "upper_lower_4day",
+      "estimatedCalorieDeficit": "Surplus of 300–500 calories",
+      "notes": "Muscle gain requires progressive overload and adequate nutrition. Emphasizes compound movements with strategic accessory work."
+    },
+    {
+      "goalId": "strength",
+      "name": "Strength",
+      "aliases": ["powerlifting", "strength training", "getting strong", "max strength"],
+      "description": "Build maximum strength in compound movements through heavy resistance and low reps. Focuses on the big three: squat, bench, deadlift.",
+      "difficulty": "advanced",
+      "primaryMetrics": ["strength", "max_weight"],
+      "frequencyRange": {
+        "min": 3,
+        "max": 4,
+        "recommended": 3
+      },
+      "sessionDurationRange": {
+        "min": 60,
+        "max": 120,
+        "recommended": 90
+      },
+      "trainingParameters": {
+        "repRanges": {
+          "compound": {
+            "low": 1,
+            "high": 6,
+            "description": "Very heavy weights, low reps for max strength"
+          },
+          "submaximal": {
+            "low": 3,
+            "high": 8,
+            "description": "Heavy sets building toward max"
+          },
+          "accessory": {
+            "low": 6,
+            "high": 12,
+            "description": "Supporting exercises"
+          }
+        },
+        "restTimes": {
+          "compound": {
+            "min": 300,
+            "max": 600,
+            "recommended": 480,
+            "description": "5–10 minutes rest between heavy singles/doubles"
+          },
+          "submaximal": {
+            "min": 180,
+            "max": 300,
+            "recommended": 240,
+            "description": "3–5 minutes between heavy sets"
+          },
+          "accessory": {
+            "min": 90,
+            "max": 180,
+            "recommended": 120,
+            "description": "1.5–3 minutes between accessory"
+          }
+        },
+        "volumeTargets": {
+          "setsPerMusclePerWeek": {
+            "min": 6,
+            "max": 12,
+            "recommended": 9,
+            "description": "Lower volume, higher intensity"
+          },
+          "frequency": {
+            "min": 1,
+            "max": 2,
+            "recommended": 1,
+            "description": "Hit each movement 1–2 times per week"
+          },
+          "totalWeeklyVolume": {
+            "min": 20,
+            "max": 35,
+            "recommended": 27,
+            "description": "Total sets very low, quality over quantity"
+          }
+        }
+      },
+      "exerciseSelectionRules": {
+        "movementPatternPriority": [
+          "squat",
+          "hinge",
+          "push_horizontal",
+          "pull_horizontal"
+        ],
+        "muscleGroupFocus": [
+          "quads",
+          "glutes",
+          "hamstrings",
+          "lower_back",
+          "chest",
+          "back",
+          "shoulders"
+        ],
+        "equipmentPreference": [
+          "barbell"
+        ],
+        "excludeMovementPatterns": [
+          "conditioning",
+          "isolation"
+        ],
+        "minCompoundPercentage": 85,
+        "maxIsolationPercentage": 15,
+        "avoidCardio": true
+      },
+      "progressionStrategy": {
+        "progressionRate": "conservative",
+        "volumeProgression": "linear",
+        "progressionPath": "weight first, then reps",
+        "deloadFrequency": 6,
+        "deloadIntensity": 80,
+        "deloadDuration": "1 week",
+        "periodizationStyle": "linear"
+      },
+      "feedbackAdjustment": {
+        "easyThreshold": 1,
+        "hardThreshold": 1,
+        "painTolerance": "high",
+        "autoRegress": false,
+        "maxConsecutiveHardSessions": 3
+      },
+      "contraindications": [
+        "lower_back_pain",
+        "knee_injury",
+        "shoulder_injury"
+      ],
+      "bestForBodyTypes": [
+        "mesomorph"
+      ],
+      "estimatedDuration": {
+        "untilVisibleResults": 8,
+        "untilGoalAchievement": 24,
+        "plateauManagementWeeks": 8
+      },
+      "sampleWorkoutSplit": "texas_method",
+      "estimatedCalorieDeficit": "Maintenance to slight surplus",
+      "notes": "Strength is a skill. Requires technical proficiency, adequate recovery, and patience. For experienced lifters only."
+    },
+    {
+      "goalId": "endurance",
+      "name": "Endurance",
+      "aliases": ["muscular endurance", "conditioning", "cardio fitness", "stamina"],
+      "description": "Improve cardiovascular fitness and muscular endurance through higher reps, shorter rest, and metabolic conditioning. Suitable for all experience levels.",
+      "difficulty": "beginner",
+      "primaryMetrics": ["endurance", "cardiovascular_fitness", "work_capacity"],
+      "frequencyRange": {
+        "min": 4,
+        "max": 6,
+        "recommended": 5
+      },
+      "sessionDurationRange": {
+        "min": 30,
+        "max": 60,
+        "recommended": 45
+      },
+      "trainingParameters": {
+        "repRanges": {
+          "compound": {
+            "low": 10,
+            "high": 15,
+            "description": "Moderate reps for muscular endurance"
+          },
+          "accessory": {
+            "low": 12,
+            "high": 20,
+            "description": "Higher reps"
+          },
+          "conditioning": {
+            "low": 15,
+            "high": 30,
+            "description": "Very high reps or time-based"
+          }
+        },
+        "restTimes": {
+          "compound": {
+            "min": 30,
+            "max": 90,
+            "recommended": 60,
+            "description": "Short rest to keep heart rate elevated"
+          },
+          "accessory": {
+            "min": 20,
+            "max": 60,
+            "recommended": 45,
+            "description": "Minimal rest"
+          },
+          "conditioning": {
+            "min": 10,
+            "max": 45,
+            "recommended": 30,
+            "description": "Circuit-style minimal rest"
+          }
+        },
+        "volumeTargets": {
+          "setsPerMusclePerWeek": {
+            "min": 8,
+            "max": 12,
+            "recommended": 10,
+            "description": "Moderate volume"
+          },
+          "frequency": {
+            "min": 2,
+            "max": 3,
+            "recommended": 2,
+            "description": "Hit muscles frequently"
+          },
+          "totalWeeklyVolume": {
+            "min": 60,
+            "max": 80,
+            "recommended": 70,
+            "description": "High volume with low intensity"
+          }
+        }
+      },
+      "exerciseSelectionRules": {
+        "movementPatternPriority": [
+          "conditioning",
+          "squat",
+          "hinge",
+          "push_horizontal",
+          "pull_horizontal"
+        ],
+        "muscleGroupFocus": [
+          "quads",
+          "glutes",
+          "hamstrings",
+          "back",
+          "core"
+        ],
+        "equipmentPreference": [
+          "bodyweight",
+          "dumbbell",
+          "barbell",
+          "resistance_band"
+        ],
+        "excludeMovementPatterns": [],
+        "minCompoundPercentage": 40,
+        "maxIsolationPercentage": 20,
+        "includeCardioEmphasis": true
+      },
+      "progressionStrategy": {
+        "progressionRate": "fast",
+        "volumeProgression": "linear",
+        "progressionPath": "reps first, then weight",
+        "deloadFrequency": 8,
+        "deloadIntensity": 65,
+        "deloadDuration": "1 week",
+        "periodizationStyle": "linear"
+      },
+      "feedbackAdjustment": {
+        "easyThreshold": 3,
+        "hardThreshold": 2,
+        "painTolerance": "moderate",
+        "autoRegress": true,
+        "maxConsecutiveHardSessions": 2
+      },
+      "contraindications": [],
+      "bestForBodyTypes": ["all"],
+      "estimatedDuration": {
+        "untilVisibleResults": 3,
+        "untilGoalAchievement": 10,
+        "plateauManagementWeeks": 4
+      },
+      "sampleWorkoutSplit": "full_body_5day",
+      "estimatedCalorieDeficit": "Maintenance to slight deficit",
+      "notes": "Endurance training improves work capacity and burns calories. Great for general health and cardiovascular fitness."
+    },
+    {
+      "goalId": "mobility",
+      "name": "Mobility",
+      "aliases": ["flexibility", "range of motion", "movement quality", "recovery"],
+      "description": "Improve range of motion, movement quality, and joint health through controlled movements and stretching. Pairs well with other goals.",
+      "difficulty": "beginner",
+      "primaryMetrics": ["range_of_motion", "movement_quality", "flexibility"],
+      "frequencyRange": {
+        "min": 3,
+        "max": 7,
+        "recommended": 5
+      },
+      "sessionDurationRange": {
+        "min": 15,
+        "max": 45,
+        "recommended": 30
+      },
+      "trainingParameters": {
+        "repRanges": {
+          "mobility": {
+            "low": 8,
+            "high": 12,
+            "description": "Controlled dynamic stretching"
+          },
+          "stretching": {
+            "low": 30,
+            "high": 60,
+            "description": "Static holds in seconds"
+          }
+        },
+        "restTimes": {
+          "mobility": {
+            "min": 30,
+            "max": 60,
+            "recommended": 45,
+            "description": "Move to next stretch"
+          },
+          "stretching": {
+            "min": 0,
+            "max": 0,
+            "recommended": 0,
+            "description": "Continuous holds"
+          }
+        },
+        "volumeTargets": {
+          "setsPerMusclePerWeek": {
+            "min": 1,
+            "max": 7,
+            "recommended": 3,
+            "description": "Light, frequent work"
+          },
+          "frequency": {
+            "min": 1,
+            "max": 7,
+            "recommended": 5,
+            "description": "Daily is ideal"
+          }
+        }
+      },
+      "exerciseSelectionRules": {
+        "movementPatternPriority": [
+          "mobility",
+          "push_horizontal",
+          "pull_horizontal",
+          "squat",
+          "hinge"
+        ],
+        "muscleGroupFocus": [
+          "hip_flexors",
+          "hamstrings",
+          "chest",
+          "shoulders",
+          "lower_back"
+        ],
+        "equipmentPreference": [
+          "bodyweight",
+          "foam_roller",
+          "yoga_mat"
+        ],
+        "excludeMovementPatterns": [
+          "strength",
+          "heavy_conditioning"
+        ],
+        "focusOnPainFreeMovement": true,
+        "avoidHeavyLoad": true
+      },
+      "progressionStrategy": {
+        "progressionRate": "moderate",
+        "volumeProgression": "range_of_motion",
+        "progressionPath": "deeper stretch, longer holds",
+        "deloadFrequency": 0,
+        "deloadIntensity": 100,
+        "periodicResetWeeks": 0
+      },
+      "feedbackAdjustment": {
+        "easyThreshold": 5,
+        "hardThreshold": 0,
+        "painTolerance": "strict",
+        "avoidPain": true,
+        "maxConsecutiveHardSessions": 0
+      },
+      "contraindications": [],
+      "bestForBodyTypes": ["all"],
+      "estimatedDuration": {
+        "untilVisibleResults": 2,
+        "untilGoalAchievement": 8,
+        "maintenanceRequired": true
+      },
+      "sampleWorkoutSplit": "daily_mobility",
+      "estimatedCalorieDeficit": "None",
+      "notes": "Mobility work prevents injury and improves performance in other goals. Best done daily or on recovery days."
+    },
+    {
+      "goalId": "general_fitness",
+      "name": "General Fitness",
+      "aliases": ["balanced fitness", "all-around fit", "everyday fitness", "wellness"],
+      "description": "Build well-rounded fitness with balanced strength, endurance, and mobility. Perfect for beginners or those wanting overall health.",
+      "difficulty": "beginner",
+      "primaryMetrics": ["overall_fitness", "health", "balanced_strength"],
+      "frequencyRange": {
+        "min": 2,
+        "max": 4,
+        "recommended": 3
+      },
+      "sessionDurationRange": {
+        "min": 30,
+        "max": 60,
+        "recommended": 45
+      },
+      "trainingParameters": {
+        "repRanges": {
+          "compound": {
+            "low": 8,
+            "high": 12,
+            "description": "Moderate reps for balanced development"
+          },
+          "conditioning": {
+            "low": 12,
+            "high": 20,
+            "description": "Higher reps for cardiovascular work"
+          },
+          "mobility": {
+            "low": 8,
+            "high": 12,
+            "description": "Movement quality reps"
+          }
+        },
+        "restTimes": {
+          "compound": {
+            "min": 60,
+            "max": 120,
+            "recommended": 90,
+            "description": "Balanced rest"
+          },
+          "conditioning": {
+            "min": 30,
+            "max": 60,
+            "recommended": 45,
+            "description": "Short rest for cardio effect"
+          },
+          "mobility": {
+            "min": 30,
+            "max": 60,
+            "recommended": 45,
+            "description": "Easy transitions"
+          }
+        },
+        "volumeTargets": {
+          "setsPerMusclePerWeek": {
+            "min": 6,
+            "max": 10,
+            "recommended": 8,
+            "description": "Moderate volume"
+          },
+          "frequency": {
+            "min": 2,
+            "max": 2,
+            "recommended": 2,
+            "description": "Hit muscles 2x per week"
+          },
+          "totalWeeklyVolume": {
+            "min": 30,
+            "max": 45,
+            "recommended": 36,
+            "description": "Manageable volume"
+          }
+        }
+      },
+      "exerciseSelectionRules": {
+        "movementPatternPriority": [
+          "squat",
+          "hinge",
+          "push_horizontal",
+          "pull_horizontal",
+          "push_vertical",
+          "pull_vertical",
+          "mobility",
+          "conditioning"
+        ],
+        "muscleGroupFocus": [
+          "quads",
+          "glutes",
+          "hamstrings",
+          "back",
+          "chest",
+          "shoulders",
+          "core"
+        ],
+        "equipmentPreference": [
+          "bodyweight",
+          "dumbbell",
+          "barbell"
+        ],
+        "excludeMovementPatterns": [],
+        "balancedApproach": true,
+        "includeAllMovementTypes": true
+      },
+      "progressionStrategy": {
+        "progressionRate": "moderate",
+        "volumeProgression": "linear",
+        "progressionPath": "balanced",
+        "deloadFrequency": 8,
+        "deloadIntensity": 75,
+        "deloadDuration": "1 week"
+      },
+      "feedbackAdjustment": {
+        "easyThreshold": 2,
+        "hardThreshold": 2,
+        "painTolerance": "moderate",
+        "autoRegress": true,
+        "maxConsecutiveHardSessions": 2
+      },
+      "contraindications": [],
+      "bestForBodyTypes": ["all"],
+      "estimatedDuration": {
+        "untilVisibleResults": 4,
+        "untilGoalAchievement": 12,
+        "maintenanceRequired": true
+      },
+      "sampleWorkoutSplit": "full_body_3day",
+      "estimatedCalorieDeficit": "Maintenance",
+      "notes": "General fitness is sustainable long-term. Great for beginners and those focused on overall health and wellness."
+    },
+    {
+      "goalId": "rehab_safe",
+      "name": "Rehab-Safe",
+      "aliases": ["injury recovery", "physical therapy", "pain-free training", "post-injury"],
+      "description": "Return to training safely after injury through controlled movements and pain-free progressions. Requires strict form and immediate regression if pain occurs.",
+      "difficulty": "beginner",
+      "primaryMetrics": ["pain_free_movement", "recovery", "functional_strength"],
+      "frequencyRange": {
+        "min": 2,
+        "max": 4,
+        "recommended": 3
+      },
+      "sessionDurationRange": {
+        "min": 20,
+        "max": 45,
+        "recommended": 30
+      },
+      "trainingParameters": {
+        "repRanges": {
+          "controlled": {
+            "low": 10,
+            "high": 15,
+            "description": "Light weight, high control"
+          },
+          "mobility": {
+            "low": 8,
+            "high": 12,
+            "description": "Pain-free range of motion"
+          }
+        },
+        "restTimes": {
+          "controlled": {
+            "min": 60,
+            "max": 120,
+            "recommended": 90,
+            "description": "Full recovery between sets"
+          },
+          "mobility": {
+            "min": 30,
+            "max": 60,
+            "recommended": 45,
+            "description": "Easy transitions"
+          }
+        },
+        "volumeTargets": {
+          "setsPerMusclePerWeek": {
+            "min": 3,
+            "max": 6,
+            "recommended": 4,
+            "description": "Low volume, high quality"
+          },
+          "frequency": {
+            "min": 1,
+            "max": 2,
+            "recommended": 1,
+            "description": "Light work, frequent days for recovery"
+          },
+          "totalWeeklyVolume": {
+            "min": 15,
+            "max": 25,
+            "recommended": 18,
+            "description": "Very low volume focus on form"
+          }
+        }
+      },
+      "exerciseSelectionRules": {
+        "movementPatternPriority": [
+          "mobility",
+          "push_horizontal",
+          "pull_horizontal",
+          "squat",
+          "hinge"
+        ],
+        "muscleGroupFocus": [],
+        "equipmentPreference": [
+          "bodyweight",
+          "light_resistance_band"
+        ],
+        "excludeMovementPatterns": [
+          "heavy_compounds",
+          "plyometric",
+          "conditioning_intensive"
+        ],
+        "avoidExercises": true,
+        "strictPainTolerance": true,
+        "focusOnForm": true
+      },
+      "progressionStrategy": {
+        "progressionRate": "very_conservative",
+        "volumeProgression": "linear",
+        "progressionPath": "form perfection first",
+        "deloadFrequency": 0,
+        "deloadIntensity": 100,
+        "immediateRegressionOnPain": true
+      },
+      "feedbackAdjustment": {
+        "easyThreshold": 3,
+        "hardThreshold": 1,
+        "painTolerance": "strict",
+        "immediateRegressionOnPain": true,
+        "avoidPainAtAllCosts": true,
+        "maxConsecutiveHardSessions": 1
+      },
+      "contraindications": [
+        "acute_injury",
+        "severe_pain",
+        "recent_surgery"
+      ],
+      "bestForBodyTypes": ["all"],
+      "estimatedDuration": {
+        "untilVisibleResults": 3,
+        "untilGoalAchievement": 12,
+        "variableTimeframe": true
+      },
+      "sampleWorkoutSplit": "custom_rehabilitation",
+      "estimatedCalorieDeficit": "Maintenance",
+      "notes": "Pain is the signal to stop. If any exercise causes pain, regress immediately or skip. Work with physical therapist when possible."
+    },
+    {
+      "goalId": "athletic_performance",
+      "name": "Athletic Performance",
+      "aliases": ["sports performance", "athletic training", "power development", "sport-specific"],
+      "description": "Develop explosive power, speed, and agility to improve sports performance. Requires advanced training experience and sport-specific programming.",
+      "difficulty": "advanced",
+      "primaryMetrics": ["power", "speed", "athletic_ability", "sport_performance"],
+      "frequencyRange": {
+        "min": 4,
+        "max": 6,
+        "recommended": 5
+      },
+      "sessionDurationRange": {
+        "min": 60,
+        "max": 120,
+        "recommended": 90
+      },
+      "trainingParameters": {
+        "repRanges": {
+          "power": {
+            "low": 1,
+            "high": 5,
+            "description": "Explosive, low reps for max power"
+          },
+          "strength": {
+            "low": 3,
+            "high": 8,
+            "description": "Heavy strength building"
+          },
+          "conditioning": {
+            "low": 8,
+            "high": 15,
+            "description": "Sport-specific conditioning"
+          }
+        },
+        "restTimes": {
+          "power": {
+            "min": 180,
+            "max": 300,
+            "recommended": 240,
+            "description": "Full rest for power output"
+          },
+          "strength": {
+            "min": 120,
+            "max": 240,
+            "recommended": 180,
+            "description": "Adequate rest for strength"
+          },
+          "conditioning": {
+            "min": 30,
+            "max": 90,
+            "recommended": 60,
+            "description": "Sport-specific pace"
+          }
+        },
+        "volumeTargets": {
+          "setsPerMusclePerWeek": {
+            "min": 8,
+            "max": 15,
+            "recommended": 12,
+            "description": "Moderate volume for power development"
+          },
+          "frequency": {
+            "min": 2,
+            "max": 3,
+            "recommended": 2,
+            "description": "Adequate recovery for adaptation"
+          },
+          "totalWeeklyVolume": {
+            "min": 35,
+            "max": 50,
+            "recommended": 40,
+            "description": "Balanced power + strength + conditioning"
+          }
+        }
+      },
+      "exerciseSelectionRules": {
+        "movementPatternPriority": [
+          "squat",
+          "hinge",
+          "push_horizontal",
+          "pull_horizontal",
+          "plyometric",
+          "conditioning"
+        ],
+        "muscleGroupFocus": [
+          "quads",
+          "glutes",
+          "hamstrings",
+          "back",
+          "chest",
+          "core",
+          "shoulders"
+        ],
+        "equipmentPreference": [
+          "barbell",
+          "dumbbell",
+          "plyometric_equipment",
+          "bodyweight"
+        ],
+        "excludeMovementPatterns": [
+          "isolation"
+        ],
+        "minCompoundPercentage": 70,
+        "includePlyometrics": true,
+        "sportSpecific": true
+      },
+      "progressionStrategy": {
+        "progressionRate": "moderate",
+        "volumeProgression": "undulating",
+        "progressionPath": "power first, then strength",
+        "deloadFrequency": 4,
+        "deloadIntensity": 75,
+        "deloadDuration": "1 week",
+        "periodizationStyle": "periodized"
+      },
+      "feedbackAdjustment": {
+        "easyThreshold": 2,
+        "hardThreshold": 2,
+        "painTolerance": "moderate",
+        "autoRegress": true,
+        "maxConsecutiveHardSessions": 3
+      },
+      "contraindications": [
+        "lower_back_pain",
+        "knee_injury",
+        "ankle_sprain"
+      ],
+      "bestForBodyTypes": [
+        "mesomorph"
+      ],
+      "estimatedDuration": {
+        "untilVisibleResults": 6,
+        "untilGoalAchievement": 16,
+        "seasonalProgramming": true
+      },
+      "sampleWorkoutSplit": "custom_athletic",
+      "estimatedCalorieDeficit": "Maintenance to slight surplus",
+      "notes": "Athletic performance training requires experience. Best paired with sport-specific coaching. Prioritize power and strength with adequate recovery."
+    }
+  ],
+  "goalStatistics": {
+    "totalGoals": 8,
+    "beginner": 4,
+    "intermediate": 2,
+    "advanced": 2,
+    "averageSessionDuration": 60,
+    "averageFrequency": 4,
+    "recommendedForNewUsers": ["general_fitness", "fat_loss", "endurance"]
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "exerciseSchema": {
+    "description": "Complete exercise template with all 29 fields",
+    "version": "1.0",
+    "example": {
+      "id": "pushup",
+      "name": "Push-Up",
+      "aliases": ["push up", "press-up"],
+      "movementPattern": "push_horizontal",
+      "category": "bodyweight",
+      "difficultyLevel": "beginner",
+      "primaryMuscles": ["chest", "triceps"],
+      "secondaryMuscles": ["shoulders", "core"],
+      "requiredEquipment": ["bodyweight"],
+      "optionalEquipment": [],
+      "isUnilateral": false,
+      "isTimeBased": false,
+      "goalsSupported": ["muscle_gain", "strength", "endurance"],
+      "estimatedDurationSeconds": 60,
+      "defaultPrescription": {
+        "beginner": {
+          "sets": 3,
+          "reps": 8,
+          "restSeconds": 60,
+          "tempo": "2-1-2-1"
+        },
+        "intermediate": {
+          "sets": 4,
+          "reps": 12,
+          "restSeconds": 45,
+          "tempo": "2-0-2-0"
+        },
+        "advanced": {
+          "sets": 4,
+          "reps": 15,
+          "restSeconds": 30,
+          "tempo": "1-0-1-0"
+        }
+      },
+      "coachingCues": [
+        "Keep your body in a straight line from head to heels",
+        "Lower your body until your chest nearly touches the floor",
+        "Push through your palms to return to starting position",
+        "Keep your core tight throughout the movement"
+      ],
+      "commonMistakes": [
+        "Sagging hips — keep the body rigid",
+        "Flaring elbows too wide — keep elbows at 45 degrees",
+        "Incomplete range of motion — go low enough to challenge yourself",
+        "Holding your breath — breathe out as you push up"
+      ],
+      "setupInstructions": [
+        "Start in a plank position with hands shoulder-width apart",
+        "Place hands directly under shoulders",
+        "Keep feet together or slightly apart for stability",
+        "Engage your core and glutes"
+      ],
+      "executionSteps": [
+        "Lower your body in one straight line",
+        "Chest should nearly touch the floor at the bottom",
+        "Push through your palms to drive back up",
+        "Return to starting position without locking elbows"
+      ],
+      "contraindications": {
+        "shoulder_injury": {
+          "severity": "avoid",
+          "note": "Risk of further shoulder strain with loaded pressing"
+        },
+        "wrist_pain": {
+          "severity": "modify",
+          "note": "Use neutral grip push-up or fists instead of open palms"
+        },
+        "elbow_injury": {
+          "severity": "modify",
+          "note": "Reduce range of motion to avoid full extension"
+        }
+      },
+      "substitutionTags": [
+        "chest",
+        "push_horizontal",
+        "bodyweight",
+        "beginner_friendly",
+        "push_chain",
+        "upper_body"
+      ],
+      "regressionId": "incline_pushup",
+      "progressionId": "diamond_pushup",
+      "relatedExercises": ["wide_pushup", "dumbbell_chest_press", "barbell_bench_press"],
+      "warmupCompatible": true,
+      "cooldownCompatible": false,
+      "mainLiftCompatible": true,
+      "animation": {
+        "type": "lottie",
+        "filename": "animations/bodyweight/pushup_front_beginner.lottie",
+        "thumbnail": "thumbnails/bodyweight/pushup.jpg",
+        "views": ["front", "side"],
+        "loopDuration": 12,
+        "fallback": {
+          "type": "mp4",
+          "filename": "animations/bodyweight/pushup_front_beginner.mp4"
+        }
+      }
+    }
+  },
+  "fieldDescriptions": {
+    "id": "Unique identifier (snake_case, lowercase)",
+    "name": "Display name of the exercise",
+    "aliases": "Alternative names users might search for",
+    "movementPattern": "ID from movement-patterns.json",
+    "category": "Equipment category (bodyweight, dumbbell, barbell, etc.)",
+    "difficultyLevel": "beginner, intermediate, or advanced",
+    "primaryMuscles": "Array of primary muscle group IDs",
+    "secondaryMuscles": "Array of supporting muscle group IDs",
+    "requiredEquipment": "Array of equipment IDs that are mandatory",
+    "optionalEquipment": "Array of equipment that can be substituted",
+    "isUnilateral": "Boolean — true if exercise is single-sided",
+    "isTimeBased": "Boolean — true if exercise uses duration instead of reps",
+    "goalsSupported": "Array of goals this exercise supports",
+    "estimatedDurationSeconds": "How long one set typically takes",
+    "defaultPrescription": "Sets, reps, rest, tempo for each difficulty level",
+    "coachingCues": "2-4 form cues to teach proper execution",
+    "commonMistakes": "2-4 common form errors to avoid",
+    "setupInstructions": "Step-by-step setup before exercise starts",
+    "executionSteps": "Step-by-step execution of the movement",
+    "contraindications": "Mapping of injury types to severity and modifications",
+    "substitutionTags": "5+ tags for finding replacement exercises",
+    "regressionId": "ID of easier exercise in progression chain",
+    "progressionId": "ID of harder exercise in progression chain",
+    "relatedExercises": "Similar exercises with same pattern/muscles",
+    "warmupCompatible": "Can this be used as a warm-up?",
+    "cooldownCompatible": "Can this be used as a cool-down?",
+    "mainLiftCompatible": "Is this suitable as a main compound lift?",
+    "animation": "Object containing animation asset paths and metadata"
+  },
+  "difficultyLevels": ["beginner", "intermediate", "advanced"],
+  "goals": [
+    "fat_loss",
+    "muscle_gain",
+    "strength",
+    "endurance",
+    "mobility",
+    "general_fitness",
+    "rehab_safe",
+    "athletic_performance"
+  ],
+  "injuryTypes": [
+    "shoulder_injury",
+    "elbow_injury",
+    "wrist_pain",
+    "lower_back_pain",
+    "knee_injury",
+    "hip_injury",
+    "ankle_sprain",
+    "neck_issues",
+    "high_blood_pressure",
+    "pregnant_postnatal",
+    "rotator_cuff_issues",
+    "spinal_injury"
+  ]
+}

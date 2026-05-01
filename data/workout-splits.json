@@ -1,0 +1,1245 @@
+{
+  "workoutSplits": [
+    {
+      "splitId": "full_body_1day",
+      "name": "Full Body (1 Day/Week)",
+      "aliases": ["1-day split", "once per week", "single session"],
+      "description": "One comprehensive full-body workout per week hitting all major muscle groups. Only recommended for absolute beginners or those with severe time constraints. Frequency is very low, limiting muscle growth.",
+      "frequency": 1,
+      "trainingAge": "beginner",
+      "primaryGoals": ["general_fitness"],
+      
+      "dayStructure": {
+        "dayA": {
+          "name": "Full Body",
+          "focusedMuscleGroups": ["quads", "hamstrings", "glutes", "chest", "back", "shoulders", "biceps", "triceps", "core"],
+          "movementPatterns": ["squat", "hinge", "push_horizontal", "pull_horizontal", "push_vertical", "pull_vertical", "isolation"],
+          "exerciseSlotsPerDay": 8,
+          "sessionType": "mixed",
+          "estimatedDuration": 90,
+          "exerciseBreakdown": {
+            "compound": 3,
+            "hypertrophy": 3,
+            "isolation": 2
+          }
+        }
+      },
+
+      "weeklySchedule": {
+        "description": "One day per week (any day). Six rest days for recovery.",
+        "restDays": 6,
+        "consecutiveWorkoutDays": 1,
+        "exampleWeek": ["dayA", "rest", "rest", "rest", "rest", "rest", "rest"]
+      },
+
+      "muscleGroupCoverage": {
+        "quads": {"frequencyPerWeek": 1, "daysWhereHit": ["dayA"], "totalSetsPerWeek": 4},
+        "hamstrings": {"frequencyPerWeek": 1, "daysWhereHit": ["dayA"], "totalSetsPerWeek": 3},
+        "glutes": {"frequencyPerWeek": 1, "daysWhereHit": ["dayA"], "totalSetsPerWeek": 4},
+        "chest": {"frequencyPerWeek": 1, "daysWhereHit": ["dayA"], "totalSetsPerWeek": 4},
+        "back": {"frequencyPerWeek": 1, "daysWhereHit": ["dayA"], "totalSetsPerWeek": 5},
+        "shoulders": {"frequencyPerWeek": 1, "daysWhereHit": ["dayA"], "totalSetsPerWeek": 3},
+        "biceps": {"frequencyPerWeek": 1, "daysWhereHit": ["dayA"], "totalSetsPerWeek": 3},
+        "triceps": {"frequencyPerWeek": 1, "daysWhereHit": ["dayA"], "totalSetsPerWeek": 3},
+        "core": {"frequencyPerWeek": 1, "daysWhereHit": ["dayA"], "totalSetsPerWeek": 3}
+      },
+
+      "suitableGoals": ["general_fitness"],
+      "equipmentRequirements": ["barbell", "dumbbell"],
+      
+      "exerciseSlotsPerDay": {"dayA": 8},
+      "totalExerciseSlotsPerWeek": 8,
+
+      "estimatedSessionDuration": {
+        "min": 75,
+        "max": 120,
+        "recommended": 90
+      },
+
+      "weeklyVolume": {
+        "estimatedSets": 32,
+        "estimatedReps": 320,
+        "intensity": "moderate"
+      },
+
+      "pros": [
+        "Minimum time commitment (one session/week)",
+        "Full week recovery between sessions",
+        "Works for complete beginners",
+        "Introductory to strength training"
+      ],
+
+      "cons": [
+        "Very low muscle-building frequency (1x per week)",
+        "Very long session (90+ minutes)",
+        "Insufficient volume for adaptation",
+        "Not suitable for progression",
+        "Risk of detraining between sessions"
+      ],
+
+      "suitableExperienceLevels": ["beginner"],
+      "recommendedForGoals": ["general_fitness"],
+      "notes": "Only suitable for absolute beginners or those with extreme time constraints. Frequency is too low for meaningful progress. Consider 2+ days/week as soon as possible."
+    },
+
+    {
+      "splitId": "full_body_2day",
+      "name": "Full Body (2 Days/Week)",
+      "aliases": ["2-day split", "twice per week", "every other day"],
+      "description": "Two full-body workouts per week with alternating focus. Best for beginners building a routine or intermediate lifters with limited time. Two days per week is minimum viable frequency for muscle building.",
+      "frequency": 2,
+      "trainingAge": "beginner",
+      "primaryGoals": ["general_fitness", "muscle_gain"],
+      
+      "dayStructure": {
+        "dayA": {
+          "name": "Full Body A (Lower Focus)",
+          "focusedMuscleGroups": ["quads", "glutes", "hamstrings", "back", "chest", "core"],
+          "movementPatterns": ["squat", "hinge", "push_horizontal", "pull_horizontal", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "mixed",
+          "estimatedDuration": 50,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 2,
+            "isolation": 2
+          }
+        },
+        "dayB": {
+          "name": "Full Body B (Upper Focus)",
+          "focusedMuscleGroups": ["chest", "back", "shoulders", "biceps", "triceps", "core"],
+          "movementPatterns": ["push_horizontal", "pull_horizontal", "push_vertical", "pull_vertical", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "mixed",
+          "estimatedDuration": 50,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 2,
+            "isolation": 2
+          }
+        }
+      },
+
+      "weeklySchedule": {
+        "description": "Alternate between dayA and dayB with at least one rest day between. Example: Mon (dayA), rest, Wed (dayB), rest, Fri optional second dayA",
+        "restDays": 5,
+        "consecutiveWorkoutDays": 1,
+        "exampleWeek": ["dayA", "rest", "dayB", "rest", "rest", "rest", "rest"]
+      },
+
+      "muscleGroupCoverage": {
+        "quads": {"frequencyPerWeek": 1, "daysWhereHit": ["dayA"], "totalSetsPerWeek": 4},
+        "hamstrings": {"frequencyPerWeek": 1, "daysWhereHit": ["dayA"], "totalSetsPerWeek": 3},
+        "glutes": {"frequencyPerWeek": 1, "daysWhereHit": ["dayA"], "totalSetsPerWeek": 4},
+        "chest": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayB"], "totalSetsPerWeek": 7},
+        "back": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayB"], "totalSetsPerWeek": 8},
+        "shoulders": {"frequencyPerWeek": 1, "daysWhereHit": ["dayB"], "totalSetsPerWeek": 4},
+        "biceps": {"frequencyPerWeek": 1, "daysWhereHit": ["dayB"], "totalSetsPerWeek": 3},
+        "triceps": {"frequencyPerWeek": 1, "daysWhereHit": ["dayB"], "totalSetsPerWeek": 3},
+        "core": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayB"], "totalSetsPerWeek": 6}
+      },
+
+      "suitableGoals": ["general_fitness", "muscle_gain", "fat_loss"],
+      "equipmentRequirements": ["barbell", "dumbbell"],
+      
+      "exerciseSlotsPerDay": {"dayA": 6, "dayB": 6},
+      "totalExerciseSlotsPerWeek": 12,
+
+      "estimatedSessionDuration": {
+        "min": 45,
+        "max": 60,
+        "recommended": 50
+      },
+
+      "weeklyVolume": {
+        "estimatedSets": 36,
+        "estimatedReps": 360,
+        "intensity": "moderate"
+      },
+
+      "pros": [
+        "Minimum viable frequency (2x per week per muscle)",
+        "Sessions are shorter (45–60 minutes)",
+        "Works well with busy schedules",
+        "Adequate recovery between sessions",
+        "Good for beginners learning consistency"
+      ],
+
+      "cons": [
+        "Only 1x per week frequency for each muscle (some science suggests 2x is optimal)",
+        "Limited volume compared to higher frequency",
+        "Still relatively low frequency for advanced lifters",
+        "Plateau risk after initial adaptation"
+      ],
+
+      "suitableExperienceLevels": ["beginner", "intermediate"],
+      "recommendedForGoals": ["general_fitness", "muscle_gain"],
+      "notes": "Minimum recommended frequency for meaningful muscle growth. Works best paired with a goal like muscle_gain or general_fitness."
+    },
+
+    {
+      "splitId": "full_body_3day",
+      "name": "Full Body (3 Days/Week)",
+      "aliases": ["3-day split", "full body routine", "Mon/Wed/Fri"],
+      "description": "Hit all muscle groups in each session. Best for beginners learning movement patterns and intermediate lifters with limited time. Three sessions per week with at least one rest day between workouts.",
+      "frequency": 3,
+      "trainingAge": "beginner",
+      "primaryGoals": ["general_fitness", "muscle_gain", "fat_loss"],
+      
+      "dayStructure": {
+        "dayA": {
+          "name": "Full Body A",
+          "focusedMuscleGroups": ["quads", "chest", "back", "shoulders", "core"],
+          "movementPatterns": ["squat", "push_horizontal", "pull_horizontal", "push_vertical"],
+          "exerciseSlotsPerDay": 5,
+          "sessionType": "mixed",
+          "estimatedDuration": 50,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 2,
+            "isolation": 1
+          }
+        },
+        "dayB": {
+          "name": "Full Body B",
+          "focusedMuscleGroups": ["hamstrings", "glutes", "back", "shoulders", "biceps", "core"],
+          "movementPatterns": ["hinge", "pull_horizontal", "push_vertical", "isolation"],
+          "exerciseSlotsPerDay": 5,
+          "sessionType": "mixed",
+          "estimatedDuration": 50,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 2,
+            "isolation": 1
+          }
+        },
+        "dayC": {
+          "name": "Full Body C",
+          "focusedMuscleGroups": ["quads", "glutes", "chest", "triceps", "mobility"],
+          "movementPatterns": ["squat", "push_horizontal", "push_vertical", "conditioning"],
+          "exerciseSlotsPerDay": 5,
+          "sessionType": "mixed",
+          "estimatedDuration": 50,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 2,
+            "conditioning": 1
+          }
+        }
+      },
+
+      "weeklySchedule": {
+        "description": "Monday, Wednesday, Friday (or any Mon/Wed/Fri schedule). At least one rest day between workouts. Three rest days per week for recovery.",
+        "restDays": 4,
+        "consecutiveWorkoutDays": 1,
+        "exampleWeek": ["dayA", "rest", "dayB", "rest", "dayC", "rest", "rest"]
+      },
+
+      "muscleGroupCoverage": {
+        "quads": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayC"], "totalSetsPerWeek": 8},
+        "glutes": {"frequencyPerWeek": 2, "daysWhereHit": ["dayB", "dayC"], "totalSetsPerWeek": 8},
+        "hamstrings": {"frequencyPerWeek": 2, "daysWhereHit": ["dayB", "dayC"], "totalSetsPerWeek": 6},
+        "chest": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayC"], "totalSetsPerWeek": 8},
+        "back": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayB"], "totalSetsPerWeek": 10},
+        "shoulders": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayB"], "totalSetsPerWeek": 8},
+        "biceps": {"frequencyPerWeek": 2, "daysWhereHit": ["dayB", "dayC"], "totalSetsPerWeek": 6},
+        "triceps": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayC"], "totalSetsPerWeek": 6},
+        "core": {"frequencyPerWeek": 3, "daysWhereHit": ["dayA", "dayB", "dayC"], "totalSetsPerWeek": 9}
+      },
+
+      "suitableGoals": ["general_fitness", "muscle_gain", "strength", "fat_loss"],
+      "equipmentRequirements": ["barbell", "dumbbell"],
+      
+      "exerciseSlotsPerDay": {"dayA": 5, "dayB": 5, "dayC": 5},
+      "totalExerciseSlotsPerWeek": 15,
+
+      "estimatedSessionDuration": {
+        "min": 45,
+        "max": 60,
+        "recommended": 50
+      },
+
+      "weeklyVolume": {
+        "estimatedSets": 45,
+        "estimatedReps": 450,
+        "intensity": "moderate"
+      },
+
+      "pros": [
+        "Great for beginners learning movement patterns",
+        "Only 3 days per week is sustainable long-term",
+        "Full recovery between sessions",
+        "Builds balanced strength across all muscles",
+        "Works well with busy schedules",
+        "Lower risk of overuse injuries",
+        "Sessions are manageable (45–60 min)"
+      ],
+
+      "cons": [
+        "Only 2x per week frequency per muscle group",
+        "Limited total volume for advanced lifters",
+        "Can be fatiguing doing full body each session",
+        "Plateau after initial adaptation"
+      ],
+
+      "suitableExperienceLevels": ["beginner", "intermediate"],
+      "recommendedForGoals": ["general_fitness", "muscle_gain", "fat_loss"],
+      "notes": "Sweet spot for most people. Balances frequency, volume, and sustainability. Perfect for Mon/Wed/Fri schedule."
+    },
+
+    {
+      "splitId": "upper_lower_4day",
+      "name": "Upper/Lower (4 Days/Week)",
+      "aliases": ["4-day split", "UL split", "upper lower routine"],
+      "description": "Separate upper body and lower body days. Train each muscle group twice per week. The classic 4-day split: Upper, Lower, Rest, Upper, Lower, Rest, Rest. Excellent for intermediate lifters balancing frequency and recovery.",
+      "frequency": 4,
+      "trainingAge": "intermediate",
+      "primaryGoals": ["muscle_gain", "strength", "fat_loss"],
+      
+      "dayStructure": {
+        "dayA": {
+          "name": "Upper Body A",
+          "focusedMuscleGroups": ["chest", "back", "shoulders", "biceps", "triceps"],
+          "movementPatterns": ["push_horizontal", "pull_horizontal", "push_vertical", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "strength",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 2,
+            "isolation": 2
+          }
+        },
+        "dayB": {
+          "name": "Lower Body A",
+          "focusedMuscleGroups": ["quads", "hamstrings", "glutes", "core"],
+          "movementPatterns": ["squat", "hinge", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "strength",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 2,
+            "isolation": 2
+          }
+        },
+        "dayC": {
+          "name": "Upper Body B",
+          "focusedMuscleGroups": ["back", "chest", "shoulders", "biceps", "triceps"],
+          "movementPatterns": ["pull_horizontal", "push_horizontal", "pull_vertical", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 1,
+            "hypertrophy": 3,
+            "isolation": 2
+          }
+        },
+        "dayD": {
+          "name": "Lower Body B",
+          "focusedMuscleGroups": ["glutes", "quads", "hamstrings", "core"],
+          "movementPatterns": ["hinge", "squat", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 1,
+            "hypertrophy": 3,
+            "isolation": 2
+          }
+        }
+      },
+
+      "weeklySchedule": {
+        "description": "Upper, Lower, Rest, Upper, Lower, Rest, Rest. Example: Monday (Upper A), Tuesday (Lower A), Wednesday (Rest), Thursday (Upper B), Friday (Lower B), Saturday (Rest), Sunday (Rest)",
+        "restDays": 3,
+        "consecutiveWorkoutDays": 1,
+        "exampleWeek": ["dayA", "dayB", "rest", "dayC", "dayD", "rest", "rest"]
+      },
+
+      "muscleGroupCoverage": {
+        "quads": {"frequencyPerWeek": 2, "daysWhereHit": ["dayB", "dayD"], "totalSetsPerWeek": 10},
+        "hamstrings": {"frequencyPerWeek": 2, "daysWhereHit": ["dayB", "dayD"], "totalSetsPerWeek": 8},
+        "glutes": {"frequencyPerWeek": 2, "daysWhereHit": ["dayB", "dayD"], "totalSetsPerWeek": 10},
+        "chest": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayC"], "totalSetsPerWeek": 10},
+        "back": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayC"], "totalSetsPerWeek": 12},
+        "shoulders": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayC"], "totalSetsPerWeek": 10},
+        "biceps": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayC"], "totalSetsPerWeek": 8},
+        "triceps": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayC"], "totalSetsPerWeek": 8},
+        "core": {"frequencyPerWeek": 2, "daysWhereHit": ["dayB", "dayD"], "totalSetsPerWeek": 8}
+      },
+
+      "suitableGoals": ["muscle_gain", "strength", "fat_loss", "general_fitness"],
+      "equipmentRequirements": ["barbell", "dumbbell", "machine"],
+      
+      "exerciseSlotsPerDay": {"dayA": 6, "dayB": 6, "dayC": 6, "dayD": 6},
+      "totalExerciseSlotsPerWeek": 24,
+
+      "estimatedSessionDuration": {
+        "min": 55,
+        "max": 70,
+        "recommended": 60
+      },
+
+      "weeklyVolume": {
+        "estimatedSets": 60,
+        "estimatedReps": 600,
+        "intensity": "high"
+      },
+
+      "pros": [
+        "Excellent muscle-building frequency (2x per week per muscle)",
+        "High volume with adequate recovery",
+        "Perfect for intermediate lifters",
+        "Sessions are focused (upper vs lower)",
+        "Session length is manageable (55–70 min)",
+        "Great for both strength and hypertrophy",
+        "Very effective for fat loss with muscle preservation"
+      ],
+
+      "cons": [
+        "Requires 4 days per week commitment",
+        "Still only 4 days (some advanced lifters prefer 5+)",
+        "Less flexibility than 3-day splits for scheduling"
+      ],
+
+      "suitableExperienceLevels": ["intermediate", "advanced"],
+      "recommendedForGoals": ["muscle_gain", "strength", "fat_loss"],
+      "notes": "The classic intermediate split. Balances frequency, volume, intensity, and recovery. Works exceptionally well for lifters with 1–3 years of training experience."
+    },
+
+    {
+      "splitId": "upper_lower_5day",
+      "name": "Upper/Lower (5 Days/Week)",
+      "aliases": ["5-day split", "UL + conditioning", "frequent training"],
+      "description": "Upper/Lower split with an additional full-body or conditioning day. Train upper and lower twice per week with extra volume or conditioning work. Higher volume and frequency for advanced lifters.",
+      "frequency": 5,
+      "trainingAge": "intermediate",
+      "primaryGoals": ["muscle_gain", "fat_loss", "athletic_performance"],
+      
+      "dayStructure": {
+        "dayA": {
+          "name": "Upper Body A",
+          "focusedMuscleGroups": ["chest", "back", "shoulders", "biceps", "triceps"],
+          "movementPatterns": ["push_horizontal", "pull_horizontal", "push_vertical", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "strength",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 2,
+            "isolation": 2
+          }
+        },
+        "dayB": {
+          "name": "Lower Body A",
+          "focusedMuscleGroups": ["quads", "hamstrings", "glutes", "core"],
+          "movementPatterns": ["squat", "hinge", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "strength",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 2,
+            "isolation": 2
+          }
+        },
+        "dayC": {
+          "name": "Upper Body B",
+          "focusedMuscleGroups": ["back", "chest", "shoulders", "biceps", "triceps"],
+          "movementPatterns": ["pull_horizontal", "push_horizontal", "pull_vertical", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 1,
+            "hypertrophy": 3,
+            "isolation": 2
+          }
+        },
+        "dayD": {
+          "name": "Lower Body B",
+          "focusedMuscleGroups": ["glutes", "quads", "hamstrings", "core"],
+          "movementPatterns": ["hinge", "squat", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 1,
+            "hypertrophy": 3,
+            "isolation": 2
+          }
+        },
+        "dayE": {
+          "name": "Conditioning or Accessories",
+          "focusedMuscleGroups": ["core", "full_body"],
+          "movementPatterns": ["conditioning", "mobility", "isolation"],
+          "exerciseSlotsPerDay": 4,
+          "sessionType": "conditioning",
+          "estimatedDuration": 30,
+          "exerciseBreakdown": {
+            "conditioning": 3,
+            "mobility": 1
+          }
+        }
+      },
+
+      "weeklySchedule": {
+        "description": "Upper, Lower, Upper, Lower, Conditioning. Example: Monday (Upper A), Tuesday (Lower A), Wednesday (Upper B), Thursday (Lower B), Friday (Conditioning), Saturday (Rest), Sunday (Rest)",
+        "restDays": 2,
+        "consecutiveWorkoutDays": 1,
+        "exampleWeek": ["dayA", "dayB", "dayC", "dayD", "dayE", "rest", "rest"]
+      },
+
+      "muscleGroupCoverage": {
+        "quads": {"frequencyPerWeek": 2, "daysWhereHit": ["dayB", "dayD"], "totalSetsPerWeek": 10},
+        "hamstrings": {"frequencyPerWeek": 2, "daysWhereHit": ["dayB", "dayD"], "totalSetsPerWeek": 8},
+        "glutes": {"frequencyPerWeek": 2, "daysWhereHit": ["dayB", "dayD"], "totalSetsPerWeek": 10},
+        "chest": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayC"], "totalSetsPerWeek": 10},
+        "back": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayC"], "totalSetsPerWeek": 12},
+        "shoulders": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayC"], "totalSetsPerWeek": 10},
+        "biceps": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayC"], "totalSetsPerWeek": 8},
+        "triceps": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayC"], "totalSetsPerWeek": 8},
+        "core": {"frequencyPerWeek": 3, "daysWhereHit": ["dayB", "dayD", "dayE"], "totalSetsPerWeek": 10}
+      },
+
+      "suitableGoals": ["muscle_gain", "fat_loss", "athletic_performance", "strength"],
+      "equipmentRequirements": ["barbell", "dumbbell", "machine"],
+      
+      "exerciseSlotsPerDay": {"dayA": 6, "dayB": 6, "dayC": 6, "dayD": 6, "dayE": 4},
+      "totalExerciseSlotsPerWeek": 28,
+
+      "estimatedSessionDuration": {
+        "min": 50,
+        "max": 75,
+        "recommended": 60
+      },
+
+      "weeklyVolume": {
+        "estimatedSets": 72,
+        "estimatedReps": 720,
+        "intensity": "high"
+      },
+
+      "pros": [
+        "Excellent muscle-building frequency (2x per week per muscle)",
+        "High total volume with extra conditioning",
+        "Extra recovery day (dayE is optional/conditioning)",
+        "Great for fat loss and muscle gain simultaneously",
+        "Additional conditioning improves work capacity",
+        "Flexible dayE (can be conditioning, mobility, or accessories)",
+        "Perfect for athletic performance goals"
+      ],
+
+      "cons": [
+        "Requires 5 days per week (demanding schedule)",
+        "Higher total volume may require more nutrition",
+        "Requires strong recovery (sleep, nutrition)",
+        "Risk of overtraining if not managed well"
+      ],
+
+      "suitableExperienceLevels": ["intermediate", "advanced"],
+      "recommendedForGoals": ["muscle_gain", "fat_loss", "athletic_performance"],
+      "notes": "Ideal for intermediate lifters wanting extra volume or conditioning. Day E is flexible: can be light conditioning, mobility, or extra accessory work based on weaknesses."
+    },
+    
+    {
+      "splitId": "push_pull_legs_5day",
+      "name": "Push/Pull/Legs (5 Days/Week)",
+      "aliases": ["5-day PPL", "PPL variant", "push pull legs"],
+      "description": "Rotate through Push, Pull, and Legs with Push and Pull repeated. Each muscle group trained twice per week with very high volume. Advanced split for experienced lifters wanting maximum hypertrophy.",
+      "frequency": 5,
+      "trainingAge": "advanced",
+      "primaryGoals": ["muscle_gain", "strength"],
+      
+      "dayStructure": {
+        "dayA": {
+          "name": "Push A",
+          "focusedMuscleGroups": ["chest", "shoulders", "triceps"],
+          "movementPatterns": ["push_horizontal", "push_vertical", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 3,
+            "isolation": 1
+          }
+        },
+        "dayB": {
+          "name": "Pull A",
+          "focusedMuscleGroups": ["back", "biceps"],
+          "movementPatterns": ["pull_horizontal", "pull_vertical", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 3,
+            "isolation": 1
+          }
+        },
+        "dayC": {
+          "name": "Legs A",
+          "focusedMuscleGroups": ["quads", "hamstrings", "glutes", "core"],
+          "movementPatterns": ["squat", "hinge", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 70,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 3,
+            "isolation": 1
+          }
+        },
+        "dayD": {
+          "name": "Push B",
+          "focusedMuscleGroups": ["shoulders", "chest", "triceps"],
+          "movementPatterns": ["push_vertical", "push_horizontal", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 1,
+            "hypertrophy": 3,
+            "isolation": 2
+          }
+        },
+        "dayE": {
+          "name": "Pull B",
+          "focusedMuscleGroups": ["back", "biceps", "shoulders"],
+          "movementPatterns": ["pull_vertical", "pull_horizontal", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 1,
+            "hypertrophy": 3,
+            "isolation": 2
+          }
+        }
+      },
+
+      "weeklySchedule": {
+        "description": "Push, Pull, Legs, Push, Pull. Rest 2 days. Example: Monday (Push A), Tuesday (Pull A), Wednesday (Legs A), Thursday (Push B), Friday (Pull B), Saturday (Rest), Sunday (Rest)",
+        "restDays": 2,
+        "consecutiveWorkoutDays": 1,
+        "exampleWeek": ["dayA", "dayB", "dayC", "dayD", "dayE", "rest", "rest"]
+      },
+
+      "muscleGroupCoverage": {
+        "chest": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayD"], "totalSetsPerWeek": 12},
+        "shoulders": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayD"], "totalSetsPerWeek": 14},
+        "triceps": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayD"], "totalSetsPerWeek": 10},
+        "back": {"frequencyPerWeek": 2, "daysWhereHit": ["dayB", "dayE"], "totalSetsPerWeek": 14},
+        "biceps": {"frequencyPerWeek": 2, "daysWhereHit": ["dayB", "dayE"], "totalSetsPerWeek": 10},
+        "quads": {"frequencyPerWeek": 1, "daysWhereHit": ["dayC"], "totalSetsPerWeek": 10},
+        "hamstrings": {"frequencyPerWeek": 1, "daysWhereHit": ["dayC"], "totalSetsPerWeek": 8},
+        "glutes": {"frequencyPerWeek": 1, "daysWhereHit": ["dayC"], "totalSetsPerWeek": 10},
+        "core": {"frequencyPerWeek": 1, "daysWhereHit": ["dayC"], "totalSetsPerWeek": 5}
+      },
+
+      "suitableGoals": ["muscle_gain", "strength"],
+      "equipmentRequirements": ["barbell", "dumbbell", "machine"],
+      
+      "exerciseSlotsPerDay": {"dayA": 6, "dayB": 6, "dayC": 6, "dayD": 6, "dayE": 6},
+      "totalExerciseSlotsPerWeek": 30,
+
+      "estimatedSessionDuration": {
+        "min": 55,
+        "max": 75,
+        "recommended": 60
+      },
+
+      "weeklyVolume": {
+        "estimatedSets": 82,
+        "estimatedReps": 820,
+        "intensity": "very_high"
+      },
+
+      "pros": [
+        "Excellent upper body frequency (2x per week)",
+        "Very high upper body volume for hypertrophy",
+        "Clear workout focus (push/pull/legs)",
+        "Works exceptionally well for muscle gain",
+        "Experienced lifters love this split",
+        "Only 5 days per week (2 rest days)",
+        "Sessions are manageable at 55–75 min"
+      ],
+
+      "cons": [
+        "Legs only 1x per week (lower frequency)",
+        "Very high volume requires excellent recovery",
+        "Demanding for natural lifters",
+        "Limited conditioning work",
+        "Not ideal for fat loss (high calorie demand)"
+      ],
+
+      "suitableExperienceLevels": ["advanced"],
+      "recommendedForGoals": ["muscle_gain", "strength"],
+      "notes": "The classic 5-day PPL split. Excellent for hypertrophy-focused advanced lifters. Upper body gets 2x/week frequency while legs get 1x/week, which is a tradeoff for higher upper body volume."
+    },
+
+    {
+      "splitId": "push_pull_legs_6day",
+      "name": "Push/Pull/Legs (6 Days/Week)",
+      "aliases": ["6-day PPL", "full PPL split", "classic PPL"],
+      "description": "Full Push/Pull/Legs split hitting each muscle group twice per week. The most complete PPL iteration with balanced frequency and volume across all body parts. For serious advanced lifters with strong recovery habits.",
+      "frequency": 6,
+      "trainingAge": "advanced",
+      "primaryGoals": ["muscle_gain", "strength"],
+      
+      "dayStructure": {
+        "dayA": {
+          "name": "Push A",
+          "focusedMuscleGroups": ["chest", "shoulders", "triceps"],
+          "movementPatterns": ["push_horizontal", "push_vertical", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 3,
+            "isolation": 1
+          }
+        },
+        "dayB": {
+          "name": "Pull A",
+          "focusedMuscleGroups": ["back", "biceps"],
+          "movementPatterns": ["pull_horizontal", "pull_vertical", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 3,
+            "isolation": 1
+          }
+        },
+        "dayC": {
+          "name": "Legs A",
+          "focusedMuscleGroups": ["quads", "hamstrings", "glutes", "core"],
+          "movementPatterns": ["squat", "hinge", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 70,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 3,
+            "isolation": 1
+          }
+        },
+        "dayD": {
+          "name": "Push B",
+          "focusedMuscleGroups": ["shoulders", "chest", "triceps"],
+          "movementPatterns": ["push_vertical", "push_horizontal", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 1,
+            "hypertrophy": 3,
+            "isolation": 2
+          }
+        },
+        "dayE": {
+          "name": "Pull B",
+          "focusedMuscleGroups": ["back", "biceps", "shoulders"],
+          "movementPatterns": ["pull_vertical", "pull_horizontal", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 1,
+            "hypertrophy": 3,
+            "isolation": 2
+          }
+        },
+        "dayF": {
+          "name": "Legs B",
+          "focusedMuscleGroups": ["glutes", "quads", "hamstrings", "core"],
+          "movementPatterns": ["hinge", "squat", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 70,
+          "exerciseBreakdown": {
+            "compound": 1,
+            "hypertrophy": 3,
+            "isolation": 2
+          }
+        }
+      },
+
+      "weeklySchedule": {
+        "description": "Push, Pull, Legs, Push, Pull, Legs. Rest 1 day. Example: Monday (Push A), Tuesday (Pull A), Wednesday (Legs A), Thursday (Push B), Friday (Pull B), Saturday (Legs B), Sunday (Rest)",
+        "restDays": 1,
+        "consecutiveWorkoutDays": 1,
+        "exampleWeek": ["dayA", "dayB", "dayC", "dayD", "dayE", "dayF", "rest"]
+      },
+
+      "muscleGroupCoverage": {
+        "chest": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayD"], "totalSetsPerWeek": 12},
+        "shoulders": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayD"], "totalSetsPerWeek": 14},
+        "triceps": {"frequencyPerWeek": 2, "daysWhereHit": ["dayA", "dayD"], "totalSetsPerWeek": 10},
+        "back": {"frequencyPerWeek": 2, "daysWhereHit": ["dayB", "dayE"], "totalSetsPerWeek": 14},
+        "biceps": {"frequencyPerWeek": 2, "daysWhereHit": ["dayB", "dayE"], "totalSetsPerWeek": 10},
+        "quads": {"frequencyPerWeek": 2, "daysWhereHit": ["dayC", "dayF"], "totalSetsPerWeek": 10},
+        "hamstrings": {"frequencyPerWeek": 2, "daysWhereHit": ["dayC", "dayF"], "totalSetsPerWeek": 8},
+        "glutes": {"frequencyPerWeek": 2, "daysWhereHit": ["dayC", "dayF"], "totalSetsPerWeek": 10},
+        "core": {"frequencyPerWeek": 2, "daysWhereHit": ["dayC", "dayF"], "totalSetsPerWeek": 8}
+      },
+
+      "suitableGoals": ["muscle_gain", "strength"],
+      "equipmentRequirements": ["barbell", "dumbbell", "machine"],
+      
+      "exerciseSlotsPerDay": {"dayA": 6, "dayB": 6, "dayC": 6, "dayD": 6, "dayE": 6, "dayF": 6},
+      "totalExerciseSlotsPerWeek": 36,
+
+      "estimatedSessionDuration": {
+        "min": 55,
+        "max": 75,
+        "recommended": 65
+      },
+
+      "weeklyVolume": {
+        "estimatedSets": 98,
+        "estimatedReps": 980,
+        "intensity": "very_high"
+      },
+
+      "pros": [
+        "Perfect frequency for all muscles (2x per week)",
+        "Excellent balance of push, pull, and legs volume",
+        "Highest total training volume in any split",
+        "Best for pure hypertrophy gains",
+        "All body parts get equal focus",
+        "Legs get same frequency as upper body",
+        "The most complete PPL iteration"
+      ],
+
+      "cons": [
+        "Requires 6 days per week commitment (only 1 rest day)",
+        "Extremely high volume (98 sets/week)",
+        "Demands excellent nutrition and recovery",
+        "Minimal conditioning work",
+        "Not ideal for fat loss",
+        "May lead to overtraining if recovery is poor",
+        "Requires experienced lifters with strong discipline"
+      ],
+
+      "suitableExperienceLevels": ["advanced"],
+      "recommendedForGoals": ["muscle_gain", "strength"],
+      "notes": "The ultimate PPL split for dedicated advanced lifters. Requires top-tier nutrition, sleep, and recovery. Best reserved for users training 2+ years. One full rest day per week is critical for adaptation."
+    },
+    
+    {
+      "splitId": "body_part_4day",
+      "name": "Body Part (4 Days/Week)",
+      "aliases": ["4-day split", "body part routine", "muscle group split"],
+      "description": "Each day focuses on one or two muscle groups with high volume. Chest/Back, Legs, Shoulders, Arms. Great for advanced lifters wanting to specialize in specific areas.",
+      "frequency": 4,
+      "trainingAge": "advanced",
+      "primaryGoals": ["muscle_gain", "strength"],
+      
+      "dayStructure": {
+        "dayA": {
+          "name": "Chest & Back",
+          "focusedMuscleGroups": ["chest", "back"],
+          "movementPatterns": ["push_horizontal", "pull_horizontal", "isolation"],
+          "exerciseSlotsPerDay": 7,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 75,
+          "exerciseBreakdown": {
+            "compound": 3,
+            "hypertrophy": 3,
+            "isolation": 1
+          }
+        },
+        "dayB": {
+          "name": "Legs",
+          "focusedMuscleGroups": ["quads", "hamstrings", "glutes", "core"],
+          "movementPatterns": ["squat", "hinge", "isolation"],
+          "exerciseSlotsPerDay": 7,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 75,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 4,
+            "isolation": 1
+          }
+        },
+        "dayC": {
+          "name": "Shoulders",
+          "focusedMuscleGroups": ["shoulders", "traps"],
+          "movementPatterns": ["push_vertical", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 3,
+            "isolation": 1
+          }
+        },
+        "dayD": {
+          "name": "Arms & Core",
+          "focusedMuscleGroups": ["biceps", "triceps", "core"],
+          "movementPatterns": ["isolation", "pull_vertical"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 50,
+          "exerciseBreakdown": {
+            "compound": 1,
+            "hypertrophy": 4,
+            "isolation": 1
+          }
+        }
+      },
+
+      "weeklySchedule": {
+        "description": "Chest/Back, Legs, Shoulders, Arms. Example: Monday (Chest/Back), Tuesday (Legs), Wednesday (Shoulders), Thursday (Arms), Friday (Rest), Saturday (Rest), Sunday (Rest)",
+        "restDays": 3,
+        "consecutiveWorkoutDays": 1,
+        "exampleWeek": ["dayA", "dayB", "dayC", "dayD", "rest", "rest", "rest"]
+      },
+
+      "muscleGroupCoverage": {
+        "chest": {"frequencyPerWeek": 1, "daysWhereHit": ["dayA"], "totalSetsPerWeek": 10},
+        "back": {"frequencyPerWeek": 1, "daysWhereHit": ["dayA"], "totalSetsPerWeek": 12},
+        "quads": {"frequencyPerWeek": 1, "daysWhereHit": ["dayB"], "totalSetsPerWeek": 10},
+        "hamstrings": {"frequencyPerWeek": 1, "daysWhereHit": ["dayB"], "totalSetsPerWeek": 8},
+        "glutes": {"frequencyPerWeek": 1, "daysWhereHit": ["dayB"], "totalSetsPerWeek": 10},
+        "shoulders": {"frequencyPerWeek": 1, "daysWhereHit": ["dayC"], "totalSetsPerWeek": 12},
+        "traps": {"frequencyPerWeek": 1, "daysWhereHit": ["dayC"], "totalSetsPerWeek": 4},
+        "biceps": {"frequencyPerWeek": 1, "daysWhereHit": ["dayD"], "totalSetsPerWeek": 8},
+        "triceps": {"frequencyPerWeek": 1, "daysWhereHit": ["dayD"], "totalSetsPerWeek": 8},
+        "core": {"frequencyPerWeek": 1, "daysWhereHit": ["dayD"], "totalSetsPerWeek": 4}
+      },
+
+      "suitableGoals": ["muscle_gain", "strength"],
+      "equipmentRequirements": ["barbell", "dumbbell", "machine"],
+      
+      "exerciseSlotsPerDay": {"dayA": 7, "dayB": 7, "dayC": 6, "dayD": 6},
+      "totalExerciseSlotsPerWeek": 26,
+
+      "estimatedSessionDuration": {
+        "min": 50,
+        "max": 80,
+        "recommended": 65
+      },
+
+      "weeklyVolume": {
+        "estimatedSets": 76,
+        "estimatedReps": 760,
+        "intensity": "very_high"
+      },
+
+      "pros": [
+        "High volume per muscle group (full day dedicated)",
+        "Good for specialization (can focus on lagging parts)",
+        "Only 4 days per week (3 rest days)",
+        "Sessions are focused on one area",
+        "Works well for muscle imbalances"
+      ],
+
+      "cons": [
+        "Very low frequency per muscle (1x per week only)",
+        "Requires a week to hit all body parts",
+        "Suboptimal for hypertrophy (frequency is low)",
+        "Recovery between muscle groups is long",
+        "Not ideal for beginners (needs experience)"
+      ],
+
+      "suitableExperienceLevels": ["advanced"],
+      "recommendedForGoals": ["muscle_gain", "strength"],
+      "notes": "Body part split with low frequency. Best for advanced lifters who can handle high volume per session and have strong recovery. Lower frequency limits hypertrophy potential compared to UL or PPL."
+    },
+
+    {
+      "splitId": "body_part_5day",
+      "name": "Body Part (5 Days/Week)",
+      "aliases": ["5-day split", "body part routine", "muscle specialization"],
+      "description": "Each muscle group gets its own dedicated day. Chest, Back, Legs, Shoulders, Arms. Maximum volume for each body part with focused training.",
+      "frequency": 5,
+      "trainingAge": "advanced",
+      "primaryGoals": ["muscle_gain", "strength"],
+      
+      "dayStructure": {
+        "dayA": {
+          "name": "Chest",
+          "focusedMuscleGroups": ["chest"],
+          "movementPatterns": ["push_horizontal", "isolation"],
+          "exerciseSlotsPerDay": 7,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 4,
+            "isolation": 1
+          }
+        },
+        "dayB": {
+          "name": "Back",
+          "focusedMuscleGroups": ["back", "biceps"],
+          "movementPatterns": ["pull_horizontal", "pull_vertical", "isolation"],
+          "exerciseSlotsPerDay": 7,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 4,
+            "isolation": 1
+          }
+        },
+        "dayC": {
+          "name": "Legs",
+          "focusedMuscleGroups": ["quads", "hamstrings", "glutes", "core"],
+          "movementPatterns": ["squat", "hinge", "isolation"],
+          "exerciseSlotsPerDay": 7,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 75,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 4,
+            "isolation": 1
+          }
+        },
+        "dayD": {
+          "name": "Shoulders",
+          "focusedMuscleGroups": ["shoulders", "traps"],
+          "movementPatterns": ["push_vertical", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 3,
+            "isolation": 1
+          }
+        },
+        "dayE": {
+          "name": "Arms",
+          "focusedMuscleGroups": ["biceps", "triceps"],
+          "movementPatterns": ["isolation", "pull_vertical"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 50,
+          "exerciseBreakdown": {
+            "compound": 1,
+            "hypertrophy": 4,
+            "isolation": 1
+          }
+        }
+      },
+
+      "weeklySchedule": {
+        "description": "Chest, Back, Legs, Shoulders, Arms. Example: Monday (Chest), Tuesday (Back), Wednesday (Legs), Thursday (Shoulders), Friday (Arms), Saturday (Rest), Sunday (Rest)",
+        "restDays": 2,
+        "consecutiveWorkoutDays": 1,
+        "exampleWeek": ["dayA", "dayB", "dayC", "dayD", "dayE", "rest", "rest"]
+      },
+
+      "muscleGroupCoverage": {
+        "chest": {"frequencyPerWeek": 1, "daysWhereHit": ["dayA"], "totalSetsPerWeek": 12},
+        "back": {"frequencyPerWeek": 1, "daysWhereHit": ["dayB"], "totalSetsPerWeek": 12},
+        "quads": {"frequencyPerWeek": 1, "daysWhereHit": ["dayC"], "totalSetsPerWeek": 10},
+        "hamstrings": {"frequencyPerWeek": 1, "daysWhereHit": ["dayC"], "totalSetsPerWeek": 8},
+        "glutes": {"frequencyPerWeek": 1, "daysWhereHit": ["dayC"], "totalSetsPerWeek": 10},
+        "shoulders": {"frequencyPerWeek": 1, "daysWhereHit": ["dayD"], "totalSetsPerWeek": 12},
+        "traps": {"frequencyPerWeek": 1, "daysWhereHit": ["dayD"], "totalSetsPerWeek": 4},
+        "biceps": {"frequencyPerWeek": 1, "daysWhereHit": ["dayE"], "totalSetsPerWeek": 10},
+        "triceps": {"frequencyPerWeek": 1, "daysWhereHit": ["dayE"], "totalSetsPerWeek": 10},
+        "core": {"frequencyPerWeek": 1, "daysWhereHit": ["dayC"], "totalSetsPerWeek": 5}
+      },
+
+      "suitableGoals": ["muscle_gain", "strength"],
+      "equipmentRequirements": ["barbell", "dumbbell", "machine"],
+      
+      "exerciseSlotsPerDay": {"dayA": 7, "dayB": 7, "dayC": 7, "dayD": 6, "dayE": 6},
+      "totalExerciseSlotsPerWeek": 33,
+
+      "estimatedSessionDuration": {
+        "min": 50,
+        "max": 75,
+        "recommended": 60
+      },
+
+      "weeklyVolume": {
+        "estimatedSets": 88,
+        "estimatedReps": 880,
+        "intensity": "very_high"
+      },
+
+      "pros": [
+        "Highest volume for each muscle group",
+        "Perfect focus — each day one body part",
+        "Great for specialization and weak points",
+        "Sessions are very focused",
+        "Works well for experienced lifters"
+      ],
+
+      "cons": [
+        "Very low frequency per muscle (1x per week only)",
+        "Suboptimal for hypertrophy (science suggests 2x/week is better)",
+        "Recovery between muscle group training is long",
+        "Plateau risk after initial adaptation",
+        "Not ideal for simultaneous strength and size goals"
+      ],
+
+      "suitableExperienceLevels": ["advanced"],
+      "recommendedForGoals": ["muscle_gain", "strength"],
+      "notes": "Pure body part split with maximum volume per muscle. Only for very experienced lifters with strong recovery. Low frequency (1x/week) limits optimal hypertrophy despite high volume."
+    },
+
+    {
+      "splitId": "body_part_6day",
+      "name": "Body Part (6 Days/Week)",
+      "aliases": ["6-day split", "body part frequency", "specialized training"],
+      "description": "Each muscle group gets dedicated days with some getting double days. Chest, Back, Legs x2, Shoulders, Arms. Combines high volume with improved frequency for key areas.",
+      "frequency": 6,
+      "trainingAge": "advanced",
+      "primaryGoals": ["muscle_gain", "strength"],
+      
+      "dayStructure": {
+        "dayA": {
+          "name": "Chest",
+          "focusedMuscleGroups": ["chest"],
+          "movementPatterns": ["push_horizontal", "isolation"],
+          "exerciseSlotsPerDay": 7,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 4,
+            "isolation": 1
+          }
+        },
+        "dayB": {
+          "name": "Back",
+          "focusedMuscleGroups": ["back", "biceps"],
+          "movementPatterns": ["pull_horizontal", "pull_vertical", "isolation"],
+          "exerciseSlotsPerDay": 7,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 4,
+            "isolation": 1
+          }
+        },
+        "dayC": {
+          "name": "Legs A (Quad Focus)",
+          "focusedMuscleGroups": ["quads", "glutes"],
+          "movementPatterns": ["squat", "isolation"],
+          "exerciseSlotsPerDay": 7,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 70,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 4,
+            "isolation": 1
+          }
+        },
+        "dayD": {
+          "name": "Shoulders",
+          "focusedMuscleGroups": ["shoulders", "traps"],
+          "movementPatterns": ["push_vertical", "isolation"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 60,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 3,
+            "isolation": 1
+          }
+        },
+        "dayE": {
+          "name": "Legs B (Hinge Focus)",
+          "focusedMuscleGroups": ["hamstrings", "glutes", "core"],
+          "movementPatterns": ["hinge", "isolation"],
+          "exerciseSlotsPerDay": 7,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 70,
+          "exerciseBreakdown": {
+            "compound": 2,
+            "hypertrophy": 4,
+            "isolation": 1
+          }
+        },
+        "dayF": {
+          "name": "Arms",
+          "focusedMuscleGroups": ["biceps", "triceps"],
+          "movementPatterns": ["isolation", "pull_vertical"],
+          "exerciseSlotsPerDay": 6,
+          "sessionType": "hypertrophy",
+          "estimatedDuration": 50,
+          "exerciseBreakdown": {
+            "compound": 1,
+            "hypertrophy": 4,
+            "isolation": 1
+          }
+        }
+      },
+
+      "weeklySchedule": {
+        "description": "Chest, Back, Legs (Quads), Shoulders, Legs (Hinge), Arms. Rest 1 day. Example: Monday (Chest), Tuesday (Back), Wednesday (Legs-Quads), Thursday (Shoulders), Friday (Legs-Hinge), Saturday (Arms), Sunday (Rest)",
+        "restDays": 1,
+        "consecutiveWorkoutDays": 1,
+        "exampleWeek": ["dayA", "dayB", "dayC", "dayD", "dayE", "dayF", "rest"]
+      },
+
+      "muscleGroupCoverage": {
+        "chest": {"frequencyPerWeek": 1, "daysWhereHit": ["dayA"], "totalSetsPerWeek": 12},
+        "back": {"frequencyPerWeek": 1, "daysWhereHit": ["dayB"], "totalSetsPerWeek": 12},
+        "quads": {"frequencyPerWeek": 1, "daysWhereHit": ["dayC"], "totalSetsPerWeek": 10},
+        "hamstrings": {"frequencyPerWeek": 1, "daysWhereHit": ["dayE"], "totalSetsPerWeek": 10},
+        "glutes": {"frequencyPerWeek": 2, "daysWhereHit": ["dayC", "dayE"], "totalSetsPerWeek": 14},
+        "shoulders": {"frequencyPerWeek": 1, "daysWhereHit": ["dayD"], "totalSetsPerWeek": 12},
+        "traps": {"frequencyPerWeek": 1, "daysWhereHit": ["dayD"], "totalSetsPerWeek": 4},
+        "biceps": {"frequencyPerWeek": 1, "daysWhereHit": ["dayF"], "totalSetsPerWeek": 10},
+        "triceps": {"frequencyPerWeek": 1, "daysWhereHit": ["dayF"], "totalSetsPerWeek": 10},
+        "core": {"frequencyPerWeek": 1, "daysWhereHit": ["dayE"], "totalSetsPerWeek": 5}
+      },
+
+      "suitableGoals": ["muscle_gain", "strength"],
+      "equipmentRequirements": ["barbell", "dumbbell", "machine"],
+      
+      "exerciseSlotsPerDay": {"dayA": 7, "dayB": 7, "dayC": 7, "dayD": 6, "dayE": 7, "dayF": 6},
+      "totalExerciseSlotsPerWeek": 40,
+
+      "estimatedSessionDuration": {
+        "min": 50,
+        "max": 75,
+        "recommended": 65
+      },
+
+      "weeklyVolume": {
+        "estimatedSets": 101,
+        "estimatedReps": 1010,
+        "intensity": "very_high"
+      },
+
+      "pros": [
+        "High volume for all muscle groups",
+        "Legs get 2x per week frequency (better than 1x)",
+        "Glutes get 2x per week for better hypertrophy",
+        "Maintains full body specialization focus",
+        "Only 1 rest day (high frequency training)"
+      ],
+
+      "cons": [
+        "Most muscle groups still 1x per week (suboptimal for hypertrophy)",
+        "Very demanding (6 days/week with only 1 rest day)",
+        "Extremely high volume (101 sets/week)",
+        "Requires elite recovery (sleep, nutrition, supplements)",
+        "Risk of overtraining if recovery is poor",
+        "Not suitable for natural lifters with normal recovery"
+      ],
+
+      "suitableExperienceLevels": ["advanced"],
+      "recommendedForGoals": ["muscle_gain", "strength"],
+      "notes": "High-frequency body part split with legs split across two sessions. Best for advanced lifters with excellent recovery and lifestyle. High volume and frequency demand top-tier nutrition and sleep. Only 1 rest day requires strong discipline."
+    }
+  ]
+}

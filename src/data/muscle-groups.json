@@ -1,0 +1,116 @@
+{
+  "muscleGroups": [
+    {
+      "id": "chest",
+      "name": "Chest",
+      "region": "upper_body",
+      "displayColor": "#FF6B6B",
+      "description": "Pectoralis major and minor"
+    },
+    {
+      "id": "back",
+      "name": "Back",
+      "region": "upper_body",
+      "displayColor": "#4ECDC4",
+      "description": "Lats, rhomboids, traps"
+    },
+    {
+      "id": "shoulders",
+      "name": "Shoulders",
+      "region": "upper_body",
+      "displayColor": "#FFE66D",
+      "description": "Deltoids (anterior, lateral, posterior)"
+    },
+    {
+      "id": "biceps",
+      "name": "Biceps",
+      "region": "upper_body",
+      "displayColor": "#95E1D3",
+      "description": "Biceps brachii"
+    },
+    {
+      "id": "triceps",
+      "name": "Triceps",
+      "region": "upper_body",
+      "displayColor": "#F38181",
+      "description": "Triceps brachii"
+    },
+    {
+      "id": "forearms",
+      "name": "Forearms",
+      "region": "upper_body",
+      "displayColor": "#AA96DA",
+      "description": "Wrist flexors and extensors"
+    },
+    {
+      "id": "quads",
+      "name": "Quadriceps",
+      "region": "lower_body",
+      "displayColor": "#FCBAD3",
+      "description": "Rectus femoris, vastus group"
+    },
+    {
+      "id": "hamstrings",
+      "name": "Hamstrings",
+      "region": "lower_body",
+      "displayColor": "#A8D8EA",
+      "description": "Biceps femoris, semitendinosus, semimembranosus"
+    },
+    {
+      "id": "glutes",
+      "name": "Glutes",
+      "region": "lower_body",
+      "displayColor": "#FF9671",
+      "description": "Gluteus maximus, medius, minimus"
+    },
+    {
+      "id": "calves",
+      "name": "Calves",
+      "region": "lower_body",
+      "displayColor": "#FFC75F",
+      "description": "Gastrocnemius, soleus"
+    },
+    {
+      "id": "core",
+      "name": "Core",
+      "region": "core",
+      "displayColor": "#845EC2",
+      "description": "Rectus abdominis, obliques, transverse abdominis"
+    },
+    {
+      "id": "abs",
+      "name": "Abs",
+      "region": "core",
+      "displayColor": "#D65DB1",
+      "description": "Rectus abdominis (six-pack area)"
+    },
+    {
+      "id": "obliques",
+      "name": "Obliques",
+      "region": "core",
+      "displayColor": "#FF6F91",
+      "description": "External and internal obliques"
+    },
+    {
+      "id": "lower_back",
+      "name": "Lower Back",
+      "region": "core",
+      "displayColor": "#C34A36",
+      "description": "Erector spinae, latissimus dorsi"
+    },
+    {
+      "id": "traps",
+      "name": "Traps",
+      "region": "upper_body",
+      "displayColor": "#F8B500",
+      "description": "Trapezius (upper, middle, lower)"
+    },
+    {
+      "id": "hip_flexors",
+      "name": "Hip Flexors",
+      "region": "lower_body",
+      "displayColor": "#00D2FC",
+      "description": "Iliopsoas, rectus femoris"
+    }
+  ]
+}

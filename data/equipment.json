@@ -1,0 +1,88 @@
+{
+  "equipment": [
+    {
+      "id": "bodyweight",
+      "name": "Bodyweight",
+      "category": "no_equipment",
+      "description": "Exercises using only your body weight",
+      "fallbackAlternatives": []
+    },
+    {
+      "id": "dumbbell",
+      "name": "Dumbbell",
+      "category": "free_weights",
+      "description": "Free weight consisting of a short bar with weights at each end",
+      "fallbackAlternatives": ["kettlebell", "resistance_band", "barbell"]
+    },
+    {
+      "id": "barbell",
+      "name": "Barbell",
+      "category": "free_weights",
+      "description": "Long bar with weight plates on each end, typically used for heavy compound lifts",
+      "fallbackAlternatives": ["dumbbell", "kettlebell"]
+    },
+    {
+      "id": "kettlebell",
+      "name": "Kettlebell",
+      "category": "free_weights",
+      "description": "Single handle with a rounded weight ball, used for dynamic and ballistic movements",
+      "fallbackAlternatives": ["dumbbell", "resistance_band"]
+    },
+    {
+      "id": "resistance_band",
+      "name": "Resistance Band",
+      "category": "elastic",
+      "description": "Elastic rubber band providing variable resistance, lightweight and portable",
+      "fallbackAlternatives": ["dumbbell", "bodyweight"]
+    },
+    {
+      "id": "pull_up_bar",
+      "name": "Pull-Up Bar",
+      "category": "fixed_apparatus",
+      "description": "Horizontal bar mounted high, used for pulling exercises",
+      "fallbackAlternatives": ["resistance_band"]
+    },
+    {
+      "id": "bench",
+      "name": "Weight Bench",
+      "category": "fixed_apparatus",
+      "description": "Adjustable or flat bench for pressing and support exercises",
+      "fallbackAlternatives": ["chair", "bodyweight"]
+    },
+    {
+      "id": "chair",
+      "name": "Chair",
+      "category": "furniture",
+      "description": "Standard chair, used for step-ups, dips, and supported exercises",
+      "fallbackAlternatives": ["bench", "stairs"]
+    },
+    {
+      "id": "cable_machine",
+      "name": "Cable Machine",
+      "category": "fixed_apparatus",
+      "description": "Machine with adjustable cable and pulley system for controlled movements",
+      "fallbackAlternatives": ["resistance_band", "dumbbell"]
+    },
+    {
+      "id": "medicine_ball",
+      "name": "Medicine Ball",
+      "category": "weighted_ball",
+      "description": "Weighted ball used for dynamic and explosive movements",
+      "fallbackAlternatives": ["dumbbell", "kettlebell"]
+    },
+    {
+      "id": "foam_roller",
+      "name": "Foam Roller",
+      "category": "recovery",
+      "description": "Cylindrical foam tool for self-myofascial release and mobility",
+      "fallbackAlternatives": []
+    },
+    {
+      "id": "yoga_mat",
+      "name": "Yoga Mat",
+      "category": "support",
+      "description": "Padded mat for floor exercises and stretching",
+      "fallbackAlternatives": []
+    }
+  ]
+}
