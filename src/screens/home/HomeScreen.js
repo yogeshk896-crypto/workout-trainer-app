@@ -1,3 +1,4 @@
+import { checkDeloadNeeded } from '../../engine';
 import React, { useEffect, useState } from 'react';
 import {
   View,
@@ -23,6 +24,8 @@ const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 export default function HomeScreen() {
   const [refreshing, setRefreshing] = React.useState(false);
+  const [deloadRecommended, setDeloadRecommended] = useState(false);
+  const [deloadReason, setDeloadReason] = useState('');
 
   // Stores
   const userProfile = useUserStore(state => state.userProfile);
@@ -48,6 +51,13 @@ export default function HomeScreen() {
     await loadActivePlan(userProfile.id);
     await calculateWeeklyStats(userProfile.id);
     await calculateOverallStats(userProfile.id);
+
+    // Check if deload needed
+    const deloadCheck = await checkDeloadNeeded(userProfile.id);
+    if (deloadCheck?.deloadNeeded) {
+      setDeloadRecommended(true);
+      setDeloadReason(deloadCheck.reason);
+    }
   };
 
   useEffect(() => {
@@ -119,7 +129,16 @@ export default function HomeScreen() {
             <Text style={styles.streakLabel}>streak</Text>
           </View>
         </View>
-
+        {/* ── Deload Warning ─────────────────────────────── */}
+        {deloadRecommended && (
+          <View style={styles.deloadBanner}>
+            <Text style={styles.deloadEmoji}>⚠️</Text>
+            <View style={styles.deloadInfo}>
+              <Text style={styles.deloadTitle}>Recovery Week Recommended</Text>
+              <Text style={styles.deloadSubtitle}>{deloadReason}</Text>
+            </View>
+          </View>
+        )}
         {/* ── Weekly Calendar Strip ───────────────────────── */}
         <View style={styles.calendarStrip}>
           {DAYS.map((day, index) => {
@@ -176,9 +195,9 @@ export default function HomeScreen() {
                   <View style={styles.workoutStatDivider} />
                   <View style={styles.workoutStat}>
                     <Text style={styles.workoutStatValue}>
-                      {userPreferences?.workout_frequency || 3}
+                      {exercises?.length || 0}
                     </Text>
-                    <Text style={styles.workoutStatLabel}>days/week</Text>
+                    <Text style={styles.workoutStatLabel}>exercises</Text>
                   </View>
                   <View style={styles.workoutStatDivider} />
                   <View style={styles.workoutStat}>
@@ -631,5 +650,32 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: Colors.textPrimary,
     textTransform: 'capitalize'
-  }
+  },
+    deloadBanner: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#2d2a1b',
+    borderRadius: 12,
+    padding: 14,
+    marginBottom: 16,
+    borderWidth: 1,
+    borderColor: Colors.warning,
+    gap: 12
+  },
+  deloadEmoji: {
+    fontSize: 24
+  },
+  deloadInfo: {
+    flex: 1
+  },
+  deloadTitle: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: Colors.warning,
+    marginBottom: 2
+  },
+  deloadSubtitle: {
+    fontSize: 12,
+    color: Colors.textMuted
+  },
 });

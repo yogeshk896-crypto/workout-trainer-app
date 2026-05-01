@@ -243,20 +243,43 @@ export default function WorkoutScreen() {
 
   // ── NO WORKOUT TODAY ──────────────────────────────────────
   if (!todaysWorkout) {
+    const dayOfWeek = new Date().getDay();
+    const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+
     return (
       <SafeAreaView style={styles.container} edges={['bottom']}>
         <View style={styles.emptyState}>
-          <Text style={styles.emptyEmoji}>😴</Text>
-          <Text style={styles.emptyTitle}>Rest Day</Text>
+          <Text style={styles.emptyEmoji}>
+            {isWeekend ? '🏖️' : '😴'}
+          </Text>
+          <Text style={styles.emptyTitle}>
+            {isWeekend ? 'Weekend Rest' : 'Rest Day'}
+          </Text>
           <Text style={styles.emptySubtitle}>
-            Today is a rest day. Recovery is just as important as training!
+            {isWeekend
+              ? 'Enjoy your weekend! Your next workout starts Monday.'
+              : 'Today is a rest day. Recovery is just as important as training!'}
           </Text>
           <View style={styles.restTips}>
-            <Text style={styles.restTipsTitle}>Recovery Tips:</Text>
-            <Text style={styles.restTip}>• Stay hydrated 💧</Text>
-            <Text style={styles.restTip}>• Get 7-9 hours of sleep 😴</Text>
-            <Text style={styles.restTip}>• Light stretching or walk 🚶</Text>
-            <Text style={styles.restTip}>• Eat nutritious food 🥗</Text>
+            <Text style={styles.restTipsTitle}>
+              {isWeekend ? '🏖️ Weekend Tips:' : '💤 Recovery Tips:'}
+            </Text>
+            {isWeekend ? (
+              <>
+                <Text style={styles.restTip}>• Enjoy light activity like walking 🚶</Text>
+                <Text style={styles.restTip}>• Stay hydrated 💧</Text>
+                <Text style={styles.restTip}>• Prep your meals for the week 🥗</Text>
+                <Text style={styles.restTip}>• Get good sleep tonight 😴</Text>
+                <Text style={styles.restTip}>• Review your progress 📊</Text>
+              </>
+            ) : (
+              <>
+                <Text style={styles.restTip}>• Stay hydrated 💧</Text>
+                <Text style={styles.restTip}>• Get 7-9 hours of sleep 😴</Text>
+                <Text style={styles.restTip}>• Light stretching or walk 🚶</Text>
+                <Text style={styles.restTip}>• Eat nutritious food 🥗</Text>
+              </>
+            )}
           </View>
         </View>
       </SafeAreaView>

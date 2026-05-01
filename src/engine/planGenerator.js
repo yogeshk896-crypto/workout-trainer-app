@@ -217,14 +217,13 @@ export async function generateWorkoutPlan(userId) {
 function shouldWorkoutOnDay(dayOfWeek, frequency) {
   // dayOfWeek: 0=Sun, 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat
   const schedules = {
-    1: [1],                   // Mon
-    2: [1, 4],               // Mon, Thu
-    3: [1, 3, 5],            // Mon, Wed, Fri
-    4: [1, 2, 4, 5],         // Mon, Tue, Thu, Fri
-    5: [1, 2, 3, 4, 5],      // Mon-Fri
-    6: [1, 2, 3, 4, 5, 6]    // Mon-Sat
+    1: [1],
+    2: [1, 4],
+    3: [1, 3, 5],
+    4: [1, 2, 4, 5],
+    5: [1, 2, 3, 4, 5],
+    6: [1, 2, 3, 4, 5, 6]
   };
-
   const schedule = schedules[frequency] || schedules[3];
   return schedule.includes(dayOfWeek);
 }
