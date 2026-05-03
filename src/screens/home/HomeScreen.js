@@ -32,6 +32,7 @@ export default function HomeScreen() {
   const userPreferences = useUserStore(state => state.userPreferences);
   const activePlan = useWorkoutStore(state => state.activePlan);
   const todaysWorkout = useWorkoutStore(state => state.todaysWorkout);
+  const exercises = useWorkoutStore(state => state.exercises);
   const loadActivePlan = useWorkoutStore(state => state.loadActivePlan);
   const loadTodaysWorkout = useWorkoutStore(state => state.loadTodaysWorkout);
   const weeklyStats = useProgressStore(state => state.weeklyStats);

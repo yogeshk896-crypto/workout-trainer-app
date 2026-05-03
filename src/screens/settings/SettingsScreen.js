@@ -1,4 +1,3 @@
-import { generateWorkoutPlan } from '../../engine';
 import React, { useState } from 'react';
 import {
   View,
@@ -18,6 +17,15 @@ import useProgressStore from '../../state/useProgressStore';
 import Card from '../../components/ui/Card';
 import Divider from '../../components/ui/Divider';
 import Badge from '../../components/ui/Badge';
+import { generateWorkoutPlan } from '../../engine';
+
+// Import Edit Screens
+import EditPersonalInfo from './edit/EditPersonalInfo';
+import EditBodyMetrics from './edit/EditBodyMetrics';
+import EditFitnessLevel from './edit/EditFitnessLevel';
+import EditGoals from './edit/EditGoals';
+import EditEquipment from './edit/EditEquipment';
+import EditSchedule from './edit/EditSchedule';
 
 // ─── Settings Item Component ──────────────────────────────────────────────────
 function SettingsItem({
@@ -37,7 +45,7 @@ function SettingsItem({
     >
       <View style={styles.settingsItemLeft}>
         <Text style={styles.settingsItemIcon}>{icon}</Text>
-        <View>
+        <View style={styles.settingsItemTextContainer}>
           <Text style={[
             styles.settingsItemLabel,
             danger && styles.settingsItemLabelDanger
@@ -59,16 +67,14 @@ function SettingsItem({
   );
 }
 
-// ─── Section Header Component ─────────────────────────────────────────────────
 function SectionHeader({ title }) {
-  return (
-    <Text style={styles.sectionHeader}>{title}</Text>
-  );
+  return <Text style={styles.sectionHeader}>{title}</Text>;
 }
 
 // ─── Main Settings Screen ─────────────────────────────────────────────────────
 export default function SettingsScreen() {
   const [notificationsEnabled, setNotificationsEnabled] = useState(true);
+  const [activeEditScreen, setActiveEditScreen] = useState(null);
 
   const userProfile = useUserStore(state => state.userProfile);
   const userEquipment = useUserStore(state => state.userEquipment);
@@ -76,8 +82,16 @@ export default function SettingsScreen() {
   const userPreferences = useUserStore(state => state.userPreferences);
   const userInjuries = useUserStore(state => state.userInjuries);
   const clearUserState = useUserStore(state => state.clearUserState);
+  const loadUserProfile = useUserStore(state => state.loadUserProfile);
   const clearWorkoutState = useWorkoutStore(state => state.clearWorkoutState);
   const clearProgressState = useProgressStore(state => state.clearProgressState);
+
+  // Handle going back from edit screen
+  const handleEditBack = async () => {
+    setActiveEditScreen(null);
+    // Reload profile to reflect changes
+    await loadUserProfile();
+  };
 
   // Handle reset app
   const handleResetApp = () => {
@@ -105,7 +119,7 @@ export default function SettingsScreen() {
   };
 
   // Handle regenerate plan
-    const handleRegeneratePlan = async () => {
+  const handleRegeneratePlan = () => {
     Alert.alert(
       '🔄 Regenerate Plan',
       'Generate a new workout plan based on your current profile and goals?',
@@ -118,14 +132,20 @@ export default function SettingsScreen() {
               console.log('🔄 Regenerating plan...');
               const planId = await generateWorkoutPlan(userProfile.id);
               if (planId) {
-                Alert.alert('✅ Success!', 'Your new workout plan has been generated!');
+                Alert.alert(
+                  '✅ Success!',
+                  'Your new workout plan has been generated!'
+                );
                 console.log('✅ Plan regenerated:', planId);
               } else {
-                Alert.alert('❌ Error', 'Plan generation failed. Please try again.');
+                Alert.alert(
+                  '❌ Error',
+                  'Plan generation failed. Please try again.'
+                );
               }
             } catch (error) {
               console.error('❌ Regenerate failed:', error);
-              Alert.alert('❌ Error', 'Something went wrong. Please try again.');
+              Alert.alert('❌ Error', 'Something went wrong.');
             }
           }
         }
@@ -133,6 +153,27 @@ export default function SettingsScreen() {
     );
   };
 
+  // ── Show Edit Screens ─────────────────────────────────────────────────────
+  if (activeEditScreen === 'personal') {
+    return <EditPersonalInfo onBack={handleEditBack} />;
+  }
+  if (activeEditScreen === 'body') {
+    return <EditBodyMetrics onBack={handleEditBack} />;
+  }
+  if (activeEditScreen === 'fitness') {
+    return <EditFitnessLevel onBack={handleEditBack} />;
+  }
+  if (activeEditScreen === 'goals') {
+    return <EditGoals onBack={handleEditBack} />;
+  }
+  if (activeEditScreen === 'equipment') {
+    return <EditEquipment onBack={handleEditBack} />;
+  }
+  if (activeEditScreen === 'schedule') {
+    return <EditSchedule onBack={handleEditBack} />;
+  }
+
+  // ── No Profile State ──────────────────────────────────────────────────────
   if (!userProfile) {
     return (
       <SafeAreaView style={styles.container} edges={['bottom']}>
@@ -147,6 +188,7 @@ export default function SettingsScreen() {
     );
   }
 
+  // ── Main Settings Screen ──────────────────────────────────────────────────
   return (
     <SafeAreaView style={styles.container} edges={['bottom']}>
       <ScrollView
@@ -166,7 +208,8 @@ export default function SettingsScreen() {
               <Text style={styles.profileName}>{userProfile.name}</Text>
               <Text style={styles.profileSub}>
                 {userProfile.age} years •{' '}
-                {userProfile.gender?.charAt(0).toUpperCase() + userProfile.gender?.slice(1)}
+                {userProfile.gender?.charAt(0).toUpperCase() +
+                  userProfile.gender?.slice(1)}
               </Text>
               <Badge
                 label={userProfile.fitness_level || 'beginner'}
@@ -212,21 +255,24 @@ export default function SettingsScreen() {
             icon="📝"
             label="Personal Info"
             value={`${userProfile.name} • ${userProfile.age} years`}
-            onPress={() => Alert.alert('Coming Soon', 'Edit profile coming in next update!')}
+            onPress={() => setActiveEditScreen('personal')}
           />
           <Divider />
           <SettingsItem
             icon="⚖️"
             label="Body Metrics"
             value={`${userProfile.weight_kg} kg • ${userProfile.height_cm} cm`}
-            onPress={() => Alert.alert('Coming Soon', 'Edit metrics coming in next update!')}
+            onPress={() => setActiveEditScreen('body')}
           />
           <Divider />
           <SettingsItem
             icon="🏋️"
             label="Fitness Level"
-            value={userProfile.fitness_level?.charAt(0).toUpperCase() + userProfile.fitness_level?.slice(1)}
-            onPress={() => Alert.alert('Coming Soon', 'Edit fitness level coming in next update!')}
+            value={
+              userProfile.fitness_level?.charAt(0).toUpperCase() +
+              userProfile.fitness_level?.slice(1)
+            }
+            onPress={() => setActiveEditScreen('fitness')}
           />
         </Card>
 
@@ -236,11 +282,12 @@ export default function SettingsScreen() {
           <SettingsItem
             icon="🎯"
             label="Current Goals"
-            value={userGoals?.length > 0
-              ? userGoals.map(g => g.goal_name).join(', ')
-              : 'No goals set'
+            value={
+              userGoals?.length > 0
+                ? userGoals.map(g => g.goal_name).join(', ')
+                : 'No goals set'
             }
-            onPress={() => Alert.alert('Coming Soon', 'Edit goals coming in next update!')}
+            onPress={() => setActiveEditScreen('goals')}
           />
           <Divider />
           <SettingsItem
@@ -257,17 +304,20 @@ export default function SettingsScreen() {
           <SettingsItem
             icon="🏋️"
             label="My Equipment"
-            value={userEquipment?.length > 0
-              ? `${userEquipment.length} types selected`
-              : 'Bodyweight only'
+            value={
+              userEquipment?.length > 0
+                ? `${userEquipment.length} types selected`
+                : 'Bodyweight only'
             }
-            onPress={() => Alert.alert('Coming Soon', 'Edit equipment coming in next update!')}
+            onPress={() => setActiveEditScreen('equipment')}
           />
           {userEquipment?.length > 0 && (
             <View style={styles.equipmentTags}>
               {userEquipment.map((eq) => (
                 <View key={eq.id} style={styles.equipmentTag}>
-                  <Text style={styles.equipmentTagText}>{eq.equipment_name}</Text>
+                  <Text style={styles.equipmentTagText}>
+                    {eq.equipment_name}
+                  </Text>
                 </View>
               ))}
             </View>
@@ -281,21 +331,26 @@ export default function SettingsScreen() {
             icon="📅"
             label="Workout Frequency"
             value={`${userPreferences?.workout_frequency || 3} days per week`}
-            onPress={() => Alert.alert('Coming Soon', 'Edit frequency coming in next update!')}
+            onPress={() => setActiveEditScreen('schedule')}
           />
           <Divider />
           <SettingsItem
             icon="⏱️"
             label="Session Duration"
             value={`${userPreferences?.session_duration_minutes || 45} minutes`}
-            onPress={() => Alert.alert('Coming Soon', 'Edit duration coming in next update!')}
+            onPress={() => setActiveEditScreen('schedule')}
           />
           <Divider />
           <SettingsItem
             icon="🗓️"
             label="Preferred Split"
-            value={userPreferences?.preferred_split_id?.replace(/_/g, ' ') || 'Full Body 3 Day'}
-            onPress={() => Alert.alert('Coming Soon', 'Edit split coming in next update!')}
+            value={
+              userPreferences?.preferred_split_id
+                ?.replace(/_/g, ' ')
+                ?.replace(/\b\w/g, l => l.toUpperCase()) ||
+              'Full Body 3 Day'
+            }
+            onPress={() => setActiveEditScreen('schedule')}
           />
         </Card>
 
@@ -305,11 +360,17 @@ export default function SettingsScreen() {
           <SettingsItem
             icon="🩺"
             label="Injuries & Limitations"
-            value={userInjuries?.length > 0
-              ? `${userInjuries.length} limitation(s) noted`
-              : '✅ No limitations'
+            value={
+              userInjuries?.length > 0
+                ? `${userInjuries.length} limitation(s) noted`
+                : '✅ No limitations'
             }
-            onPress={() => Alert.alert('Coming Soon', 'Edit limitations coming in next update!')}
+            onPress={() =>
+              Alert.alert(
+                'Coming Soon',
+                'Edit limitations coming in next update!'
+              )
+            }
           />
         </Card>
 
@@ -338,7 +399,12 @@ export default function SettingsScreen() {
             icon="📏"
             label="Units"
             value="Metric (kg, cm)"
-            onPress={() => Alert.alert('Coming Soon', 'Unit preference coming in next update!')}
+            onPress={() =>
+              Alert.alert(
+                'Coming Soon',
+                'Unit preference coming in next update!'
+              )
+            }
           />
         </Card>
 
@@ -362,9 +428,10 @@ export default function SettingsScreen() {
           <SettingsItem
             icon="📅"
             label="Profile Created"
-            value={userProfile?.created_at
-              ? formatDate(userProfile.created_at)
-              : '—'
+            value={
+              userProfile?.created_at
+                ? formatDate(userProfile.created_at)
+                : '—'
             }
             showArrow={false}
           />
@@ -391,9 +458,7 @@ export default function SettingsScreen() {
 
         {/* Footer */}
         <View style={styles.footer}>
-          <Text style={styles.footerText}>
-            💪 Workout Trainer v1.0.0
-          </Text>
+          <Text style={styles.footerText}>💪 Workout Trainer v1.0.0</Text>
           <Text style={styles.footerSubtext}>
             Offline-first • No cloud required
           </Text>
@@ -410,42 +475,135 @@ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: Colors.background },
   scrollView: { flex: 1 },
   content: { padding: 16, paddingBottom: 40 },
-  // Empty state
-  emptyState: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 30 },
+  emptyState: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 30
+  },
   emptyEmoji: { fontSize: 64, marginBottom: 16 },
-  emptyTitle: { fontSize: 24, fontWeight: 'bold', color: Colors.textPrimary, marginBottom: 8 },
-  emptySubtitle: { fontSize: 15, color: Colors.textMuted, textAlign: 'center' },
-  // Profile card
+  emptyTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: Colors.textPrimary,
+    marginBottom: 8
+  },
+  emptySubtitle: {
+    fontSize: 15,
+    color: Colors.textMuted,
+    textAlign: 'center'
+  },
   profileCard: { marginBottom: 24 },
-  profileHeader: { flexDirection: 'row', alignItems: 'center', gap: 16, marginBottom: 16 },
-  profileAvatar: { width: 64, height: 64, borderRadius: 32, backgroundColor: Colors.primary, alignItems: 'center', justifyContent: 'center' },
-  profileAvatarText: { fontSize: 28, fontWeight: 'bold', color: '#ffffff' },
+  profileHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 16,
+    marginBottom: 16
+  },
+  profileAvatar: {
+    width: 64,
+    height: 64,
+    borderRadius: 32,
+    backgroundColor: Colors.primary,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  profileAvatarText: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#ffffff'
+  },
   profileInfo: { flex: 1, gap: 6 },
-  profileName: { fontSize: 22, fontWeight: 'bold', color: Colors.textPrimary },
+  profileName: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: Colors.textPrimary
+  },
   profileSub: { fontSize: 14, color: Colors.textMuted },
-  profileStatsRow: { flexDirection: 'row', justifyContent: 'space-around', paddingTop: 8 },
+  profileStatsRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    paddingTop: 8
+  },
   profileStat: { alignItems: 'center' },
-  profileStatValue: { fontSize: 18, fontWeight: 'bold', color: Colors.primary, marginBottom: 2 },
+  profileStatValue: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: Colors.primary,
+    marginBottom: 2
+  },
   profileStatLabel: { fontSize: 11, color: Colors.textMuted },
-  // Section headers
-  sectionHeader: { fontSize: 12, fontWeight: '700', color: Colors.textMuted, marginBottom: 8, marginTop: 16, paddingHorizontal: 4, letterSpacing: 1 },
-  // Settings card
+  sectionHeader: {
+    fontSize: 12,
+    fontWeight: '700',
+    color: Colors.textMuted,
+    marginBottom: 8,
+    marginTop: 16,
+    paddingHorizontal: 4,
+    letterSpacing: 1
+  },
   settingsCard: { marginBottom: 4, padding: 0, overflow: 'hidden' },
-  // Settings item
-  settingsItem: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 16 },
-  settingsItemLeft: { flexDirection: 'row', alignItems: 'center', gap: 14, flex: 1 },
+  settingsItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 16
+  },
+  settingsItemLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 14,
+    flex: 1
+  },
   settingsItemIcon: { fontSize: 22, width: 32, textAlign: 'center' },
-  settingsItemLabel: { fontSize: 15, fontWeight: '600', color: Colors.textPrimary, marginBottom: 2 },
+  settingsItemTextContainer: { flex: 1 },
+  settingsItemLabel: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: Colors.textPrimary,
+    marginBottom: 2
+  },
   settingsItemLabelDanger: { color: Colors.danger },
-  settingsItemValue: { fontSize: 12, color: Colors.textMuted, maxWidth: 200 },
-  settingsItemRight: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  settingsItemArrow: { fontSize: 22, color: Colors.textMuted, fontWeight: '300' },
-  // Equipment tags
-  equipmentTags: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, paddingHorizontal: 16, paddingBottom: 14 },
-  equipmentTag: { backgroundColor: '#1e1b4b', borderRadius: 8, paddingHorizontal: 10, paddingVertical: 4, borderWidth: 1, borderColor: Colors.primary },
-  equipmentTagText: { fontSize: 11, color: Colors.primary, fontWeight: '600' },
-  // Footer
-  footer: { alignItems: 'center', marginTop: 24, marginBottom: 8 },
+  settingsItemValue: {
+    fontSize: 12,
+    color: Colors.textMuted,
+    maxWidth: 200
+  },
+  settingsItemRight: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8
+  },
+  settingsItemArrow: {
+    fontSize: 22,
+    color: Colors.textMuted,
+    fontWeight: '300'
+  },
+  equipmentTags: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 6,
+    paddingHorizontal: 16,
+    paddingBottom: 14
+  },
+  equipmentTag: {
+    backgroundColor: '#1e1b4b',
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderWidth: 1,
+    borderColor: Colors.primary
+  },
+  equipmentTagText: {
+    fontSize: 11,
+    color: Colors.primary,
+    fontWeight: '600'
+  },
+  footer: {
+    alignItems: 'center',
+    marginTop: 24,
+    marginBottom: 8
+  },
   footerText: { fontSize: 14, fontWeight: '600', color: Colors.textMuted },
   footerSubtext: { fontSize: 12, color: Colors.border, marginTop: 4 }
 });
