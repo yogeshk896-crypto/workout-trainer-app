@@ -1,3 +1,8 @@
+import {
+  initializeNotifications,
+  cancelAllWorkoutReminders,
+  requestNotificationPermissions
+} from '../../utils/notificationService';
 import React, { useState } from 'react';
 import {
   View,
@@ -74,6 +79,22 @@ function SectionHeader({ title }) {
 // ─── Main Settings Screen ─────────────────────────────────────────────────────
 export default function SettingsScreen() {
   const [notificationsEnabled, setNotificationsEnabled] = useState(true);
+
+const handleNotificationToggle = async (value) => {
+  setNotificationsEnabled(value);
+  if (value) {
+    const granted = await requestNotificationPermissions();
+    if (granted) {
+      await initializeNotifications(userPreferences);
+      console.log('✅ Notifications enabled');
+    } else {
+      setNotificationsEnabled(false);
+    }
+  } else {
+    await cancelAllWorkoutReminders();
+    console.log('✅ Notifications disabled');
+  }
+};
   const [activeEditScreen, setActiveEditScreen] = useState(null);
 
   const userProfile = useUserStore(state => state.userProfile);
@@ -385,7 +406,7 @@ export default function SettingsScreen() {
             rightElement={
               <Switch
                 value={notificationsEnabled}
-                onValueChange={setNotificationsEnabled}
+                onValueChange={handleNotificationToggle}
                 trackColor={{
                   false: Colors.border,
                   true: Colors.primary

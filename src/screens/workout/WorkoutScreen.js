@@ -23,6 +23,9 @@ import {
   findSafeSubstitute,
   applySubstitutionToWorkout
 } from '../../engine';
+import {
+  scheduleSessionCompleteNotification
+} from '../../utils/notificationService';
 
 const SESSION_STATES = {
   NOT_STARTED: 'not_started',
@@ -197,6 +200,14 @@ export default function WorkoutScreen() {
   const handleCompleteSession = async () => {
     try {
       await completeSession(userProfile.id);
+
+      // Send completion notification
+      await scheduleSessionCompleteNotification(
+        completedExercises.length,
+        Math.round(
+          (new Date() - new Date(useWorkoutStore.getState().sessionStartTime)) / 60000
+        )
+      );
 
       // Track volume and personal records
       if (exercises.length > 0 && feedbackList.length > 0) {
