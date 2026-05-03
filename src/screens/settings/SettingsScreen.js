@@ -31,7 +31,7 @@ import EditFitnessLevel from './edit/EditFitnessLevel';
 import EditGoals from './edit/EditGoals';
 import EditEquipment from './edit/EditEquipment';
 import EditSchedule from './edit/EditSchedule';
-
+import EditInjuries from './edit/EditInjuries';
 // ─── Settings Item Component ──────────────────────────────────────────────────
 function SettingsItem({
   icon,
@@ -192,6 +192,9 @@ const handleNotificationToggle = async (value) => {
   }
   if (activeEditScreen === 'schedule') {
     return <EditSchedule onBack={handleEditBack} />;
+  }
+    if (activeEditScreen === 'injuries') {
+    return <EditInjuries onBack={handleEditBack} />;
   }
 
   // ── No Profile State ──────────────────────────────────────────────────────
@@ -386,12 +389,7 @@ const handleNotificationToggle = async (value) => {
                 ? `${userInjuries.length} limitation(s) noted`
                 : '✅ No limitations'
             }
-            onPress={() =>
-              Alert.alert(
-                'Coming Soon',
-                'Edit limitations coming in next update!'
-              )
-            }
+            onPress={() => setActiveEditScreen('injuries')}
           />
         </Card>
 
